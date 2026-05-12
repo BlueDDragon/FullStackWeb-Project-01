@@ -1,0 +1,56 @@
+.footer {
+    width: 100%;
+
+    margin-top: 80px;
+    padding: 40px 48px;
+
+    border-top: 1px solid #e5e7eb;
+
+    background-color: #fafafa;
+
+    box-sizing: border-box;
+}
+
+.footer_inner {
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+/* 로고 텍스트 */
+.company {
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #111827;
+
+    margin: 0;
+}
+
+/* 메뉴 링크 */
+.menu {
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #6b7280;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+/* 회사 정보 */
+.info {
+    font-size: 12px;
+
+    color: #9ca3af;
+
+    line-height: 1.8;
+
+    margin: 0;
+}

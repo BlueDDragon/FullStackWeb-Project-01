@@ -1,4 +1,4 @@
-import type { BookData } from "@/app/_types/BookData"
+import type { BookData } from "@/types/BookData"
 
 async function fetchData<T>(url: string) : Promise<T[]> {
     try {

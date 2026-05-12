@@ -19,7 +19,7 @@ export type BookData = {
     author: string;
     pubDate: string;
     description: string;
-    creator: string;
+    creator?: string;
     isbn: string;
     isbn13: string;
     itemId: number;

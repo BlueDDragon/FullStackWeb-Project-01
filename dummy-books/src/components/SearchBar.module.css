@@ -1,0 +1,107 @@
+.search {
+    width: 560px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #ffffff;
+
+    border: 2px solid #3b82f6;
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search:focus-within {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+/* 검색 카테고리 버튼 */
+.btn_searchcategory {
+    height: 100%;
+
+    border: none;
+    background: none;
+
+    padding: 0 18px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #555;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    position: relative;
+
+    transition: color 0.2s ease;
+}
+
+.btn_searchcategory:hover {
+    color: #111827;
+}
+
+.btn_searchcategory::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: 0;
+
+    transform: translateY(-50%);
+
+    width: 1px;
+    height: 18px;
+
+    background-color: #e5e7eb;
+}
+
+/* 검색 입력창 */
+.input_searchbar {
+    flex: 1;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 0 18px;
+
+    font-size: 15px;
+
+    color: #111827;
+}
+
+.input_searchbar::placeholder {
+    color: #9ca3af;
+}
+
+/* 검색 아이콘 */
+.img_search {
+    margin-right: 18px;
+
+    cursor: pointer;
+
+    opacity: 0.72;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.img_search:hover {
+    opacity: 1;
+
+    transform: scale(1.08);
+}

@@ -1,0 +1,42 @@
+.list {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+
+    padding: 28px 36px;
+
+    background-color: #ffffff;
+
+    border-radius: 18px;
+
+    overflow-x: auto;
+
+    box-sizing: border-box;
+
+    /* 스크롤 숨기기 */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+/* 제목 */
+.title {
+    min-width: 140px;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #111827;
+
+    line-height: 1.4;
+
+    letter-spacing: -0.5px;
+
+    margin: 0;
+    padding-top: 8px;
+}

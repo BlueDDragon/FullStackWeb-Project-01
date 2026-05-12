@@ -1,30 +1,21 @@
 import styles from "./page.module.css";
-import Link from "next/link";
-import Image from "next/image";
-import img_logo from "@/app/_images/logo.png"
-import img_search from "@/app/_images/search.png"
-import BestBookList from "./_components/BestBookList";
+import BestsellerList from "@/components/Bestseller/BestsellerList";
+import BestsellerBanner from "@/components/Bestseller/BestsellerBanner";
+import books_ItemNewAll from "@/mocks/mock_ItemNewAll.json";
+import books_ItemNewSpecial from "@/mocks/mock_ItemNewSpecial.json";
+import books_Bestseller from "@/mocks/mock_Bestseller.json";
+import books_BlogBest from "@/mocks/mock_BlogBest.json";
+import books from "@/mocks/mock_books.json";
+import { BookData } from "@/types/BookData";
 
 export default function Home() {
   return (
-    <div className={styles.home_container}>
-      <button className={styles.btn_menu}>Menu</button>
-      <Link href={"/"}>
-        <Image className={styles.img_logo} src={img_logo} width={180} height={100} alt="" />
-        <span className={styles.logo}>DummyBooks</span>
-      </Link>
-      <div className={styles.search}>
-        <button className={styles.btn_searchcategory}>통합검색▼</button>
-        <input className={styles.input_searchbar} placeholder="도서 검색"></input>
-        <Image className={styles.img_search} src={img_search} width={20} height={20} alt="" />
-      </div>
-      <div className={styles.side}>
-        <button className={styles.btn_cart}>장바구니</button>
-        <button className={styles.btn_mypage}>마이페이지</button>
-      </div>
-      <div>
-        <BestBookList/>
-      </div>
+    <div>
+      <BestsellerBanner />
+      <BestsellerList title="전체 신간 리스트" books={books_ItemNewAll.item} />
+      <BestsellerList title="주목할 만한 신간 리스트" books={books_ItemNewSpecial.item} />
+      <BestsellerList title="이달의 베스트셀러" books={books_Bestseller.item} />
+      <BestsellerList title="블로거 선정 베스트셀러" books={books_BlogBest.item} />
     </div>
   );
 }

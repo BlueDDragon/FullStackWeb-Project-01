@@ -1,0 +1,2363 @@
+{
+    "version": "20131101",
+    "logo": "http://image.aladin.co.kr/img/header/2011/aladin_logo_new.gif",
+    "title": "알라딘 블로거 베스트셀러 리스트 - 국내도서",
+    "link": "https://www.aladin.co.kr/shop/common/wbest.aspx?BestType=BlogBest&amp;BranchType=1&amp;partner=openAPI",
+    "pubDate": "Tue, 12 May 2026 02:26:11 GMT",
+    "totalResults": 100,
+    "startIndex": 1,
+    "itemsPerPage": 10,
+    "query": "QueryType=BLOGBEST;SearchTarget=Book",
+    "searchCategoryId": 0,
+    "searchCategoryName": "국내도서",
+    "item": [
+        {
+            "title": "알면 잠 못 드는 위험한 인문학 - 인류학적 오답 연구",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=390909184&amp;partner=openAPI&amp;start=api",
+            "author": "다크모드 (지은이)",
+            "pubDate": "2026-04-25",
+            "description": "인류가 쌓아 올린 역사와 문명을 낭만이 아닌, ‘오답의 기록’으로 다시 들여다보는 책이다. 로마의 기괴한 처벌 의식, 권력을 과시하기 위해 잔혹함을 제도화한 제국, 극한 상황에서 드러나는 인간의 이기심까지. 우리가 위대하다고 배워온 장면들 뒤편에는, 생각보다 훨씬 어둡고 기묘한 진실이 숨어 있다.",
+            "isbn": "K982137054",
+            "isbn13": "9791124370261",
+            "itemId": 390909184,
+            "priceSales": 19800,
+            "priceStandard": 22000,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 1100,
+            "cover": "https://image.aladin.co.kr/product/39090/91/coversum/k982137054_1.jpg",
+            "categoryId": 51378,
+            "categoryName": "국내도서>인문학>교양 인문학",
+            "publisher": "모티브",
+            "salesPoint": 670,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 10,
+            "bestRank": 1,
+            "subInfo": {},
+            "reviewList": [
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][인문] 알면 잠못드는 위험한 인..",
+                    "writer": "읽고기록하기",
+                    "link": "https://blog.aladin.co.kr/751361145/17271554?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "soy",
+                    "link": "https://blog.aladin.co.kr/713267146/17271388?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "hali78",
+                    "link": "https://blog.aladin.co.kr/747680257/17271221?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "antibsy",
+                    "link": "https://blog.aladin.co.kr/787218140/17271211?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]인문학의 고정관념을 깨는 감각..",
+                    "writer": "문어의정원",
+                    "link": "https://blog.aladin.co.kr/735962144/17271088?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "jy9303",
+                    "link": "https://blog.aladin.co.kr/707069128/17270818?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "리나",
+                    "link": "https://blog.aladin.co.kr/791407193/17270498?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학 ..",
+                    "writer": "감튀",
+                    "link": "https://blog.aladin.co.kr/789294209/17270071?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "안녕미미",
+                    "link": "https://blog.aladin.co.kr/799727143/17269180?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "hwimin7",
+                    "link": "https://blog.aladin.co.kr/745539105/17269021?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "happytree",
+                    "link": "https://blog.aladin.co.kr/700404137/17268973?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "북로드",
+                    "link": "https://blog.aladin.co.kr/791983153/17268773?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠못 드는 위험한 인문학",
+                    "writer": "pukaka71",
+                    "link": "https://blog.aladin.co.kr/723600139/17267131?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]인간의 이성과 문명 뒤에 숨겨진 잔혹한 실패들을 다룬 ...",
+                    "writer": "fkqk020",
+                    "link": "https://blog.aladin.co.kr/781302218/17266615?partner=openAPI"
+                },
+                {
+                    "reviewRank": 6,
+                    "title": "[마이리뷰]‘스스로를 얼마나 객관적으로 바..",
+                    "writer": "시간의흐름",
+                    "link": "https://blog.aladin.co.kr/killthehaine/17266471?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]인류학적 오답 연구",
+                    "writer": "뚜비",
+                    "link": "https://blog.aladin.co.kr/781849118/17265845?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]위험한 인문학",
+                    "writer": "khn729",
+                    "link": "https://blog.aladin.co.kr/799472109/17265794?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "최이써",
+                    "link": "https://blog.aladin.co.kr/791587278/17265715?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "남늘",
+                    "link": "https://blog.aladin.co.kr/758861117/17265575?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평]]알면 잠 못 드는 위험한 ..",
+                    "writer": "빨간머리앤",
+                    "link": "https://blog.aladin.co.kr/750746143/17265574?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평]알면 잠 못 드는 위험한 ..",
+                    "writer": "컨텐츠리믹스",
+                    "link": "https://blog.aladin.co.kr/748791178/17265571?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "행운몽e",
+                    "link": "https://blog.aladin.co.kr/720871241/17265476?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]『알면 잠 못 드는 위험한 인문학..",
+                    "writer": "sailor_moon",
+                    "link": "https://blog.aladin.co.kr/785391227/17265304?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "gazahbs",
+                    "link": "https://blog.aladin.co.kr/721747156/17265252?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "djkidol",
+                    "link": "https://blog.aladin.co.kr/788498189/17264610?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][알면 잠 못 드는 위험한 인문학..",
+                    "writer": "응큼처녀자리",
+                    "link": "https://blog.aladin.co.kr/747084194/17264557?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]인류학적 오답 연구, <알면 ..",
+                    "writer": "가치더블업",
+                    "link": "https://blog.aladin.co.kr/791262136/17264508?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]인간은 역시 불완전한 존재이다.",
+                    "writer": "바이오킹",
+                    "link": "https://blog.aladin.co.kr/716836237/17264445?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "anynara",
+                    "link": "https://blog.aladin.co.kr/726253195/17264139?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]책 속 인류학적 오답 연구는 꼭 ..",
+                    "writer": "둥이맘",
+                    "link": "https://blog.aladin.co.kr/756347116/17263895?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못드는 위험한 인문학 ..",
+                    "writer": "써뉴",
+                    "link": "https://blog.aladin.co.kr/blessingforu/17263881?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]『알면 잠 못 드는 위험한 인문학..",
+                    "writer": "똘똘이홀릭",
+                    "link": "https://blog.aladin.co.kr/702313120/17263844?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]인간은 같은 실수를 반복한다, ..",
+                    "writer": "오미밍",
+                    "link": "https://blog.aladin.co.kr/759392263/17263513?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]인류학적오답연구",
+                    "writer": "루나",
+                    "link": "https://blog.aladin.co.kr/702676165/17263026?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "fud6571",
+                    "link": "https://blog.aladin.co.kr/720496172/17262607?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "newkorea21",
+                    "link": "https://blog.aladin.co.kr/797436123/17262300?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학_..",
+                    "writer": "세상을빛내라",
+                    "link": "https://blog.aladin.co.kr/756988194/17262229?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "나알라",
+                    "link": "https://blog.aladin.co.kr/794798128/17262218?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평] 거룩한 문명의 가면을 벗..",
+                    "writer": "try2be",
+                    "link": "https://blog.aladin.co.kr/768550175/17262053?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "나는나",
+                    "link": "https://blog.aladin.co.kr/722455173/17261720?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]위험한 인문학",
+                    "writer": "민트카페모카",
+                    "link": "https://blog.aladin.co.kr/733996174/17261685?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "seyoh",
+                    "link": "https://blog.aladin.co.kr/747206196/17261321?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][알면 잠 못 드는 위험한 인문학..",
+                    "writer": "소소",
+                    "link": "https://blog.aladin.co.kr/715784126/17261133?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평]알면 잠 못드는 위험한 인..",
+                    "writer": "shrudgus",
+                    "link": "https://blog.aladin.co.kr/715617145/17260994?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]인류학적 오답 연구",
+                    "writer": "문덕이",
+                    "link": "https://blog.aladin.co.kr/783745154/17260939?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]잘 읽었습니다",
+                    "writer": "leeyoujin486-1",
+                    "link": "https://blog.aladin.co.kr/720526186/17260895?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학 ..",
+                    "writer": "푸카콕",
+                    "link": "https://blog.aladin.co.kr/740172101/17260811?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "꾸꾸방울",
+                    "link": "https://blog.aladin.co.kr/713855236/17260719?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "conan72",
+                    "link": "https://blog.aladin.co.kr/730427225/17260646?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "쩡이",
+                    "link": "https://blog.aladin.co.kr/724078220/17260179?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "책을읽",
+                    "link": "https://blog.aladin.co.kr/726533142/17259581?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못드는 위험한 인문학",
+                    "writer": "mybridge",
+                    "link": "https://blog.aladin.co.kr/733713169/17259478?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]형벌, 감옥, 완전범죄, 전쟁 무..",
+                    "writer": "sunny",
+                    "link": "https://blog.aladin.co.kr/777328104/17259019?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못드는 위험한 인문학~ ..",
+                    "writer": "e4me2000",
+                    "link": "https://blog.aladin.co.kr/718158174/17258856?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "pinkpcl",
+                    "link": "https://blog.aladin.co.kr/712583206/17258055?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "petergo",
+                    "link": "https://blog.aladin.co.kr/729462183/17257538?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학_..",
+                    "writer": "썬원맘",
+                    "link": "https://blog.aladin.co.kr/764983191/17256649?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]과정이 목적이 될 때",
+                    "writer": "그림",
+                    "link": "https://blog.aladin.co.kr/714524154/17256060?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못드는 위험한 인문학",
+                    "writer": "M케",
+                    "link": "https://blog.aladin.co.kr/757557191/17255575?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "lifor2202",
+                    "link": "https://blog.aladin.co.kr/758907290/17254849?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]합리라는 이름의 위험 인간의 오..",
+                    "writer": "ksbj1127",
+                    "link": "https://blog.aladin.co.kr/714162130/17254590?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][리뷰] 알면 잠 못 드는 위험한 ..",
+                    "writer": "andradaaesyulli",
+                    "link": "https://blog.aladin.co.kr/748110226/17254533?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]인간은 단 한번도 완벽한 적이 ..",
+                    "writer": "책읽는제니",
+                    "link": "https://blog.aladin.co.kr/703165124/17254377?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "pinkpcl",
+                    "link": "https://blog.aladin.co.kr/712583206/17254001?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "koogi386",
+                    "link": "https://blog.aladin.co.kr/707015249/17253918?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "다독이",
+                    "link": "https://blog.aladin.co.kr/792381115/17253421?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠못드는 인문학",
+                    "writer": "2redfire",
+                    "link": "https://blog.aladin.co.kr/750774200/17253084?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "purepurpler",
+                    "link": "https://blog.aladin.co.kr/790501207/17252898?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "다윗",
+                    "link": "https://blog.aladin.co.kr/781237196/17249464?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평]알면 잠 못 드는 위험한 ..",
+                    "writer": "왕눈이",
+                    "link": "https://blog.aladin.co.kr/711577196/17248966?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][모티브] 알면 잠 못 드는 위험..",
+                    "writer": "dugsss",
+                    "link": "https://blog.aladin.co.kr/757225176/17248349?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][알면 잠 못드는 위험한 인문학]..",
+                    "writer": "물야기",
+                    "link": "https://blog.aladin.co.kr/795823218/17248031?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]위험한 인문학",
+                    "writer": "문덕이",
+                    "link": "https://blog.aladin.co.kr/783745154/17246792?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠 못 드는 위험한 인문학",
+                    "writer": "kity9841",
+                    "link": "https://blog.aladin.co.kr/716150202/17244611?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]우리가 잘 알고 있다고 생각했던 역사 속 사건들을 조금...",
+                    "writer": "슈브레인",
+                    "link": "https://blog.aladin.co.kr/785216192/17243968?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]몰입감 최고!",
+                    "writer": "wlsgml9932",
+                    "link": "https://blog.aladin.co.kr/788170174/17243309?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]알면 잠못드는 위험한 인문학",
+                    "writer": "mint28",
+                    "link": "https://blog.aladin.co.kr/722853151/17238286?partner=openAPI"
+                }
+            ]
+        },
+        {
+            "title": "백지 앞에서",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=391370049&amp;partner=openAPI&amp;start=api",
+            "author": "최은영 (지은이)",
+            "pubDate": "2026-04-30",
+            "description": "소설가 최은영이 데뷔 이후 13년 만에 처음으로 산문집을 출간한다. 2024년 가을부터 2025년까지 써내려간 6편의 새로운 원고에 기존에 발표한 4편의 원고를 고치고 더해 완성한 책으로, 한 편 한 편이 단편소설에 가까운 긴 호흡으로 이어지며 최은영 특유의 “정서적 중량감”(문학평론가 서영채)을 고스란히 느끼게 한다.",
+            "isbn": "K732137654",
+            "isbn13": "9791141603373",
+            "itemId": 391370049,
+            "priceSales": 15750,
+            "priceStandard": 17500,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 870,
+            "cover": "https://image.aladin.co.kr/product/39137/0/coversum/k732137654_1.jpg",
+            "categoryId": 51371,
+            "categoryName": "국내도서>에세이>한국에세이",
+            "publisher": "문학동네",
+            "salesPoint": 74510,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 9,
+            "bestRank": 2,
+            "subInfo": {},
+            "reviewList": [
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]작가님의 마음을 따라갈 수 있어서 좋습니다.",
+                    "writer": "겨울이",
+                    "link": "https://blog.aladin.co.kr/778585243/17267009?partner=openAPI"
+                },
+                {
+                    "reviewRank": 2,
+                    "title": "[100자평]또 속았다. 또 옳은 여성 얘기....손쉽게 도덕적 우...",
+                    "writer": "제제",
+                    "link": "https://blog.aladin.co.kr/lalaland/17260735?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[100자평]작가 모임에서 읽어보라고들 추천해서 산다. 좋다고들 했...",
+                    "writer": "젤소민아",
+                    "link": "https://blog.aladin.co.kr/705632123/17259891?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]글쓰기가 <나의 거의 모든 것>인 최은영의 ...",
+                    "writer": "마콘도",
+                    "link": "https://blog.aladin.co.kr/794430145/17256172?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]머뭇거림은 믿음으로, 믿음은 확..",
+                    "writer": "Youngwoong Kim",
+                    "link": "https://blog.aladin.co.kr/777068101/17255022?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]마음을 어루만지기도하고 가슴을 찢는 깨달음을 주는 하얀...",
+                    "writer": "GLORIA",
+                    "link": "https://blog.aladin.co.kr/799102193/17253462?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]여왕의 귀환, 그 자체입니다. 예약구매 후 카운트다운해...",
+                    "writer": "Jooeun  Lee",
+                    "link": "https://blog.aladin.co.kr/722194160/17251594?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]백지 앞에서를 읽고",
+                    "writer": "LGS68",
+                    "link": "https://blog.aladin.co.kr/772724120/17251574?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]책 오랜만에 사본다 기다렸다 최은영!!!!!작가님!!!...",
+                    "writer": "cndwottl",
+                    "link": "https://blog.aladin.co.kr/744541159/17248789?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]기대됩니다",
+                    "writer": "글을매일씁니다",
+                    "link": "https://blog.aladin.co.kr/797104119/17246330?partner=openAPI"
+                }
+            ]
+        },
+        {
+            "title": "미술관에서 길을 잃은 당신에게 - 9가지 형태로 보는 현대 미술",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=390633328&amp;partner=openAPI&amp;start=api",
+            "author": "스즈키 히로후미 (지은이), 김진아 (옮긴이)",
+            "pubDate": "2026-04-24",
+            "description": "현대미술을 9가지 유형으로 정리해 감상의 기준을 제시하는 책이다. 작품의 목적과 재료, 관점을 분석하며 ‘왜 좋은지 모르겠다’는 막막함을 넘어 스스로 해석하는 힘을 길러주는 현대미술 입문서다.",
+            "isbn": "8931481772",
+            "isbn13": "9788931481778",
+            "itemId": 390633328,
+            "priceSales": 19800,
+            "priceStandard": 22000,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 1100,
+            "cover": "https://image.aladin.co.kr/product/39063/33/coversum/8931481772_1.jpg",
+            "categoryId": 50978,
+            "categoryName": "국내도서>예술/대중문화>미술>미술 이야기",
+            "publisher": "영진.com(영진닷컴)",
+            "salesPoint": 350,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 10,
+            "bestRank": 3,
+            "subInfo": {},
+            "reviewList": [
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "머털도사",
+                    "link": "https://blog.aladin.co.kr/731428103/17270716?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]현대미술을 내 시선으로 바라보..",
+                    "writer": "해피먼데이",
+                    "link": "https://blog.aladin.co.kr/772065186/17269646?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]현대 미술을 위한 치트키를 찾았..",
+                    "writer": "다정한여유",
+                    "link": "https://blog.aladin.co.kr/723897203/17268945?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "tpffktm",
+                    "link": "https://blog.aladin.co.kr/721376277/17267142?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "해수화",
+                    "link": "https://blog.aladin.co.kr/752809207/17267114?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]《미술관에서 길을 잃은 당신에게..",
+                    "writer": "브리카",
+                    "link": "https://blog.aladin.co.kr/786070280/17266855?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "djkidol",
+                    "link": "https://blog.aladin.co.kr/788498189/17266250?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평] 미술관에서 길을 잃은 당..",
+                    "writer": "오늘도책을읽는다",
+                    "link": "https://blog.aladin.co.kr/758168168/17265942?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]이 작품은 왜 유명한 걸까, 어렵게만 느껴지는 현대미술...",
+                    "writer": "오늘도책을읽는다",
+                    "link": "https://blog.aladin.co.kr/758168168/17265939?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]책 덕분에 즐겁게, 더 풍요롭게 ..",
+                    "writer": "둥이맘",
+                    "link": "https://blog.aladin.co.kr/756347116/17265653?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "하리보",
+                    "link": "https://blog.aladin.co.kr/701807164/17265581?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]미술관에서 헤매던 순간들을, 이해와 발견의 시간으로 바...",
+                    "writer": "하리보",
+                    "link": "https://blog.aladin.co.kr/701807164/17265567?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]현대미술을 감상하는 다양한 관..",
+                    "writer": "바이올렛",
+                    "link": "https://blog.aladin.co.kr/yeonv6/17265488?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]현대미술을 감상하는 다양한 관점과 사례",
+                    "writer": "바이올렛",
+                    "link": "https://blog.aladin.co.kr/yeonv6/17265470?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[100자평]현대미술을 이해하기 쉽게 설명합니다",
+                    "writer": "리나",
+                    "link": "https://blog.aladin.co.kr/791407193/17265436?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "리나",
+                    "link": "https://blog.aladin.co.kr/791407193/17265434?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]‘형태‘에 대한 관점을 갖자!",
+                    "writer": "books",
+                    "link": "https://blog.aladin.co.kr/711084206/17265226?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]‘형태‘에 대한 관점을 갖자!",
+                    "writer": "books",
+                    "link": "https://blog.aladin.co.kr/711084206/17265215?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "e36",
+                    "link": "https://blog.aladin.co.kr/740396147/17265093?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]현대미술의 길라잡이",
+                    "writer": "시아와세",
+                    "link": "https://blog.aladin.co.kr/767501106/17264696?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]현대미술을 가까이하고 싶은 이..",
+                    "writer": "yule",
+                    "link": "https://blog.aladin.co.kr/714225150/17264359?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]책을 다 읽고 나면넓은 공간에 놓인 바위 한 덩이를 어...",
+                    "writer": "yule",
+                    "link": "https://blog.aladin.co.kr/714225150/17264356?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]어려운 현대미술 앞에서 좌절한 당신에게 등불이 되어줄 ...",
+                    "writer": "sailor_moon",
+                    "link": "https://blog.aladin.co.kr/785391227/17264287?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]『 미술관에서 길을 잃은 당신에..",
+                    "writer": "sailor_moon",
+                    "link": "https://blog.aladin.co.kr/785391227/17264281?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "민트카페모카",
+                    "link": "https://blog.aladin.co.kr/733996174/17263910?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "오즐",
+                    "link": "https://blog.aladin.co.kr/770266113/17263806?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평] <미술관에서 길을 잃..",
+                    "writer": "what_ur_name",
+                    "link": "https://blog.aladin.co.kr/721509152/17263632?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]9가지 미술의 형태로 만나보는 현대 미술 감상법에 대한...",
+                    "writer": "gazahbs",
+                    "link": "https://blog.aladin.co.kr/721747156/17263272?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][현대미술/영진닷컴/미술의형태]..",
+                    "writer": "gazahbs",
+                    "link": "https://blog.aladin.co.kr/721747156/17263271?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "man1429",
+                    "link": "https://blog.aladin.co.kr/790013288/17263103?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]어려운 현대미술과 친해지는 시..",
+                    "writer": "가자자작나무야",
+                    "link": "https://blog.aladin.co.kr/724164168/17262888?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "fud6571",
+                    "link": "https://blog.aladin.co.kr/720496172/17262824?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "곽철이",
+                    "link": "https://blog.aladin.co.kr/pang98/17262258?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "화덕이",
+                    "link": "https://blog.aladin.co.kr/761931161/17261278?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "newkorea21",
+                    "link": "https://blog.aladin.co.kr/797436123/17261105?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "명랑걸우네",
+                    "link": "https://blog.aladin.co.kr/746923161/17261098?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]진작 이 책 읽고 미술관을 갔더라면 아쉽지만, 지금이라...",
+                    "writer": "렛잇고",
+                    "link": "https://blog.aladin.co.kr/714595160/17260951?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]이 책 먼저 읽고 미술관 가세요!..",
+                    "writer": "렛잇고",
+                    "link": "https://blog.aladin.co.kr/714595160/17260947?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "mibgo",
+                    "link": "https://blog.aladin.co.kr/702937119/17260558?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "옥수수",
+                    "link": "https://blog.aladin.co.kr/734875185/17260110?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "뚜기",
+                    "link": "https://blog.aladin.co.kr/728825134/17259212?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "랄라무",
+                    "link": "https://blog.aladin.co.kr/750138128/17257840?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "seyoh",
+                    "link": "https://blog.aladin.co.kr/747206196/17256725?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술 관람 입문서",
+                    "writer": "jangddaki",
+                    "link": "https://blog.aladin.co.kr/729147154/17256264?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "예찬아빠",
+                    "link": "https://blog.aladin.co.kr/739544108/17255793?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평][협찬도서리뷰] 이 책은 ‘미술은 어떻게 봐야 하는가?...",
+                    "writer": "박온아",
+                    "link": "https://blog.aladin.co.kr/764068104/17255572?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "M케",
+                    "link": "https://blog.aladin.co.kr/757557191/17255484?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "coldtravism",
+                    "link": "https://blog.aladin.co.kr/795939303/17254833?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]˝정답이 없으니 자유롭게 느끼라˝는 무책임한 조언에 지...",
+                    "writer": "klm2289",
+                    "link": "https://blog.aladin.co.kr/781576216/17252369?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평] 난해한 현대미술의 미궁..",
+                    "writer": "klm2289",
+                    "link": "https://blog.aladin.co.kr/781576216/17252360?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][미술관에서 길을 잃은 당신에게..",
+                    "writer": "물야기",
+                    "link": "https://blog.aladin.co.kr/795823218/17248036?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "다윗",
+                    "link": "https://blog.aladin.co.kr/781237196/17245339?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "lempickasw",
+                    "link": "https://blog.aladin.co.kr/799718217/17243730?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에서 길을 잃은 당신에게",
+                    "writer": "bookpage",
+                    "link": "https://blog.aladin.co.kr/709495234/17243591?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]어렵다고 여겨지는 그림 보는 법을 쉽게 알려주는 그림 ...",
+                    "writer": "왕눈이",
+                    "link": "https://blog.aladin.co.kr/711577196/17243377?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평]미술관에서 길을 잃은 당..",
+                    "writer": "왕눈이",
+                    "link": "https://blog.aladin.co.kr/711577196/17243369?partner=openAPI"
+                }
+            ]
+        },
+        {
+            "title": "야생 종려나무 - 예루살렘이여, 만약 내가 그대를 잊는다면",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=391700890&amp;partner=openAPI&amp;start=api",
+            "author": "윌리엄 포크너 (지은이), 권지은 (옮긴이)",
+            "pubDate": "2026-04-30",
+            "description": "미국 모더니즘 문학의 개척자로서 전통적인 소설의 형식을 파괴하고 소설 문법에 혁신을 가져온 퓰리처상, 노벨 문학상 수상 작가인 윌리엄 포크너의 『야생 종려나무』가 민음사 세계문학전집으로 출간되었다.",
+            "isbn": "8937464950",
+            "isbn13": "9788937464959",
+            "itemId": 391700890,
+            "priceSales": 15300,
+            "priceStandard": 17000,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 850,
+            "cover": "https://image.aladin.co.kr/product/39170/8/coversum/8937464950_1.jpg",
+            "categoryId": 50919,
+            "categoryName": "국내도서>소설/시/희곡>영미소설",
+            "publisher": "민음사",
+            "salesPoint": 9940,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 10,
+            "bestRank": 4,
+            "seriesInfo": {
+                "seriesId": 13679,
+                "seriesLink": "http://www.aladin.co.kr/shop/common/wseriesitem.aspx?SRID=13679&amp;partner=openAPI",
+                "seriesName": "민음사 세계문학전집 495"
+            },
+            "subInfo": {},
+            "reviewList": [
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰](민음사) 야생종려나무",
+                    "writer": "우주",
+                    "link": "https://blog.aladin.co.kr/070625/17265180?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]완벽하지 않은데 완벽한 이야기. 그렇게밖에 이야기할 수...",
+                    "writer": "blanca",
+                    "link": "https://blog.aladin.co.kr/blanca98/17264175?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]영원한 비통함",
+                    "writer": "blanca",
+                    "link": "https://blog.aladin.co.kr/blanca98/17264172?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]선택과 책임",
+                    "writer": "잠자냥",
+                    "link": "https://blog.aladin.co.kr/socker/17260423?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]빔 벤더스의 <퍼펙트 데이즈>에서 ‘히라야마...",
+                    "writer": "잠자냥",
+                    "link": "https://blog.aladin.co.kr/socker/17255962?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]존버 성공. 사랑해요 민음사.",
+                    "writer": "Luka",
+                    "link": "https://blog.aladin.co.kr/708897237/17253740?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]포크너의 대표작으로 보기엔 생소한 책이 번역되어 조금 ...",
+                    "writer": "shinski",
+                    "link": "https://blog.aladin.co.kr/755705123/17243641?partner=openAPI"
+                }
+            ]
+        },
+        {
+            "title": "중독을 통제할 수 있다는 착각 - 숏폼, 데이팅 앱, 초가공식품은 나의 뇌를 어떻게 점령했는가",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=391287387&amp;partner=openAPI&amp;start=api",
+            "author": "니클라스 브렌보르 (지은이), 김성훈 (옮긴이)",
+            "pubDate": "2026-04-22",
+            "description": "행복지수 최상위 국가 덴마크 베스트셀러 1위, ‘초자극의 시대’에 중독의 본질을 파헤친다. 더 크고 강렬한 자극을 좇을수록 서서히 마취되는 현대인의 뇌를 짚으며, 세계적 과학 커뮤니케이터 니클라스 브렌보르는 우리가 누리는 즐거움이 선택인지 설계된 함정인지 묻는다.",
+            "isbn": "K512137558",
+            "isbn13": "9791175910584",
+            "itemId": 391287387,
+            "priceSales": 18900,
+            "priceStandard": 21000,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 1050,
+            "cover": "https://image.aladin.co.kr/product/39128/73/coversum/k512137558_1.jpg",
+            "categoryId": 51378,
+            "categoryName": "국내도서>인문학>교양 인문학",
+            "publisher": "위즈덤하우스",
+            "salesPoint": 3500,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 10,
+            "bestRank": 5,
+            "subInfo": {},
+            "reviewList": [
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][협찬] 중독을 통제할 수 있다는..",
+                    "writer": "토스트아웃",
+                    "link": "https://blog.aladin.co.kr/toastout/17271372?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "ㅁ",
+                    "link": "https://blog.aladin.co.kr/rnjsdns5/17267334?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]내가 틱톡, 포르노, 과자를 끊을..",
+                    "writer": "미야",
+                    "link": "https://blog.aladin.co.kr/764248186/17267222?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평] 중독을 통제할 수 있다는..",
+                    "writer": "천국지기",
+                    "link": "https://blog.aladin.co.kr/722141157/17266623?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "Bluejo",
+                    "link": "https://blog.aladin.co.kr/796377177/17266002?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "화덕이",
+                    "link": "https://blog.aladin.co.kr/761931161/17265200?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]증독읔 통제할 수 없고 조심조심",
+                    "writer": "오렌지",
+                    "link": "https://blog.aladin.co.kr/763732173/17264923?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 건 당..",
+                    "writer": "길준경",
+                    "link": "https://blog.aladin.co.kr/756717112/17264071?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "오즐",
+                    "link": "https://blog.aladin.co.kr/770266113/17263753?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "tpffktm",
+                    "link": "https://blog.aladin.co.kr/721376277/17263729?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]서평_중독을 통제할 수 있다는 ..",
+                    "writer": "lkth3",
+                    "link": "https://blog.aladin.co.kr/756949116/17263246?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]숏폼, 데이팅 앱, 초가공식품은 ..",
+                    "writer": "개성상인전우치",
+                    "link": "https://blog.aladin.co.kr/748358174/17262750?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]『중독을 통제할 수 있다는 착각』",
+                    "writer": "sailor_moon",
+                    "link": "https://blog.aladin.co.kr/785391227/17262686?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "해수화",
+                    "link": "https://blog.aladin.co.kr/752809207/17261769?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "토토엄마",
+                    "link": "https://blog.aladin.co.kr/monkeyking/17261549?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "sophia80",
+                    "link": "https://blog.aladin.co.kr/sophia80/17260572?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "민트카페모카",
+                    "link": "https://blog.aladin.co.kr/733996174/17259620?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][교양과학]중독을 통제할 수 있..",
+                    "writer": "호시우행",
+                    "link": "https://blog.aladin.co.kr/736098143/17259597?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][협찬]  중독을 통제할 수 있다..",
+                    "writer": "fiorina2",
+                    "link": "https://blog.aladin.co.kr/758512138/17258685?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]초자극이라는 강렬함",
+                    "writer": "yenarosa",
+                    "link": "https://blog.aladin.co.kr/711089139/17257956?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "헬리오스",
+                    "link": "https://blog.aladin.co.kr/717385153/17256930?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "물까치",
+                    "link": "https://blog.aladin.co.kr/787776189/17255751?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "thddus",
+                    "link": "https://blog.aladin.co.kr/741187103/17255466?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰][마이리뷰] 중독을 통제할 수 있..",
+                    "writer": "슈왈로어테일",
+                    "link": "https://blog.aladin.co.kr/730146167/17252681?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "bebebook",
+                    "link": "https://blog.aladin.co.kr/724956229/17249205?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제 할 수 있다는 착각",
+                    "writer": "가을사랑",
+                    "link": "https://blog.aladin.co.kr/769245223/17248203?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "곽철이",
+                    "link": "https://blog.aladin.co.kr/pang98/17241726?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]포르노와 숏폼이 파괴한 뇌, 초..",
+                    "writer": "Ravenz_76",
+                    "link": "https://blog.aladin.co.kr/757290116/17238703?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "koogi386",
+                    "link": "https://blog.aladin.co.kr/707015249/17237548?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "다윗",
+                    "link": "https://blog.aladin.co.kr/781237196/17235838?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][중독을 통제할 수 있다는 착각]..",
+                    "writer": "물야기",
+                    "link": "https://blog.aladin.co.kr/795823218/17230984?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]중독을 통제할 수 있다는 착각",
+                    "writer": "그레이스북스",
+                    "link": "https://blog.aladin.co.kr/785228162/17230257?partner=openAPI"
+                }
+            ]
+        },
+        {
+            "title": "안부를 전하며 - 헤르만 헤세 x 빈센트 반 고흐",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=390582748&amp;partner=openAPI&amp;start=api",
+            "author": "헤르만 헤세, 빈센트 반 고흐 (지은이), 홍선기 (옮긴이)",
+            "pubDate": "2026-04-16",
+            "description": "세계문화전집은 문학가와 예술가를 한 권 안에 나란히 놓는 시리즈다. 독일, 영국, 프랑스, 네덜란드, 일본 등 해외 유수의 박물관과 미술관, 학회 및 유족들의 협력 하에 시작된, 전 세계에 동일한 포맷이 없는 최초의 크로스 문화 전집 시리즈다.",
+            "isbn": "K342137644",
+            "isbn13": "9791124370391",
+            "itemId": 390582748,
+            "priceSales": 19800,
+            "priceStandard": 22000,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 1100,
+            "cover": "https://image.aladin.co.kr/product/39058/27/coversum/k342137644_1.jpg",
+            "categoryId": 50922,
+            "categoryName": "국내도서>소설/시/희곡>독일소설",
+            "publisher": "모티브",
+            "salesPoint": 1050,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 10,
+            "bestRank": 6,
+            "seriesInfo": {
+                "seriesId": 1340348,
+                "seriesLink": "http://www.aladin.co.kr/shop/common/wseriesitem.aspx?SRID=1340348&amp;partner=openAPI",
+                "seriesName": "세계문화전집 1"
+            },
+            "subInfo": {},
+            "reviewList": [
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "여니",
+                    "link": "https://blog.aladin.co.kr/726662122/17271314?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]헤르만 헤세×빈센트 반 고흐 안..",
+                    "writer": "hali78",
+                    "link": "https://blog.aladin.co.kr/747680257/17271176?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]편지로 전하는 ‘안부‘의 서로 다..",
+                    "writer": "둥이맘",
+                    "link": "https://blog.aladin.co.kr/756347116/17271019?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "하하",
+                    "link": "https://blog.aladin.co.kr/788136107/17270079?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를전하며",
+                    "writer": "khn729",
+                    "link": "https://blog.aladin.co.kr/799472109/17269534?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]살아간다는 것은",
+                    "writer": "꿈의복지사",
+                    "link": "https://blog.aladin.co.kr/761268151/17269378?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며?",
+                    "writer": "정지게",
+                    "link": "https://blog.aladin.co.kr/702581113/17268933?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부에 대하여",
+                    "writer": "겨울",
+                    "link": "https://blog.aladin.co.kr/718078273/17268501?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]헤르만 헤세 x 빈센트 반 고흐 ..",
+                    "writer": "가을사랑",
+                    "link": "https://blog.aladin.co.kr/769245223/17268311?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "esc077",
+                    "link": "https://blog.aladin.co.kr/774952222/17267830?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]헤세와 고흐의 조합이라니, 이것부터 흥미로웠는데요.[안...",
+                    "writer": "comet0907",
+                    "link": "https://blog.aladin.co.kr/753618276/17267613?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]헤세가 고흐에게 보내는 안부",
+                    "writer": "nymph",
+                    "link": "https://blog.aladin.co.kr/767004132/17267297?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]그대에게 전하는 나의 안부",
+                    "writer": "beatrix612",
+                    "link": "https://blog.aladin.co.kr/719248189/17267236?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "Noel",
+                    "link": "https://blog.aladin.co.kr/700237162/17267025?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며: 헤르만 헤세 x ..",
+                    "writer": "플로라2",
+                    "link": "https://blog.aladin.co.kr/700045110/17267019?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]《안부를 전하며: 헤르만 헤세X빈..",
+                    "writer": "브리카",
+                    "link": "https://blog.aladin.co.kr/786070280/17266881?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][안부를 전하며: 헤르만 헤세 x ..",
+                    "writer": "aomm33",
+                    "link": "https://blog.aladin.co.kr/703308215/17266771?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]우리는 어떤 식으로 서로에게 안..",
+                    "writer": "가자자작나무야",
+                    "link": "https://blog.aladin.co.kr/724164168/17266559?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]두 천재의 삶에 파고드는 시간",
+                    "writer": "민이",
+                    "link": "https://blog.aladin.co.kr/776067109/17266451?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]감사합니다.안부를 전합니다.",
+                    "writer": "-",
+                    "link": "https://blog.aladin.co.kr/725245297/17266359?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "오즐",
+                    "link": "https://blog.aladin.co.kr/770266113/17266356?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]감사합니다. 안부를 전합니다.",
+                    "writer": "-",
+                    "link": "https://blog.aladin.co.kr/725245297/17266355?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]다정한 안부의 힘",
+                    "writer": "꿀벌나무",
+                    "link": "https://blog.aladin.co.kr/758563111/17266334?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며 - 서평",
+                    "writer": "감튀",
+                    "link": "https://blog.aladin.co.kr/789294209/17266329?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "djkidol",
+                    "link": "https://blog.aladin.co.kr/788498189/17266264?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]헤르만헤세이와 반고흐의 감성과 삶이 담긴 책이라그런지 ...",
+                    "writer": "슈브레인",
+                    "link": "https://blog.aladin.co.kr/785216192/17266095?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "민트카페모카",
+                    "link": "https://blog.aladin.co.kr/733996174/17265681?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]서로 다른 길, 닮아 있는 삶",
+                    "writer": "몽몽이",
+                    "link": "https://blog.aladin.co.kr/778332158/17265652?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "Mabel",
+                    "link": "https://blog.aladin.co.kr/791341232/17265651?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]모티브 - 안부를 전하며 : 헤르..",
+                    "writer": "guri",
+                    "link": "https://blog.aladin.co.kr/723809242/17265537?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "jy9303",
+                    "link": "https://blog.aladin.co.kr/707069128/17265366?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "꾸꾸방울",
+                    "link": "https://blog.aladin.co.kr/713855236/17265144?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]아름다운 글, 그림 그리고 시간. 책이 주는 소중한 선...",
+                    "writer": "happyyoonchae",
+                    "link": "https://blog.aladin.co.kr/edelbook/17264787?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며를 읽고",
+                    "writer": "happyyoonchae",
+                    "link": "https://blog.aladin.co.kr/edelbook/17264785?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]《안부를 전하며: 헤르만 헤세 x ..",
+                    "writer": "adelia77",
+                    "link": "https://blog.aladin.co.kr/752709232/17264654?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "MK",
+                    "link": "https://blog.aladin.co.kr/750567158/17264601?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]헤르만 헤세의 문장과 빈센트 반 고흐의 그림이 만나니,...",
+                    "writer": "MK",
+                    "link": "https://blog.aladin.co.kr/750567158/17264599?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "라온혜윰",
+                    "link": "https://blog.aladin.co.kr/716143140/17264392?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]당신에게 안부를 전합니다",
+                    "writer": "사랑해",
+                    "link": "https://blog.aladin.co.kr/785965196/17264233?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "djqksfhwm",
+                    "link": "https://blog.aladin.co.kr/796783154/17263875?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "hwimin7",
+                    "link": "https://blog.aladin.co.kr/745539105/17263702?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]《헤르만 헤세 × 빈센트 반 고흐 ..",
+                    "writer": "goldsiri",
+                    "link": "https://blog.aladin.co.kr/703813210/17263627?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]<안부를 전하며 : 헤르만 헤..",
+                    "writer": "오미밍",
+                    "link": "https://blog.aladin.co.kr/759392263/17263573?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "시아와세",
+                    "link": "https://blog.aladin.co.kr/767501106/17263291?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][도서협찬/리뷰] 안부를 전하며,..",
+                    "writer": "하놀",
+                    "link": "https://blog.aladin.co.kr/715769124/17263096?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]<<안부를 전하며>>헤르만 헤세x...",
+                    "writer": "김연숙",
+                    "link": "https://blog.aladin.co.kr/703481132/17263072?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "김연숙",
+                    "link": "https://blog.aladin.co.kr/703481132/17263063?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "김연숙",
+                    "link": "https://blog.aladin.co.kr/703481132/17263024?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며: 헤르만 헤세 X ..",
+                    "writer": "달팽이",
+                    "link": "https://blog.aladin.co.kr/777799154/17263015?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]‘나의 안부는 어떻게 기억될까?’",
+                    "writer": "yeowool8080",
+                    "link": "https://blog.aladin.co.kr/792277290/17262718?partner=openAPI"
+                },
+                {
+                    "reviewRank": 4,
+                    "title": "[마이리뷰]안부를 전하며 - ‘좋은 책, 다만..",
+                    "writer": "Booklove",
+                    "link": "https://blog.aladin.co.kr/709342196/17262677?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며 헤르만 헤세 x 빈..",
+                    "writer": "나알라",
+                    "link": "https://blog.aladin.co.kr/794798128/17262277?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]두 거장의 안부, 살리는 편지와 ..",
+                    "writer": "으름이짱",
+                    "link": "https://blog.aladin.co.kr/796761156/17261890?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]평안과 위안 위로",
+                    "writer": "미니민2",
+                    "link": "https://blog.aladin.co.kr/706359151/17261873?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며 : 헤르만 헤세 x ..",
+                    "writer": "똘똘토끼",
+                    "link": "https://blog.aladin.co.kr/737102111/17261834?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "미니민2",
+                    "link": "https://blog.aladin.co.kr/706359151/17261831?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "레인포유",
+                    "link": "https://blog.aladin.co.kr/749233179/17261828?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[100자평][이 리뷰는 컬처블룸을 통해 출판사에서 도서 를 제공 ...",
+                    "writer": "미니민2",
+                    "link": "https://blog.aladin.co.kr/706359151/17261825?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]서로 다른 두 예술가가 안부를 ..",
+                    "writer": "해피먼데이",
+                    "link": "https://blog.aladin.co.kr/772065186/17261753?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부라는 이름의 고백, 두 거장..",
+                    "writer": "ksbj1127",
+                    "link": "https://blog.aladin.co.kr/714162130/17261676?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "leeyoujin486-1",
+                    "link": "https://blog.aladin.co.kr/720526186/17261674?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]헤르만헤세x빈센트반고흐 안부를..",
+                    "writer": "새벽이",
+                    "link": "https://blog.aladin.co.kr/711004158/17261633?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]헤르만 헤세와 빈센트 반 고흐.",
+                    "writer": "lilyeun22",
+                    "link": "https://blog.aladin.co.kr/775392190/17261631?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "뚜기",
+                    "link": "https://blog.aladin.co.kr/728825134/17261589?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "뚱이",
+                    "link": "https://blog.aladin.co.kr/797844174/17261480?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "sieon78",
+                    "link": "https://blog.aladin.co.kr/752034201/17260884?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "토토엄마",
+                    "link": "https://blog.aladin.co.kr/monkeyking/17260757?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]928통의 편지를 통해 살펴본 반..",
+                    "writer": "미소가득쀼",
+                    "link": "https://blog.aladin.co.kr/754961156/17260516?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "리나",
+                    "link": "https://blog.aladin.co.kr/791407193/17260169?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]헤세와 반 고흐에게서 받은 오래..",
+                    "writer": "Landscaper",
+                    "link": "https://blog.aladin.co.kr/722044188/17260018?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "conan72",
+                    "link": "https://blog.aladin.co.kr/730427225/17260014?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]세계문화전집 01 안부를 전하며 ..",
+                    "writer": "헬리오스",
+                    "link": "https://blog.aladin.co.kr/717385153/17259906?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]<안부를 전하며 : 헤르만 헤..",
+                    "writer": "하트숑숑",
+                    "link": "https://blog.aladin.co.kr/750624165/17259793?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]『안부를 전하며 헤르만 헤세 x빈센트 반 고흐』 리뷰안...",
+                    "writer": "jangddaki",
+                    "link": "https://blog.aladin.co.kr/729147154/17259692?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]헤르만 헤세와 반고흐 빈센트 두..",
+                    "writer": "주발이",
+                    "link": "https://blog.aladin.co.kr/751576126/17259448?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰](인문) 헤르만 헤세 빈센트 반 ..",
+                    "writer": "책돌이",
+                    "link": "https://blog.aladin.co.kr/727389109/17259188?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전한다는것에 사유하게 ..",
+                    "writer": "cmk2806",
+                    "link": "https://blog.aladin.co.kr/716100229/17258916?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]고흐와 헤세가 전하는 안부",
+                    "writer": "자유인",
+                    "link": "https://blog.aladin.co.kr/761539188/17258559?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]헤세와 반 고흐가 안부를 전하는..",
+                    "writer": "plitvice",
+                    "link": "https://blog.aladin.co.kr/747247128/17258423?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며 : 헤르만 헤세 × ..",
+                    "writer": "kity9841",
+                    "link": "https://blog.aladin.co.kr/716150202/17258284?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "글로벌썬",
+                    "link": "https://blog.aladin.co.kr/724553162/17258243?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]<안부를 전하며> 한 권의 ..",
+                    "writer": "라일락",
+                    "link": "https://blog.aladin.co.kr/771907196/17257998?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "쩡이",
+                    "link": "https://blog.aladin.co.kr/724078220/17257694?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "soy",
+                    "link": "https://blog.aladin.co.kr/713267146/17257030?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]헤르만 헤세 x 빈센트 반 고흐",
+                    "writer": "M케",
+                    "link": "https://blog.aladin.co.kr/757557191/17255472?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][협찬 - 똑똑한 도서소개] 모티..",
+                    "writer": "꽃사슴녹용",
+                    "link": "https://blog.aladin.co.kr/758113175/17255434?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "ARTSPACE",
+                    "link": "https://blog.aladin.co.kr/727988120/17254969?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며~ 홍선기 엮음",
+                    "writer": "e4me2000",
+                    "link": "https://blog.aladin.co.kr/718158174/17254723?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][책리뷰] 세계문학전집 01 안부..",
+                    "writer": "포크리",
+                    "link": "https://blog.aladin.co.kr/pokre/17254674?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]일생을 보고 나니 그들의 글과 그림이 단순한 안부가 아...",
+                    "writer": "포크리",
+                    "link": "https://blog.aladin.co.kr/pokre/17254671?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "antibsy",
+                    "link": "https://blog.aladin.co.kr/787218140/17254561?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][리뷰] 안부를 전하며: 헤르만 ..",
+                    "writer": "andradaaesyulli",
+                    "link": "https://blog.aladin.co.kr/748110226/17254545?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "문어의정원",
+                    "link": "https://blog.aladin.co.kr/735962144/17254236?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며: 헤르만 헤세 × ..",
+                    "writer": "pinkpcl",
+                    "link": "https://blog.aladin.co.kr/712583206/17254015?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]《헤르만 헤세 × 빈센트 반 고흐:..",
+                    "writer": "thedipper",
+                    "link": "https://blog.aladin.co.kr/703764116/17253845?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "몽꾸앙",
+                    "link": "https://blog.aladin.co.kr/772679104/17253816?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][모티브] 안부를 전하며 : 헤르..",
+                    "writer": "dugsss",
+                    "link": "https://blog.aladin.co.kr/757225176/17253297?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술과 문학, 두 거장의 만남",
+                    "writer": "요리도리 ",
+                    "link": "https://blog.aladin.co.kr/711852101/17253245?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "책을읽",
+                    "link": "https://blog.aladin.co.kr/726533142/17253082?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "jjo07",
+                    "link": "https://blog.aladin.co.kr/765443149/17252386?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]미술관에 들어간 것 같은 책",
+                    "writer": "오지윤",
+                    "link": "https://blog.aladin.co.kr/720432132/17252014?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평]안부를 전하며",
+                    "writer": "왕눈이",
+                    "link": "https://blog.aladin.co.kr/711577196/17249748?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "이영두",
+                    "link": "https://blog.aladin.co.kr/713923101/17248204?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를전하며",
+                    "writer": "문덕이",
+                    "link": "https://blog.aladin.co.kr/783745154/17246829?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "곽철이",
+                    "link": "https://blog.aladin.co.kr/pang98/17245629?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며 서평",
+                    "writer": "slrsodla60",
+                    "link": "https://blog.aladin.co.kr/771781169/17243268?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평][안부를 전하며]",
+                    "writer": "try2be",
+                    "link": "https://blog.aladin.co.kr/768550175/17243250?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "량컁컁컄ㅇ",
+                    "link": "https://blog.aladin.co.kr/742062148/17243131?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며",
+                    "writer": "youjuhea",
+                    "link": "https://blog.aladin.co.kr/797235288/17242126?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]안부를 전하며 : 헤르만 헤세 x ..",
+                    "writer": "화덕이",
+                    "link": "https://blog.aladin.co.kr/761931161/17240085?partner=openAPI"
+                }
+            ]
+        },
+        {
+            "title": "유령 이야기 - 폴 오스터 ‘그리고’ 시리 허스트베트",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=392454296&amp;partner=openAPI&amp;start=api",
+            "author": "시리 허스트베트 (지은이), 김재성 (옮긴이)",
+            "pubDate": "2026-05-07",
+            "description": "",
+            "isbn": "K472138209",
+            "isbn13": "9791161111605",
+            "itemId": 392454296,
+            "priceSales": 19800,
+            "priceStandard": 22000,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 1100,
+            "cover": "https://image.aladin.co.kr/product/39245/42/coversum/k472138209_1.jpg",
+            "categoryId": 51381,
+            "categoryName": "국내도서>인문학>인문 에세이",
+            "publisher": "뮤진트리",
+            "salesPoint": 1870,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 0,
+            "bestRank": 7,
+            "subInfo": {},
+            "reviewList": []
+        },
+        {
+            "title": "시사(時事) 고사성어 - 김영수의 ’지인논세(知人論世)’",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=390839106&amp;partner=openAPI&amp;start=api",
+            "author": "김영수 (지은이)",
+            "pubDate": "2026-05-22",
+            "description": "김영수 한국사마천학회이사장이 지난 2월 《사마천사기성어대사전(司馬遷史記成語大辭典)》을 펴낸 뒤, 우리 사회를 병들게 하는 사회 주도층의 타락한 언행과 SNS와 매체에 오르내리는 고사성어의 의미를 짚어본 《시사(時事) 고사성어》를 펴냈다.",
+            "isbn": "K482137050",
+            "isbn13": "9791171740765",
+            "itemId": 390839106,
+            "priceSales": 25200,
+            "priceStandard": 28000,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 1400,
+            "cover": "https://image.aladin.co.kr/product/39083/91/coversum/k482137050_1.jpg",
+            "categoryId": 51378,
+            "categoryName": "국내도서>인문학>교양 인문학",
+            "publisher": "창해",
+            "salesPoint": 180,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 9,
+            "bestRank": 8,
+            "subInfo": {},
+            "reviewList": [
+                {
+                    "reviewRank": 6,
+                    "title": "[마이리뷰]‘시사 고사성어‘를 읽고서...",
+                    "writer": "아기사자",
+                    "link": "https://blog.aladin.co.kr/744870146/17265541?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]시사 고사성어",
+                    "writer": "열공인생",
+                    "link": "https://blog.aladin.co.kr/796478176/17265527?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]시사 고사성어",
+                    "writer": "tpffktm",
+                    "link": "https://blog.aladin.co.kr/721376277/17265512?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]시사(時事) 고사성어",
+                    "writer": "남늘",
+                    "link": "https://blog.aladin.co.kr/758861117/17265496?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]시사 고사성어",
+                    "writer": "오즐",
+                    "link": "https://blog.aladin.co.kr/770266113/17265485?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]『시사 고사성어』 김영수의 지인..",
+                    "writer": "sailor_moon",
+                    "link": "https://blog.aladin.co.kr/785391227/17265337?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]창해 / 시사 고사성어",
+                    "writer": "lovemyself",
+                    "link": "https://blog.aladin.co.kr/751771159/17265243?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]시사(時事) 고사성어",
+                    "writer": "아담",
+                    "link": "https://blog.aladin.co.kr/741112165/17265213?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]시사 고사성어",
+                    "writer": "happytree",
+                    "link": "https://blog.aladin.co.kr/700404137/17265070?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]시사(時事) 고사성어",
+                    "writer": "newkorea21",
+                    "link": "https://blog.aladin.co.kr/797436123/17264850?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]시사 고사성어",
+                    "writer": "상예주",
+                    "link": "https://blog.aladin.co.kr/773034244/17262811?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]현대 시사를 고사성어로 풀어보..",
+                    "writer": "beingstories",
+                    "link": "https://blog.aladin.co.kr/710078212/17262806?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰][서평] 시사(時事) 고사성어 : ..",
+                    "writer": "천국지기",
+                    "link": "https://blog.aladin.co.kr/722141157/17262231?partner=openAPI"
+                },
+                {
+                    "reviewRank": 2,
+                    "title": "[100자평]이거 김영수 본인이 쓴책 맞나요?  재미로 고전은 김영...",
+                    "writer": "astro10twister",
+                    "link": "https://blog.aladin.co.kr/741355108/17255338?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]시사(時事) 고사성어",
+                    "writer": "Bennie",
+                    "link": "https://blog.aladin.co.kr/774780146/17243483?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]시사(時事) 고사성어",
+                    "writer": "purepurpler",
+                    "link": "https://blog.aladin.co.kr/790501207/17242187?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]각종 지면에서 엉뚱하게 튀어나오는 고사성어의 진정한 의...",
+                    "writer": "쎄인트",
+                    "link": "https://blog.aladin.co.kr/nurimaru/17237630?partner=openAPI"
+                }
+            ]
+        },
+        {
+            "title": "파이로매니악 1",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=391288614&amp;partner=openAPI&amp;start=api",
+            "author": "이우혁 (지은이)",
+            "pubDate": "2026-04-22",
+            "description": "『퇴마록』 누적 판매 1,000만 부라는 압도적인 기록을 보유한 이우혁 작가. 그가 25년여 만에 전면 개정하여 완성한 테크노스릴러 장르의 시초이자 전설 『파이로매니악』이 출간됐다. 『파이로매니악』은 법의 사각지대에 숨은 악惡을 화약과 첨단 기술로 직접 처단하는 세 명의 다크히어로, 일명 ‘피엠(PM)’의 폭발적인 복수극이다.",
+            "isbn": "K972137559",
+            "isbn13": "9791175772656",
+            "itemId": 391288614,
+            "priceSales": 19800,
+            "priceStandard": 22000,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 1100,
+            "cover": "https://image.aladin.co.kr/product/39128/86/coversum/k972137559_1.jpg",
+            "categoryId": 107435,
+            "categoryName": "국내도서>소설/시/희곡>액션/스릴러소설>한국 액션/스릴러소설",
+            "publisher": "반타",
+            "salesPoint": 4830,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 10,
+            "bestRank": 9,
+            "subInfo": {},
+            "reviewList": [
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악 1",
+                    "writer": "까리",
+                    "link": "https://blog.aladin.co.kr/741341168/17269649?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악 1",
+                    "writer": "류북",
+                    "link": "https://blog.aladin.co.kr/761074125/17269633?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악",
+                    "writer": "빕어",
+                    "link": "https://blog.aladin.co.kr/745932179/17269000?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]<파이로매니악 1>",
+                    "writer": "twmoon1088",
+                    "link": "https://blog.aladin.co.kr/763908140/17268513?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로 매니악 1",
+                    "writer": "lh0326",
+                    "link": "https://blog.aladin.co.kr/768854241/17268498?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악 1",
+                    "writer": "feelingnote",
+                    "link": "https://blog.aladin.co.kr/791724198/17268367?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로메니악",
+                    "writer": "kjdeunjin",
+                    "link": "https://blog.aladin.co.kr/737107170/17267822?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]다크히어로인가 방화광인가.",
+                    "writer": "아베오베",
+                    "link": "https://blog.aladin.co.kr/724966244/17267252?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]2026-139th #협찬  #원고료제공 ..",
+                    "writer": "mohanet",
+                    "link": "https://blog.aladin.co.kr/792939128/17267228?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악1",
+                    "writer": "윤혜숙",
+                    "link": "https://blog.aladin.co.kr/739556243/17267226?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악1",
+                    "writer": "jin09230225",
+                    "link": "https://blog.aladin.co.kr/779103192/17266978?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[100자평]불장난, 장난감 총 장난인 줄 알았는데 어느새 빠져서 ...",
+                    "writer": "얌찐",
+                    "link": "https://blog.aladin.co.kr/790173186/17266493?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]이거 안 읽으면 유죄 [파이로매..",
+                    "writer": "쿠쥬니",
+                    "link": "https://blog.aladin.co.kr/780142101/17266342?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악",
+                    "writer": "미니장미",
+                    "link": "https://blog.aladin.co.kr/782177106/17266301?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]이우혁: 파이로 매니악👍🏻",
+                    "writer": "moogu_moogu",
+                    "link": "https://blog.aladin.co.kr/769743174/17266290?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]사적 복수에서 세상을 변화시키..",
+                    "writer": "오늘의반려책",
+                    "link": "https://blog.aladin.co.kr/753748141/17266245?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]불길 속에서",
+                    "writer": "쭐떠기",
+                    "link": "https://blog.aladin.co.kr/725402264/17264899?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악 1",
+                    "writer": "토토엄마",
+                    "link": "https://blog.aladin.co.kr/monkeyking/17263675?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]사법정의가 무너진 곳에선 사적..",
+                    "writer": "異之我_또다른나",
+                    "link": "https://blog.aladin.co.kr/728876216/17263503?partner=openAPI"
+                },
+                {
+                    "reviewRank": 8,
+                    "title": "[마이리뷰]파이로매니악 1",
+                    "writer": "북노마드",
+                    "link": "https://blog.aladin.co.kr/713673116/17260886?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]정밀하게 설계된 긴장, 『파이로..",
+                    "writer": "ksbj1127",
+                    "link": "https://blog.aladin.co.kr/714162130/17260391?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]정의가 무너진 곳에서 타오른 파..",
+                    "writer": "소소한온기luvhee",
+                    "link": "https://blog.aladin.co.kr/782645151/17260001?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악",
+                    "writer": "yje38",
+                    "link": "https://blog.aladin.co.kr/777674238/17259496?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악 1",
+                    "writer": "민트카페모카",
+                    "link": "https://blog.aladin.co.kr/733996174/17259475?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악 1",
+                    "writer": "우리별",
+                    "link": "https://blog.aladin.co.kr/709440137/17259436?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]무려 25년여 만의 귀환 - 파이로..",
+                    "writer": "csw2700",
+                    "link": "https://blog.aladin.co.kr/768131149/17258521?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]기다림 끝에 완성된 테크노스릴..",
+                    "writer": "토마토스프",
+                    "link": "https://blog.aladin.co.kr/776863259/17257781?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]그들이 돌아왔다",
+                    "writer": "yjy202",
+                    "link": "https://blog.aladin.co.kr/722117174/17256916?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]이미 영상화 확정! 이번엔 테러..",
+                    "writer": "습관언니",
+                    "link": "https://blog.aladin.co.kr/766046219/17256777?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]차가운 기술 따뜻한 사람",
+                    "writer": "북쩡",
+                    "link": "https://blog.aladin.co.kr/707778165/17256464?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악",
+                    "writer": "suya",
+                    "link": "https://blog.aladin.co.kr/752482145/17255951?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]그들이 움직이는 이유",
+                    "writer": "nyr114",
+                    "link": "https://blog.aladin.co.kr/762871260/17255849?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]25년 만에 귀환한 전설 이우혁의..",
+                    "writer": "Ravenz_76",
+                    "link": "https://blog.aladin.co.kr/757290116/17255099?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악1",
+                    "writer": "ARTSPACE",
+                    "link": "https://blog.aladin.co.kr/727988120/17255086?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]작가님 필력 무엇? 완전 몰입감 ..",
+                    "writer": "momo5555",
+                    "link": "https://blog.aladin.co.kr/716126171/17253986?partner=openAPI"
+                },
+                {
+                    "reviewRank": 10,
+                    "title": "[마이리뷰]파이로매니악1",
+                    "writer": "수목",
+                    "link": "https://blog.aladin.co.kr/723001144/17249694?partner=openAPI"
+                }
+            ]
+        },
+        {
+            "title": "당신에게 미학은 어떤 의미입니까?",
+            "link": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=391349131&amp;partner=openAPI&amp;start=api",
+            "author": "레너드 코렌 (지은이), 박정훈 (옮긴이)",
+            "pubDate": "2026-04-22",
+            "description": "우리가 너무 쉽게 사용하는 단어, ‘미학(aesthetics)’에 대한 가장 근본적인 질문에서 출발한다. “당신이 말하는 미학은 정확히 무엇을 의미하는가?” 이 책에서 레너드 코렌은 미학을 하나의 정의로 통합하려 하지 않는다. 대신 현실에서 사용되는 다양한 맥락을 추적하며 서로 다른 열 개의 ‘미학’을 제시한다.",
+            "isbn": "K732137650",
+            "isbn13": "9791190533843",
+            "itemId": 391349131,
+            "priceSales": 10800,
+            "priceStandard": 12000,
+            "mallType": "BOOK",
+            "stockStatus": "",
+            "mileage": 600,
+            "cover": "https://image.aladin.co.kr/product/39134/91/coversum/k732137650_1.jpg",
+            "categoryId": 2547,
+            "categoryName": "국내도서>인문학>서양철학>미학/예술철학",
+            "publisher": "1984Books",
+            "salesPoint": 2090,
+            "adult": false,
+            "fixedPrice": true,
+            "customerReviewRank": 0,
+            "bestRank": 10,
+            "subInfo": {},
+            "reviewList": []
+        }
+    ]
+}

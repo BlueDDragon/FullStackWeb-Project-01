@@ -1,0 +1,226 @@
+.detail_upper {
+    max-width: 1200px;
+
+    margin: 48px auto 36px;
+
+    padding-bottom: 28px;
+
+    border-bottom: 1px solid #ececec;
+}
+
+/* 제목 */
+.title {
+    margin: 0 0 14px;
+
+    font-size: 36px;
+    font-weight: 700;
+
+    color: #111827;
+
+    line-height: 1.35;
+
+    letter-spacing: -1px;
+}
+
+/* 저자 정보 */
+.info {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #6b7280;
+
+    line-height: 1.7;
+}
+
+/* 본문 */
+.detail_body {
+    max-width: 1200px;
+
+    margin: 0 auto 80px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 60px;
+}
+
+/* 책 표지 */
+.detail_body img {
+    width: 280px;
+    height: auto;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12),
+        0 4px 10px rgba(0, 0, 0, 0.08);
+
+    flex-shrink: 0;
+}
+
+/* 가격 정보 영역 */
+.container {
+    min-width: 340px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+    padding-top: 10px;
+}
+
+/* 항목 */
+.key {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #4b5563;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* 값 */
+.value {
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+/* 수량 영역 */
+.buy_count {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+/* 수량 입력 */
+.input {
+    width: 70px;
+    height: 42px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    outline: none;
+}
+
+/* 수량 버튼 */
+.btn_increase,
+.btn_decrease {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.btn_increase:hover,
+.btn_decrease:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+}
+
+/* 구매 버튼 영역 */
+.detail_body > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    margin-left: auto;
+}
+
+/* 구매 버튼 */
+.btn_cart {
+    width: 180px;
+    height: 52px;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.btn_cart:hover {
+    background-color: #1d4ed8;
+}
+
+.btn_cart:active {
+    transform: scale(0.98);
+}
+
+/* 버튼별 스타일 차별화 */
+.btn_cart:nth-child(1) {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+.btn_cart:nth-child(1):hover {
+    background-color: #f9fafb;
+}
+
+.btn_cart:nth-child(2) {
+    background-color: #2563eb;
+}
+
+.btn_cart:nth-child(3) {
+    background-color: #14b8a6;
+}
+
+.btn_cart:nth-child(3):hover {
+    background-color: #0f9f91;
+}
+
+.btn_cart:nth-child(4) {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.btn_cart:nth-child(4):hover {
+    background-color: #e5e7eb;
+}

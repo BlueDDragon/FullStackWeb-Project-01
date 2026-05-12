@@ -1,0 +1,45 @@
+.search {
+    max-width: 1200px;
+
+    margin: 44px auto 16px;
+
+    padding: 0 4px;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.7px;
+
+    line-height: 1.45;
+}
+
+/* 검색어 강조 */
+.search_query {
+    color: #2563eb;
+
+    margin-right: 4px;
+}
+
+/* 결과 영역 */
+.result {
+    max-width: 1200px;
+
+    margin: 0 auto 28px;
+
+    padding: 0 4px 18px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #6b7280;
+
+    border-bottom: 1px solid #ececec;
+
+    box-sizing: border-box;
+}
+
+.result strong {
+    color: #111827;
+}

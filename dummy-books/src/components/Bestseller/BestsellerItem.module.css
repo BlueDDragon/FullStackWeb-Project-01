@@ -1,0 +1,74 @@
+.container {
+    width: 140px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+
+    padding: 12px 10px;
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.container:hover {
+    background-color: #fafafa;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* 책 표지 */
+.cover {
+    width: 100px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.12),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.container:hover .cover {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.18),
+        0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 책 제목 */
+.title {
+    margin-top: 14px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #222;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+    word-break: keep-all;
+}
