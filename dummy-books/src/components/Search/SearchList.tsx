@@ -1,11 +1,15 @@
 import styles from "@/components/Search/SearchList.module.css"
-import books from "@/mocks/mock_books.json"
 import SearchItem from "./SearchItem";
+import { BookData } from "@/types/BookData";
 
-export default function SearchList() {
+type SearchListProps = {
+    books: BookData[];
+}
+
+export default function SearchList({ books }: SearchListProps) {
     return (
         <div className={styles.container}>
-            {books.item.map((book) => <SearchItem key={book.isbn13} book={book}/>)}
+            {books.map((book) => <SearchItem key={book.isbn13} book={book}/>)}
         </div>
     );
 }

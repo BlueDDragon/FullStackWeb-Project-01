@@ -3,17 +3,20 @@
 import styles from "@/components/SearchBar.module.css"
 import Image from "next/image"
 import { useRouter, useSearchParams } from "next/navigation";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useState } from "react";
 
 export default function SearchBar() {
     const [search, setSearch] = useState('');
+    const router = useRouter();
+    const query = useSearchParams().get('q');
 
     const handleChangeSearch = (e: ChangeEvent<HTMLInputElement>) => {
         setSearch(e.target.value);
     };
+    const handleSubmitKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter') handleSubmitSearch();
+    };
 
-    const router = useRouter();
-    const query = useSearchParams().get('q');
     const handleSubmitSearch = () => {
         if (!search || query === search) return;
         router.push(`/search?q=${search}`);

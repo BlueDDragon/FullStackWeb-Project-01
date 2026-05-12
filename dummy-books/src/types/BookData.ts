@@ -1,18 +1,3 @@
-export interface SearchResponse {
-    version: string;
-    title: string;
-    link: string;
-    pubDate: string;
-    imageUrl: string;
-    totalResults: number;
-    startIndex: number;
-    itemsPerPage: number;
-    query: string;
-    searchCategoryId: number;
-    searchCategoryName: string;
-    item: BookData[];
-}
-
 export type BookData = {
     title: string;
     link: string;
