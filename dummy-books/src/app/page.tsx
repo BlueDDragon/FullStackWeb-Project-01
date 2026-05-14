@@ -11,10 +11,10 @@ export default async function Home() {
 
   return (
     <div>
-      <BestsellerBanner title="주목할 만한 신간 리스트" books={books_ItemNewSpecial}/>
-      <BestsellerList title="전체 신간 리스트" books={books_ItemNewAll} />
-      <BestsellerList title="이달의 베스트셀러" books={books_Bestseller} />
-      <BestsellerList title="블로거 선정 베스트셀러" books={books_BlogBest} />
+      <BestsellerBanner title="주목할 만한 신간 리스트 👍" books={books_ItemNewSpecial}/>
+      <BestsellerList title="전체 신간 리스트 💐" books={books_ItemNewAll} />
+      <BestsellerList title="이달의 베스트셀러 🩵" books={books_Bestseller} />
+      <BestsellerList title="블로거 선정 베스트셀러 🖥️" books={books_BlogBest} />
     </div>
   );
 }

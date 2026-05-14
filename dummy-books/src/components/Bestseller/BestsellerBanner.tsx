@@ -3,7 +3,7 @@
 import styles from "@/components/Bestseller/BestsellerBanner.module.css"
 import { BookData } from "@/types/BookData";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type BestsellerBannerProps = {
   title: string;
@@ -13,6 +13,27 @@ type BestsellerBannerProps = {
 export default function BestsellerBanner({ title, books }: BestsellerBannerProps) {
     const slideRef = useRef<HTMLDivElement>(null);
     
+    const [isPrevDisabled, setIsPrevDisabled] = useState(true);
+    const [isNextDisabled, setIsNextDisabled] = useState(false);
+    const updateButtonState = () => {
+      if (!slideRef.current) return;
+
+      const { scrollLeft, scrollWidth, clientWidth } = slideRef.current;
+
+      setIsPrevDisabled(scrollLeft <= 0);
+      setIsNextDisabled(scrollLeft + clientWidth >= scrollWidth - 1);
+    };
+
+    useEffect(() => {
+      const slide = slideRef.current;
+      if (!slide) return;
+
+      updateButtonState();
+      slide.addEventListener("scroll", updateButtonState);
+
+      return () => {slide.removeEventListener("scroll", updateButtonState);};
+    }, []);
+
     const handlePrev = () => {
         if (!slideRef.current) return;
 
@@ -36,7 +57,7 @@ export default function BestsellerBanner({ title, books }: BestsellerBannerProps
   return (
     <div>
       <div className={styles.container}>
-        <div className={styles.btn_prev} onClick={handlePrev}>이전</div>
+        <button className={styles.btn_prev} onClick={handlePrev} disabled={isPrevDisabled}>이전</button>
 
         <div className={styles.slide_box} ref={slideRef}>
           {books.map((book, idx) => {
@@ -56,7 +77,7 @@ export default function BestsellerBanner({ title, books }: BestsellerBannerProps
           })}
         </div>
 
-        <div className={styles.btn_next} onClick={handleNext}>다음</div>
+        <button className={styles.btn_next} onClick={handleNext} disabled={isNextDisabled}>다음</button>
       </div>
     </div>
   );

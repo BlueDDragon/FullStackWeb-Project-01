@@ -43,7 +43,7 @@ export default function SearchBar() {
     return (
       <div className={styles.search_container}>
         <div className={styles.search}>
-          <button className={styles.btn_searchcategory}>통합검색 ▼</button>
+          {/* <button className={styles.btn_searchcategory}>통합검색 ▼</button> */}
           <input
             className={styles.input_searchbar}
             placeholder="도서 검색"

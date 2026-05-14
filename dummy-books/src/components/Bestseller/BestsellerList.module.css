@@ -1,22 +1,38 @@
-.list {
+.container {
+    position: relative;
+
     width: 100%;
 
+    /* 위 여백 추가 */
+    padding: 28px 0 24px;
+}
+
+/* 제목 */
+.title {
+    margin: 0 0 30px;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    color: #111827;
+
+    letter-spacing: -0.9px;
+}
+
+/* 리스트 */
+.list {
     display: flex;
-    align-items: flex-start;
-    gap: 24px;
 
-    padding: 28px 36px;
-
-    background-color: #ffffff;
-
-    border-radius: 18px;
+    gap: 22px;
 
     overflow-x: auto;
+    overflow-y: hidden;
 
-    box-sizing: border-box;
+    scroll-behavior: smooth;
 
-    /* 스크롤 숨기기 */
-    -ms-overflow-style: none;
+    /* 위쪽 여백 증가 */
+    padding: 18px 6px 20px;
+
     scrollbar-width: none;
 }
 
@@ -24,19 +40,85 @@
     display: none;
 }
 
-/* 제목 */
-.title {
-    min-width: 140px;
+/* 버튼 공통 */
+.btn_prev,
+.btn_next {
+    position: absolute;
 
-    font-size: 24px;
-    font-weight: 700;
+    /* 기존보다 위로 */
+    top: 58%;
+
+    transform: translateY(-50%);
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    border-radius: 999px;
+
+    background-color: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(10px);
 
     color: #111827;
 
-    line-height: 1.4;
+    font-size: 22px;
+    font-weight: 700;
 
-    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    margin: 0;
-    padding-top: 8px;
+    cursor: pointer;
+
+    z-index: 20;
+
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.08),
+        0 2px 6px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+/* hover */
+.btn_prev:hover,
+.btn_next:hover {
+    background-color: white;
+
+    transform: translateY(-50%) scale(1.06);
+
+    box-shadow:
+        0 18px 30px rgba(0, 0, 0, 0.12),
+        0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* 클릭 */
+.btn_prev:active,
+.btn_next:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+/* 비활성화 */
+.btn_prev:disabled,
+.btn_next:disabled {
+    opacity: 0.34;
+
+    cursor: default;
+
+    transform: translateY(-50%);
+}
+
+/* 위치 */
+.btn_prev {
+    left: -26px;
+    top: 240px;
+}
+
+.btn_next {
+    right: -26px;
+    top: 240px;
 }
