@@ -61,7 +61,7 @@ export default function Page() {
                 </div>
             </div>
             <div>
-                <CartConfirm book={book} isOpen={isConfirm} onOpen={setIsConfirm}/>
+                <CartConfirm isOpen={isConfirm} onOpen={setIsConfirm}/>
             </div>
         </div>
     );

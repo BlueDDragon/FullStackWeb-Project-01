@@ -18,3 +18,10 @@ export type BookData = {
     publisher: string;
     customerReviewRank: number;
 }
+
+export type SaleData = {
+    priceSales: number;
+    priceStandard: number;
+    isSale: boolean;
+    percentSale: number;
+}

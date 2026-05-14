@@ -1,23 +1,25 @@
 import styles from "@/components/SearchBar/SearchBarDropdownItem.module.css"
 import { BookData } from "@/types/BookData";
-import { AddCart } from "@/utils/cartUtils";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import CartConfirm from "../Confirm/CartConfirm";
+import { GetSaleData } from "@/utils/saleUtils";
+import { AddCart } from "@/utils/cartUtils";
 
 type SearchBarDropdownItemProps = {
     book: BookData;
+    onCartOpen: () => void;
 };
 
-export default function SearchBarDropdownItem({ book }: SearchBarDropdownItemProps) {
-    const [isConfirm, setIsConfirm] = useState(false);
-    const handleOpen = () => {
-        AddCart({ book: book, count: 1 });
-        setIsConfirm(true);
-    };
+export default function SearchBarDropdownItem({ book, onCartOpen }: SearchBarDropdownItemProps) {
+  const handleCartOpen = () => {
+    AddCart({ book: book, count: 1 });
+    onCartOpen();
+  };
 
-    return (
+  const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
+
+  return (
+    <div>
       <div className={styles.container}>
         <Link className={styles.book_container} href={`/detail/${book.isbn13}`}>
           <Image
@@ -30,13 +32,18 @@ export default function SearchBarDropdownItem({ book }: SearchBarDropdownItemPro
           <div className={styles.box}>
             <p className={styles.title}>{book.title}</p>
             <p className={styles.author}>{book.author}</p>
-            <p className={styles.price}>{book.priceStandard}</p>
+            <p className={styles.price}>
+              {isSale && (
+                <span className={styles.sale}>{`${percentSale}%`}</span>
+              )}
+              {(isSale ? priceSales : priceStandard).toLocaleString()}원
+            </p>
           </div>
         </Link>
-        <button className={styles.btn_cart} onClick={handleOpen}>장바구니</button>
-        <div>
-          <CartConfirm book={book} isOpen={isConfirm} onOpen={setIsConfirm}/>
-        </div>
+        <button className={styles.btn_cart} onClick={handleCartOpen}>
+          장바구니
+        </button>
       </div>
-    );
+    </div>
+  );
 }

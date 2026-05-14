@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
     const q = req.nextUrl.searchParams.get("q");
     const maxResults = req.nextUrl.searchParams.get("maxResults");
+    const page = req.nextUrl.searchParams.get("page");
 
     if (!q) {
         return NextResponse.json({
@@ -15,7 +16,7 @@ export async function GET(req: NextRequest) {
     apiURL += `?ttbKey=${process.env.NEXT_PUBLIC_API_KEY}`;
     apiURL += `&Query=${q}`;
     apiURL += `&SearchTarget=Book`;
-    apiURL += `&Start=1`;
+    apiURL += `&Start=${page}`;
     apiURL += `&MaxResults=${maxResults}`;
     apiURL += `&Cover=MidBig`;
     apiURL += `&Output=JS`;

@@ -7,6 +7,7 @@ import { ChangeEvent, KeyboardEvent, useState } from "react";
 import SearchBarDropdown from "./SearchBarDropdown";
 import { fetchItemSearch } from "@/utils/fetchClient";
 import { BookData } from "@/types/BookData";
+import CartConfirm from "../Confirm/CartConfirm";
 
 export default function SearchBar() {
     const [search, setSearch] = useState('');
@@ -22,7 +23,8 @@ export default function SearchBar() {
 
     const handleSubmitSearch = () => {
         if (!search || query === search) return;
-        router.push(`/search?q=${search}`);
+
+        router.push(`/search?q=${search}&page=${1}`);
     };
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -40,30 +42,41 @@ export default function SearchBar() {
     const [books, setBooks] = useState<BookData[]>([]);
     fetchItemSearch(setBooks, search, 4);
 
-    return (
-      <div className={styles.search_container}>
-        <div className={styles.search}>
-          {/* <button className={styles.btn_searchcategory}>통합검색 ▼</button> */}
-          <input
-            className={styles.input_searchbar}
-            placeholder="도서 검색"
-            onChange={handleChangeSearch}
-            onKeyDown={handleSubmitKeyDown}
-            onFocus={handleDropdownFocus}
-            onBlur={handleDropdownBlur}
-          />
-          <Image
-            className={styles.img_search}
-            src="/images/search.png"
-            width={20}
-            height={20}
-            alt=""
-            onClick={handleSubmitSearch}
-          />
-        </div>
+    const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+    const handleOpen = () => {
+      setIsConfirmOpen(true);
+    };
 
-        <div className={styles.dropdown}>
-          {isDropdownOpen && books.length > 0 && <SearchBarDropdown books={books} />}
+    return (
+      <div className={styles.container}>
+        <div className={styles.search_container}>
+          <div className={styles.search}>
+            {/* <button className={styles.btn_searchcategory}>통합검색 ▼</button> */}
+            <input
+              className={styles.input_searchbar}
+              placeholder="도서 검색"
+              onChange={handleChangeSearch}
+              onKeyDown={handleSubmitKeyDown}
+              onFocus={handleDropdownFocus}
+              onBlur={handleDropdownBlur}
+            />
+            <Image
+              className={styles.img_search}
+              src="/images/search.png"
+              width={20}
+              height={20}
+              alt=""
+              onClick={handleSubmitSearch}
+            />
+          </div>
+          <div className={styles.dropdown}>
+            {isDropdownOpen && books.length > 0 && (
+              <SearchBarDropdown books={books} onCartOpen={handleOpen} />
+            )}
+          </div>
+        </div>
+        <div className={styles.confirm}>
+          <CartConfirm isOpen={isConfirmOpen} onOpen={setIsConfirmOpen} />
         </div>
       </div>
     );

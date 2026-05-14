@@ -1,0 +1,109 @@
+
+.page_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-top: 0;
+
+    padding: 20px 0;
+}
+
+/* 버튼 공통 */
+.btn_prev,
+.btn_next {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+
+    background-color: white;
+
+    color: #374151;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.04);
+
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.15s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+}
+
+/* hover */
+.btn_prev:hover,
+.btn_next:hover {
+    background-color: #f8fafc;
+
+    border-color: #d1d5db;
+
+    color: #111827;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* 클릭 */
+.btn_prev:active,
+.btn_next:active {
+    transform: scale(0.95);
+}
+
+/* 비활성화 */
+.btn_prev:disabled,
+.btn_next:disabled {
+    opacity: 0.35;
+
+    cursor: default;
+
+    background-color: #f9fafb;
+
+    color: #cbd5e1;
+
+    border-color: #edf2f7;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+/* 현재 페이지 */
+.currentPage {
+    min-width: 28px;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    color: #2563eb;
+
+    letter-spacing: -0.5px;
+}
+
+/* 최대 페이지 */
+.maxPage {
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #9ca3af;
+
+    margin-left: -10px;
+}

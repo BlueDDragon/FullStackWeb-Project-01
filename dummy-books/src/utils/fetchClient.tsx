@@ -21,6 +21,23 @@ async function fetchData<T>(url: string) : Promise<T | undefined> {
     }
 }
 
+export function fetchItemSearchResponse(setData: (data: ItemSearchResponse) => void, q: string, maxResults: number = 10, page: number = 1) {
+    useEffect(() => {
+      if (!q.trim()) {
+        setData(null);
+        return;
+      }
+
+      const timer = setTimeout(async () => {
+        const data = await fetchData(`/api/search?q=${q}&maxResults=${maxResults}&page=${page}`) as ItemSearchResponse;
+        setData(data || null);
+      }, 300);
+
+      return () => clearTimeout(timer);
+    }, [q]);
+}
+
+
 export function fetchItemSearch(setData: (data: BookData[]) => void, q: string, maxResults: number = 10) {
     useEffect(() => {
       if (!q.trim()) {

@@ -21,6 +21,7 @@ export default function ConfirmPopup({ info, no, yes, routerURL, isOpen, onOpen,
   };
 
   const handleClickYes = () => {
+    onOpen(false);
     onConfirm();
     if (routerURL) router.push(routerURL);
   };

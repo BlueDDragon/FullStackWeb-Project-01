@@ -20,19 +20,23 @@ async function fetchData<T>(url: string) : Promise<T | undefined> {
     }
 }
 
-export async function fetchItemSearch(q: string, maxResults: number = 10) : Promise<BookData[]> {
+export async function fetchItemSearchResponse(q: string, maxResults: number = 10, page: number = 1) : Promise<ItemSearchResponse> {
     let apiURL = `${process.env.NEXT_PUBLIC_API_URL}/ItemSearch.aspx`;
     apiURL += `?ttbKey=${process.env.NEXT_PUBLIC_API_KEY}`;
     apiURL += `&Query=${q}`;
     apiURL += `&SearchTarget=Book`;
-    apiURL += `&Start=1`;
+    apiURL += `&Start=${page}`;
     apiURL += `&MaxResults=${maxResults}`;
     apiURL += `&Cover=MidBig`;
     apiURL += `&Output=JS`;
     apiURL += `&Version=20131101`;
 
     const data = await fetchData(apiURL) as ItemSearchResponse;
-    return data.item;
+    return data;
+}
+
+export async function fetchItemSearch(q: string, maxResults: number = 10) : Promise<BookData[]> {
+    return (await fetchItemSearchResponse(q, maxResults, 1)).item;
 }
 
 export async function fetchItemList(type: string) : Promise<BookData[]> {
