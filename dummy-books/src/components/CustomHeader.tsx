@@ -1,13 +1,12 @@
 import styles from "@/components/CustomHeader.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/SearchBar/SearchBar";
 
-export default function CustomHearder() {
+export default function CustomHearder() {  
     return (
         <div className={styles.header}>
           <div className={styles.container}>
-            <button className={styles.btn_menu}>Menu</button>
             <Link href={"/"}>
               <Image
                 className={styles.img_logo}
@@ -22,8 +21,9 @@ export default function CustomHearder() {
             <SearchBar />
 
             <div className={styles.side}>
-              <button className={styles.btn_cart}>장바구니</button>
-              <button className={styles.btn_mypage}>마이페이지</button>
+              <Link className={styles.btn_cart} href={(`/mypage/0/cart`)}>장바구니</Link>
+              <Link className={styles.btn_order} href={(`/mypage/0/order`)}>주문조회</Link>
+              <Link className={styles.btn_wish} href={(`/mypage/0/wish`)}>보관함</Link>
             </div>
           </div>
         </div>

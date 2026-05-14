@@ -1,5 +1,5 @@
 .search {
-    width: 560px;
+    width: 420px;
     height: 46px;
 
     display: flex;
@@ -104,4 +104,11 @@
     opacity: 1;
 
     transform: scale(1.08);
+}
+
+/* 드롭다운 */
+.dropdown {
+    position: relative;
+    
+    z-index: 999;
 }

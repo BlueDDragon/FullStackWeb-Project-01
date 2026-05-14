@@ -2,3 +2,9 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+main {
+  padding-top: 88px;
+  padding-left: 200px;
+  padding-right: 200px;
+}

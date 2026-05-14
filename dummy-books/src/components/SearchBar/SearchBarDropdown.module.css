@@ -1,0 +1,27 @@
+.container {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    left: 0;
+
+    width: 100%;
+    max-width: 560px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px 0;
+
+    background-color: #ffffff;
+
+    border: 1px solid #ececec;
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08),
+        0 4px 10px rgba(0, 0, 0, 0.04);
+
+    overflow: hidden;
+
+    z-index: 100;
+}

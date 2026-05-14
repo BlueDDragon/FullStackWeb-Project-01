@@ -1,0 +1,113 @@
+.container {
+    width: 100%;
+
+    background-color: white;
+
+    border: 1px solid #ececec;
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* 상단 주문 정보 */
+.order_info {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 22px 28px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    background-color: #fafafa;
+
+    flex-wrap: wrap;
+}
+
+/* 주문 날짜 */
+.date {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #111827;
+
+    letter-spacing: -0.3px;
+}
+
+/* 주문 번호 */
+.num {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #6b7280;
+}
+
+/* 배송 상태 */
+.state {
+    margin-left: auto;
+    margin-bottom: 0;
+
+    padding: 7px 14px;
+
+    border-radius: 999px;
+
+    background-color: #dbeafe;
+
+    color: #2563eb;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+/* 상품 리스트 */
+.carts_container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 하단 결제 정보 */
+.order_bottom {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 24px 28px;
+
+    border-top: 1px solid #f1f5f9;
+
+    background-color: #fcfcfc;
+}
+
+/* 결제 텍스트 */
+.key {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #4b5563;
+}
+
+/* 금액 */
+.value {
+    font-size: 28px;
+    font-weight: 800;
+
+    color: #2563eb;
+
+    letter-spacing: -0.6px;
+}

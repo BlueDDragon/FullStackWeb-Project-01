@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "carts": [
+        {
+          "book": {
+            "title": "AI 에이전트 개발 완벽 입문 - 에이전트 기초부터 RAG, ReAct, 펑션 콜링, 랭그래프, CrewAI, smolagents, A2A, n8n, MCP, 클로드 코드, 오픈클로까지 실전 에이전트 개발을 위한 모든 것",
+            "link": "https:\/\/www.aladin.co.kr\/shop\/wproduct.aspx?ItemId=390789073&amp;copyPaper=1&amp;ttbkey=ttbhjkim41770723001&amp;start=api",
+            "author": "에디 유 외 지음",
+            "pubDate": "2026-04-27",
+            "description": "AI에 입문하고자 하는 누구나 손쉽게 AI 에이전트의 세계에 자연스럽게 발을 들일 수 있도록 구성한 교재다. 단순히 사용법을 따라 하는 데 그치지 않고, RAG, 펑션 콜링, 랭그래프, CrewAI, smolagents의 동작 원리를 이해하는 데 필요한 기초 지식부터 충실히 다루고 있다.",
+            "creator": "aladin",
+            "isbn": "K082137951",
+            "isbn13": "9791158396756",
+            "itemId": 390789073,
+            "priceSales": 37800,
+            "priceStandard": 42000,
+            "stockStatus": "",
+            "mileage": 2100,
+            "cover": "https:\/\/image.aladin.co.kr\/product\/39078\/90\/coversum\/k082137951_1.jpg",
+            "categoryId": 212364,
+            "categoryName": "국내도서>컴퓨터/모바일>인공지능",
+            "publisher": "위키북스",
+            "customerReviewRank": 10
+          },
+          "count": 3
+        },
+        {
+          "book": {
+            "title": "코어 프런트엔드 UI - 리액트와 순수 자바스크립트로 키우는 실무 사고력",
+            "link": "https:\/\/www.aladin.co.kr\/shop\/wproduct.aspx?ItemId=387317457&amp;copyPaper=1&amp;ttbkey=ttbhjkim41770723001&amp;start=api",
+            "author": "정재남 지음",
+            "pubDate": "2026-03-09",
+            "description": "기능별 작성법이나 사용법을 나열하고 소개하는 데 그치지 않고, UI가 동작하는 원리와 설계 기준을 깊이 있게 다룬다. Intersection Observer를 활용한 가시성 제어 등 최신 Web API와 리액트 기술을 다루고, HTML과 CSS만으로 해결할 수 있는 영역까지 아우른다.",
+            "creator": "aladin",
+            "isbn": "K902136941",
+            "isbn13": "9791158396602",
+            "itemId": 387317457,
+            "priceSales": 34200,
+            "priceStandard": 38000,
+            "stockStatus": "",
+            "mileage": 1900,
+            "cover": "https:\/\/image.aladin.co.kr\/product\/38731\/74\/coversum\/k902136941_1.jpg",
+            "categoryId": 6355,
+            "categoryName": "국내도서>컴퓨터/모바일>웹디자인/홈페이지>HTML/JavaScript",
+            "publisher": "위키북스",
+            "customerReviewRank": 0
+          },
+          "count": 1
+        },
+        {
+          "book": {
+            "title": "자율형 AI 에이전트 서비스 구축하기 - FastAPI와 리액트로 뼈대를 세우고 랭체인(LangChain)으로 지능을 완성하는 풀스택 엔지니어링 실전 가이드",
+            "link": "https:\/\/www.aladin.co.kr\/shop\/wproduct.aspx?ItemId=387230267&amp;copyPaper=1&amp;ttbkey=ttbhjkim41770723001&amp;start=api",
+            "author": "정금호 지음",
+            "pubDate": "2026-03-09",
+            "description": "자율형 AI 에이전트의 전 개발 과정을 따라 배운다. FastAPI와 React로 서비스 뼈대를 세우고, 구글 검색·캘린더 연동·영화 DB 등 외부 API를 결합해 문제를 해결한다. LangChain의 Plan & Execute 패턴으로 도구를 자율 조합하는 아키텍처를 구현한다.",
+            "creator": "aladin",
+            "isbn": "K472136744",
+            "isbn13": "9791193229446",
+            "itemId": 387230267,
+            "priceSales": 24300,
+            "priceStandard": 27000,
+            "stockStatus": "",
+            "mileage": 1350,
+            "cover": "https:\/\/image.aladin.co.kr\/product\/38723\/2\/coversum\/k472136744_1.jpg",
+            "categoryId": 212364,
+            "categoryName": "국내도서>컴퓨터/모바일>인공지능",
+            "publisher": "로드북",
+            "customerReviewRank": 0
+          },
+          "count": 2
+        }
+      ],
+      "state": "buy",
+      "buyDate": 0,
+      "totalPrice": 200000
+    },
+    {
+      "carts": [
+        {
+          "book": {
+            "title": "코어 프런트엔드 UI - 리액트와 순수 자바스크립트로 키우는 실무 사고력",
+            "link": "https:\/\/www.aladin.co.kr\/shop\/wproduct.aspx?ItemId=387317457&amp;copyPaper=1&amp;ttbkey=ttbhjkim41770723001&amp;start=api",
+            "author": "정재남 지음",
+            "pubDate": "2026-03-09",
+            "description": "기능별 작성법이나 사용법을 나열하고 소개하는 데 그치지 않고, UI가 동작하는 원리와 설계 기준을 깊이 있게 다룬다. Intersection Observer를 활용한 가시성 제어 등 최신 Web API와 리액트 기술을 다루고, HTML과 CSS만으로 해결할 수 있는 영역까지 아우른다.",
+            "creator": "aladin",
+            "isbn": "K902136941",
+            "isbn13": "9791158396602",
+            "itemId": 387317457,
+            "priceSales": 34200,
+            "priceStandard": 38000,
+            "stockStatus": "",
+            "mileage": 1900,
+            "cover": "https:\/\/image.aladin.co.kr\/product\/38731\/74\/coversum\/k902136941_1.jpg",
+            "categoryId": 6355,
+            "categoryName": "국내도서>컴퓨터/모바일>웹디자인/홈페이지>HTML/JavaScript",
+            "publisher": "위키북스",
+            "customerReviewRank": 0
+          },
+          "count": 1
+        }
+      ],
+      "state": "buy",
+      "buyDate": 0,
+      "totalPrice": 38000
+    }
+  ]
+}

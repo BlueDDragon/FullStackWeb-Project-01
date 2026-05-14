@@ -1,0 +1,125 @@
+.container {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(15, 23, 42, 0.45);
+
+    backdrop-filter: blur(4px);
+
+    z-index: 2000;
+}
+
+/* 모달 박스 */
+.box {
+    width: 100%;
+    max-width: 420px;
+
+    background-color: white;
+
+    border-radius: 24px;
+
+    padding: 36px 32px 28px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.18),
+        0 8px 18px rgba(0, 0, 0, 0.08);
+
+    animation: modalShow 0.22s ease;
+}
+
+/* 문구 */
+.confirm {
+    margin: 0 0 32px;
+
+    text-align: center;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    letter-spacing: -0.6px;
+
+    color: #111827;
+
+    word-break: keep-all;
+}
+
+/* 버튼 영역 */
+.btns {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+/* 공통 버튼 */
+.btn_no,
+.btn_yes {
+    flex: 1;
+
+    height: 52px;
+
+    border-radius: 14px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+/* 취소 */
+.btn_no {
+    border: 1px solid #d1d5db;
+
+    background-color: white;
+
+    color: #374151;
+}
+
+.btn_no:hover {
+    background-color: #f9fafb;
+}
+
+/* 주문 */
+.btn_yes {
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+}
+
+.btn_yes:hover {
+    background-color: #1d4ed8;
+}
+
+/* 클릭 */
+.btn_no:active,
+.btn_yes:active {
+    transform: scale(0.98);
+}
+
+/* 등장 애니메이션 */
+@keyframes modalShow {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

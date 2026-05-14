@@ -1,0 +1,219 @@
+.container {
+    width: 100%;
+    height: 560px;
+
+    padding: 0 48px; /* 양옆 여백 */
+    box-sizing: border-box;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+}
+
+/* 슬라이드 전체 영역 */
+.slide_box {
+    width: 100%;
+    height: 560px;
+
+    display: flex;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    border-radius: 28px;
+
+    background-color: #111827;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.slide_box::-webkit-scrollbar {
+    display: none;
+}
+
+/* 슬라이드 아이템 */
+.slide_item {
+    min-width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0 90px;
+
+    box-sizing: border-box;
+
+    scroll-snap-align: start;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+/* 블러 배경 */
+.slide_item::before {
+    content: "";
+
+    position: absolute;
+    inset: -20px; /* blur 잘림 방지 */
+
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(18px);
+
+    transform: scale(1.08);
+
+    z-index: 0;
+}
+
+/* 어두운 오버레이 */
+.slide_item::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.42) 45%,
+            rgba(0, 0, 0, 0.2) 100%
+        );
+
+    z-index: 1;
+}
+
+/* 텍스트를 위로 */
+.slide_item > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+/* 텍스트 공통 */
+.title,
+.book_title,
+.book_info {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 640px;
+
+    color: white;
+}
+
+/* 카테고리 */
+.title {
+    margin: 0 0 18px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #93c5fd;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+/* 책 제목 */
+.book_title {
+    margin: 0 0 24px;
+
+    font-size: 56px;
+    font-weight: 800;
+
+    line-height: 1.18;
+
+    letter-spacing: -2px;
+
+    word-break: keep-all;
+}
+
+/* 설명 */
+.book_info {
+    margin: 0 0 12px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.84);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+    word-break: keep-all;
+}
+
+/* 이전 / 다음 버튼 */
+.btn_prev,
+.btn_next {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 20;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background-color: rgba(255, 255, 255, 0.14);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn_prev:hover,
+.btn_next:hover {
+    background-color: rgba(255, 255, 255, 0.24);
+
+    transform: translateY(-50%) scale(1.05);
+}
+
+.btn_prev {
+    left: 72px;
+}
+
+.btn_next {
+    right: 72px;
+}
