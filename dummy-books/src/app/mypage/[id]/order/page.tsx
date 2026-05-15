@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 export default function Page() {
     const [orders, setOrders] = useState<OrderData[]>([]);
-    useEffect(() => { setOrders(GetOrders()); }, []);
+    useEffect(() => { setOrders(GetOrders().reverse()); }, []);
     const isOrdersEmpty = IsOrdersEmpty(orders);
 
     return (
@@ -18,7 +18,7 @@ export default function Page() {
                 <p className={styles.count}>주문조회</p>
             </div>
             <div className={styles.order_container}>
-                {!isOrdersEmpty && orders.reverse().map((order, idx) => <OrderList key={idx} order={order}/>)}
+                {!isOrdersEmpty && orders.map((order, idx) => <OrderList key={idx} order={order}/>)}
                 {isOrdersEmpty && <Empty info="주문한 상품이 없습니다."/>}
             </div>
         </div>

@@ -9,7 +9,6 @@ type OrderListProps = {
 
 export default function OrderList({ order }: OrderListProps) {
     const orderDate = new Date(order.buyDate);
-    // const orderTime = new Date(order.buyDate).toLocaleTimeString();
     const orderId = GetOrderId(orderDate);
 
     const isPresentType = order.type == "present";
@@ -27,7 +26,7 @@ export default function OrderList({ order }: OrderListProps) {
                 {order.carts.map((cart, idx) => <OrderItem key={idx} cart={cart}/>)}
             </div>
             <div className={styles.order_bottom}>
-                <p className={styles.key_delivery}>배송비<span className={styles.value_delivery}>{3000}원</span></p>
+                <p className={styles.key_delivery}>배송비<span className={styles.value_delivery}>{(3000).toLocaleString()}원</span></p>
                 <p className={styles.key}>총 결제금액<span className={styles.value}>{order.totalPrice.toLocaleString()}원</span></p>
             </div>
         </div>
