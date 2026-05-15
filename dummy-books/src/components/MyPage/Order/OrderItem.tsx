@@ -8,19 +8,30 @@ type OrderItemProps = {
 };
 
 export default function OrderItem({ cart }: OrderItemProps) {
+  const totalPrice = cart.book.priceSales * cart.count;
+
   return (
     <div className={styles.container}>
-      <Link href={`/detail/${cart.book.isbn13}`}>
-        <div className={styles.book}>
-          <Image className={styles.cover} src={cart.book.cover} width={180} height={100} alt="" />
-          <div>
+      <div className={styles.book}>
+        <Image
+          className={styles.cover}
+          src={cart.book.cover}
+          width={180}
+          height={100}
+          alt=""
+        />
+        <div className={styles.book_detail}>
+          <Link href={`/detail/${cart.book.isbn13}`}>
             <p className={styles.title}>{cart.book.title}</p>
-            <p className={styles.description}>{cart.book.description}</p>
-            <p className={styles.price}>{cart.book.priceStandard}원</p>
-            <p className={styles.count}>{cart.count}개</p>
-          </div>
+          </Link>
+          <p className={styles.description}>{cart.book.author}</p>
+          <p className={styles.description}>{cart.book.description}</p>
         </div>
-      </Link>
+      </div>
+      <div className={styles.price_container}>
+        <p className={styles.price}>{totalPrice.toLocaleString()}원</p>
+        <p className={styles.count}>{cart.count}개</p>
+      </div>
     </div>
   );
 }

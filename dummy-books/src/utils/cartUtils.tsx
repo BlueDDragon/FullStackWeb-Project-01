@@ -6,9 +6,13 @@ export function GetCarts() : CartData[] {
     return LoadData<CartData[]>({ type: "Carts" }, ("[]"));
 }
 
+export function IsCartEmpty(carts: CartData[]) {
+    return (!carts || !Array.isArray(carts) || carts.length === 0);
+}
+
 export function IsCartDuplicate(isbn13: string) {
     const carts = GetCarts();
-    const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
+    const isCartsEmpty = IsCartEmpty(carts);
 
     if (isCartsEmpty) return isCartsEmpty;
 
@@ -18,7 +22,7 @@ export function IsCartDuplicate(isbn13: string) {
 
 export function AddCart(selectCart: CartData) {
     const carts = GetCarts();
-    const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
+    const isCartsEmpty = IsCartEmpty(carts);
 
     // 기존에 저장된 값이 없을 경우
     if (isCartsEmpty) {
@@ -44,7 +48,7 @@ export function AddCart(selectCart: CartData) {
 
 export function RemoveCart(selectBook: BookData) {
     const carts = GetCarts();
-    const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
+    const isCartsEmpty = IsCartEmpty(carts);
 
     // 기존에 저장된 값이 없을 경우
     if (isCartsEmpty) {
@@ -61,7 +65,7 @@ export function RemoveCartAll() {
 
 export function ChangeCartCount(selectBook: BookData, count: number) {
     const carts = GetCarts();
-    const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
+    const isCartsEmpty = IsCartEmpty(carts);
 
     // 기존에 저장된 값이 없을 경우
     if (isCartsEmpty) {

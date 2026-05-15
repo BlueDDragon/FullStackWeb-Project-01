@@ -5,12 +5,13 @@ import CartConfirm from "@/components/Confirm/CartConfirm";
 import { BookData } from "@/types/BookData";
 import { fetchItemLookUpByISBN13 } from "@/utils/fetchClient";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { AddCart } from "@/utils/cartUtils";
 import Empty from "@/components/Empty/Empty";
 import { GetSaleData } from "@/utils/saleUtils";
 import DetailCategory from "@/components/Detail/DetailCategory";
+import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
 
 export default function Page() {
     const { id } = useParams();
@@ -42,13 +43,28 @@ export default function Page() {
         AddCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
         router.push(`/mypage/0/cart`);
     };
+    
+    const isBooksEmpty = (!books || books.length === 0);
 
-    if (!books || books.length === 0) {
+    const [isWishAlready, setIsWishAlready] = useState(false);
+    useEffect(() => {
+      if (!isBooksEmpty) {
+        setIsWishAlready(IsWishAlready(book.isbn13));
+      }
+    }, [books]);
+    const handleToggleWish = () => {
+        setIsWishAlready(ToggleWish(book));
+    };
+    
+    if (isBooksEmpty) {
         return <Empty info="상품을 불러오고 있습니다."/>;
     }
 
     const book = books[0] as BookData;
     const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
+
+    // const [isWishAlready, setIsWishAlready] = useState(false);
+    // useEffect(() => { setIsWishAlready(IsWishAlready(book.isbn13)); }, []);
 
     return (
         <div>
@@ -76,7 +92,10 @@ export default function Page() {
                     </div>
                     <div className={styles.btns}>
                         <button className={styles.btn_cart} onClick={handleOpen}>장바구니</button>
-                        <button className={styles.btn_cart} onClick={handleOrder}>바로구매</button>
+                        <button className={styles.btn_order} onClick={handleOrder}>바로구매</button>
+                        {isWishAlready ?
+                        <button className={styles.btn_wish_already} onClick={handleToggleWish}>♥</button> :
+                        <button className={styles.btn_wish} onClick={handleToggleWish}>♡</button>}
                     </div>
                 </div>
             </div>

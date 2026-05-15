@@ -7,7 +7,7 @@ import Empty from "@/components/Empty/Empty";
 import CartItem from "@/components/MyPage/Cart/CartItem";
 import { BookData } from "@/types/BookData";
 import { CartData } from "@/types/CartData";
-import { GetCarts, RemoveCart, RemoveCartAll } from "@/utils/cartUtils";
+import { GetCarts, IsCartEmpty, RemoveCart, RemoveCartAll } from "@/utils/cartUtils";
 import { AddOrder } from "@/utils/orderUtils";
 import { useEffect, useState } from "react";
 
@@ -18,9 +18,9 @@ export default function Page() {
       setTotalCount(carts.reduce((sum, cur) => sum + (cur.count), 0));
     };
     useEffect(() => updateCarts(), []);
-    const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
+    const isCartsEmpty = IsCartEmpty(carts);
 
-    const deliveryPrice = 3000;
+    const deliveryPrice = isCartsEmpty ? 0 : 3000;
     const [totalCount, setTotalCount] = useState(0);
     const selectCarts= isCartsEmpty ? [] : carts;
     const [totalStandardPrice, setTotalStandardPrice] = useState(0);
@@ -38,7 +38,17 @@ export default function Page() {
     const handleOrderConfirm = () => {
         if (isCartsEmpty) return;
         RemoveCartAll();
-        AddOrder(carts, totalResultPrice);
+        AddOrder(carts, totalResultPrice, "buy");
+    };
+
+    const [isPresentConfirm, setIsPresentConfirm] = useState(false);
+    const handlePresentOpen = () => {
+        setIsPresentConfirm(true);
+    };
+    const handlePresentConfirm = () => {
+        if (isCartsEmpty) return;
+        RemoveCartAll();
+        AddOrder(carts, totalResultPrice, "present");
     };
 
     const [selectBook, setSelectBook] = useState<BookData>();
@@ -91,7 +101,7 @@ export default function Page() {
               결제 예정 금액<span className={styles.value}>{totalResultPrice.toLocaleString()}원</span>
             </p>
             <button className={styles.btn_buy} onClick={handleOrderOpen}>주문하기 ({totalCount})</button>
-            <button className={styles.btn_present} onClick={handleOrderOpen}>선물하기</button>
+            <button className={styles.btn_present} onClick={handlePresentOpen}>선물하기</button>
           </div>
         </div>
         <div>
@@ -100,6 +110,12 @@ export default function Page() {
             isOpen={isOrderConfirm}
             onOpen={setIsOrderConfirm}
             onConfirm={handleOrderConfirm}
+          />
+          <OrderConfirm
+            count={totalCount}
+            isOpen={isPresentConfirm}
+            onOpen={setIsPresentConfirm}
+            onConfirm={handlePresentConfirm}
           />
           <DelCartConfirm
             isOpen={isDelCartConfirm}

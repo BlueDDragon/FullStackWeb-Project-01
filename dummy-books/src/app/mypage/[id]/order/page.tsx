@@ -3,11 +3,14 @@
 import styles from "@/app/mypage/[id]/order/order.module.css";
 import Empty from "@/components/Empty/Empty";
 import OrderList from "@/components/MyPage/Order/OrderList";
-import { GetOrders } from "@/utils/orderUtils";
+import { OrderData } from "@/types/OrderData";
+import { GetOrders, IsOrdersEmpty } from "@/utils/orderUtils";
+import { useEffect, useState } from "react";
 
 export default function Page() {
-    const orders = GetOrders();
-    const isOrdersEmpty = (!orders || !Array.isArray(orders) || orders.length === 0);
+    const [orders, setOrders] = useState<OrderData[]>([]);
+    useEffect(() => { setOrders(GetOrders()); }, []);
+    const isOrdersEmpty = IsOrdersEmpty(orders);
 
     return (
         <div className={styles.container}>

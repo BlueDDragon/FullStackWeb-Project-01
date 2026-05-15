@@ -6,14 +6,20 @@ export function GetOrders() : OrderData[]{
     return LoadData<OrderData[]>({ type: "Orders" }, ("[]"));
 }
 
-export function AddOrder(carts: CartData[], totalPrice: number) {
-    const orders = GetOrders();
-    const isOrdersEmpty = (!orders || !Array.isArray(orders) || orders.length === 0);
+export function IsOrdersEmpty(orders: OrderData[]) {
+    return (!orders || !Array.isArray(orders) || orders.length === 0);
+}
 
+export function AddOrder(carts: CartData[], totalPrice: number, type: string) {
+    const orders = GetOrders();
+    const isOrdersEmpty = IsOrdersEmpty(orders);
+
+    const nowDate: number = Date.now();
     const newOrder: OrderData = {
         carts: carts,
+        type: type,
         state: "buy",
-        buyDate: 0,
+        buyDate: nowDate,
         totalPrice: totalPrice,
     }
     
@@ -24,4 +30,14 @@ export function AddOrder(carts: CartData[], totalPrice: number) {
     }
     
     SaveData<OrderData[]>({ type: "Orders" }, [...orders, newOrder]);
+}
+
+export function GetOrderId(buyDate: Date): string {
+    const buyMonth = (buyDate.getMonth() + 1).toString().padStart(2, '0');
+    const buyDay = buyDate.getDate().toString().padStart(2, '0');
+    const buyHour = buyDate.getHours().toString().padStart(2, '0');
+    const buyMin = buyDate.getMinutes().toString().padStart(2, '0');
+    const buySec = buyDate.getSeconds().toString().padStart(2, '0');
+
+    return `${buyMonth}${buyDay}${buyHour}${buyMin}${buySec}`;
 }

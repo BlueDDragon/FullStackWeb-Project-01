@@ -20,8 +20,8 @@ export default function SearchList({ books }: SearchListProps) {
   return (
     <div>
       <div className={styles.container}>
-        {books.map((book) => (
-          <SearchItem key={book.isbn13} book={book} onCartOpen={handleOpen} />
+        {books.map((book, idx) => (
+          <SearchItem key={idx} book={book} onCartOpen={handleOpen} />
         ))}
       </div>
       <div className={styles.confirm}>

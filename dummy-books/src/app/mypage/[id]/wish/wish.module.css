@@ -32,7 +32,7 @@
     border-bottom: 1px solid #ececec;
 }
 
-/* 페이지 제목 */
+/* 제목 */
 .count {
     margin: 0;
 
@@ -45,12 +45,16 @@
 }
 
 /* =========================
-   주문 리스트 영역
+   보관함 리스트
 ========================= */
 
-.order_container {
+.wish_container {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
 
-    gap: 28px;
+    gap: 52px;
+
+    min-height: 320px;
 }

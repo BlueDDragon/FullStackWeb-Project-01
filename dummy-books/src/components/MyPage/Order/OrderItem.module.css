@@ -1,77 +1,69 @@
+/* =========================
+   주문 상품 아이템
+========================= */
+
 .container {
+    width: 100%;
+
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
 
-    gap: 18px;
+    gap: 32px;
 
-    padding: 26px 28px;
+    padding: 28px 0;
 
     border-bottom: 1px solid #f3f4f6;
 
-    background-color: white;
-
-    transition: background-color 0.18s ease;
-}
-
-.container:hover {
-    background-color: #fafafa;
+    box-sizing: border-box;
 }
 
 .container:last-child {
     border-bottom: none;
 }
 
-/* 링크 */
-.container > a {
+/* =========================
+   책 영역
+========================= */
+
+.book {
     flex: 1;
 
-    text-decoration: none;
-
-    color: inherit;
-
     min-width: 0;
-}
 
-/* 책 영역 */
-.book {
     display: flex;
     align-items: flex-start;
 
     gap: 24px;
-
-    min-width: 0;
 }
 
-/* 이미지 */
+/* =========================
+   커버 이미지
+========================= */
+
 .cover {
-    width: 110px;
-    height: 160px;
+    width: 120px;
+    height: 174px;
 
     object-fit: cover;
+    margin-left: 40px;
 
-    border-radius: 8px;
+    border-radius: 12px;
 
     flex-shrink: 0;
 
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.08),
-        0 2px 6px rgba(0, 0, 0, 0.04);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.container:hover .cover {
-    transform: translateY(-2px);
+    background-color: #f3f4f6;
 
     box-shadow:
-        0 12px 24px rgba(0, 0, 0, 0.12),
-        0 4px 12px rgba(0, 0, 0, 0.06);
+        0 8px 18px rgba(0, 0, 0, 0.06),
+        0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
-/* 텍스트 영역 */
-.book > div {
+/* =========================
+   상세 영역
+========================= */
+
+.book_detail {
     flex: 1;
 
     min-width: 0;
@@ -79,64 +71,104 @@
     display: flex;
     flex-direction: column;
 
-    padding-top: 6px;
+    justify-content: center;
 }
 
-/* 제목 */
+/* 링크 */
+.book_detail a {
+    text-decoration: none;
+
+    color: inherit;
+}
+
+/* =========================
+   제목
+========================= */
+
 .title {
     margin: 0 0 12px;
-
-    font-size: 20px;
-    font-weight: 700;
-
-    color: #111827;
-
-    line-height: 1.45;
-
-    letter-spacing: -0.3px;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/* 설명 */
-.description {
-    margin: 0 0 16px;
-
-    font-size: 14px;
-
-    color: #6b7280;
-
-    line-height: 1.7;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-
-    overflow: hidden;
-
-    word-break: keep-all;
-}
-
-/* 가격 */
-.price {
-    margin: 0 0 8px;
 
     font-size: 24px;
     font-weight: 800;
 
-    color: #2563eb;
+    line-height: 1.4;
 
-    letter-spacing: -0.5px;
+    color: #111827;
+
+    letter-spacing: -0.4px;
+
+    transition: color 0.18s ease;
+}
+
+.title:hover {
+    color: #2563eb;
+}
+
+/* =========================
+   설명
+========================= */
+
+.description {
+    margin: 0 0 10px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1.7;
+
+    color: #6b7280;
+
+    word-break: keep-all;
+}
+
+.description:last-child {
+    margin-bottom: 0;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+/* =========================
+   가격 영역
+========================= */
+
+.price_container {
+    min-width: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    margin-right: 40px;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+/* 가격 */
+.price {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 900;
+
+    color: #111827;
+
+    letter-spacing: -0.6px;
 }
 
 /* 수량 */
 .count {
     margin: 0;
 
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
 
-    color: #4b5563;
+    color: #6b7280;
 }

@@ -7,6 +7,8 @@ import Image from "next/image";
 import { GetSaleData } from "@/utils/saleUtils";
 import { AddCart } from "@/utils/cartUtils";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
 
 type SearchItemProps = {
   book: BookData;
@@ -27,6 +29,12 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     router.push(`/mypage/0/cart`);
   };
   
+  const [isWishAlready, setIsWishAlready] = useState(false);
+  useEffect(() => { setIsWishAlready(IsWishAlready(book.isbn13)); }, [book]);
+  const handleToggleWish = () => {
+      setIsWishAlready(ToggleWish(book));
+  };
+
   return (
     <div className={styles.container}>
       {/* <input className={styles.checkbox} type="checkbox" /> */}
@@ -48,7 +56,10 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
       </Link>
       <div className={styles.btns}>
         <button className={styles.btn_cart} onClick={handleCartOpen}>장바구니</button>
-        <button className={styles.btn_buy} onClick={handleOrder}>주문하기</button>
+        <button className={styles.btn_buy} onClick={handleOrder}>바로구매</button>
+        {isWishAlready ?
+        <button className={styles.btn_wish_already} onClick={handleToggleWish}>♥</button> :
+        <button className={styles.btn_wish} onClick={handleToggleWish}>♡</button>}
       </div>
     </div>
   );
