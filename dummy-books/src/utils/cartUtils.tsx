@@ -2,8 +2,12 @@ import { CartData } from "@/types/CartData";
 import { LoadData, SaveData } from "./saveload";
 import { BookData } from "@/types/BookData";
 
+export function GetCarts() : CartData[] {
+    return LoadData<CartData[]>({ type: "Carts" }, ("[]"));
+}
+
 export function IsCartDuplicate(isbn13: string) {
-    const carts = LoadData<CartData[]>({ type: "Carts" });
+    const carts = GetCarts();
     const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
 
     if (isCartsEmpty) return isCartsEmpty;
@@ -13,7 +17,7 @@ export function IsCartDuplicate(isbn13: string) {
 }
 
 export function AddCart(selectCart: CartData) {
-    const carts = LoadData<CartData[]>({ type: "Carts" });
+    const carts = GetCarts();
     const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
 
     // 기존에 저장된 값이 없을 경우
@@ -39,7 +43,7 @@ export function AddCart(selectCart: CartData) {
 }
 
 export function RemoveCart(selectBook: BookData) {
-    const carts = LoadData<CartData[]>({ type: "Carts" });
+    const carts = GetCarts();
     const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
 
     // 기존에 저장된 값이 없을 경우

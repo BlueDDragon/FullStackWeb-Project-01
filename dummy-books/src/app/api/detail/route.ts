@@ -15,6 +15,7 @@ export async function GET(req: NextRequest) {
     apiURL += `&itemType=ISBN13`;
     apiURL += `&itemId=${q}`;
     apiURL += `&Cover=Big`;
+    apiURL += `&OptResult=ratingInfo,reviewList,Toc,Story,phraseList`
     apiURL += `&Output=JS`;
     apiURL += `&Version=20131101`;
 

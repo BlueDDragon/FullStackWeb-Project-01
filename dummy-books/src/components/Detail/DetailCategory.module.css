@@ -1,0 +1,79 @@
+/* =========================
+   카테고리 전체 컨테이너
+========================= */
+
+.category_container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 12px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 6px;
+
+    box-sizing: border-box;
+}
+
+/* =========================
+   구분선 (/)
+========================= */
+
+.category_mainline {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    line-height: 1;
+}
+
+.category_subline {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #9ca3af;
+
+    line-height: 1;
+}
+
+/* =========================
+   "카테고리" 메인 타이틀
+========================= */
+
+.category_maintitle {
+    font-size: 14px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    letter-spacing: -0.2px;
+}
+
+/* =========================
+   서브 카테고리 텍스트
+========================= */
+
+.category_subtitme {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #6b7280;
+
+    letter-spacing: -0.2px;
+}
+
+/* hover 느낌 (옵션 UX) */
+.category_subtitme:hover {
+    color: #2563eb;
+
+    cursor: default;
+}

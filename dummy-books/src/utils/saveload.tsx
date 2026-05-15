@@ -1,11 +1,11 @@
 type DataType = { type: "Carts" } | { type: "Orders" } | { type: "Wish" };
 
-function LoadDataJSON<T>(key: string): T {
+function LoadDataJSON<T>(key: string, defaultValue: string): T {
     if (typeof window !== 'undefined') {
-        return JSON.parse(localStorage.getItem(`data_${key}`) || ("{}"));
+        return JSON.parse(localStorage.getItem(`data_${key}`) || defaultValue);
     }
 
-    return JSON.parse("{}");
+    return JSON.parse(defaultValue);
 }
 
 function SaveDataJSON<T>(key: string, value: T) {
@@ -14,8 +14,8 @@ function SaveDataJSON<T>(key: string, value: T) {
     }
 }
 
-export function LoadData<T>(type: DataType) {
-    return LoadDataJSON<T>(type.type.toLowerCase());
+export function LoadData<T>(type: DataType, defaultValue: string) {
+    return LoadDataJSON<T>(type.type.toLowerCase(), defaultValue);
 }
 
 export function SaveData<T>(type: DataType, value: T) {

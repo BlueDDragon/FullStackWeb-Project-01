@@ -94,8 +94,8 @@
     letter-spacing: -0.2px;
 
     transition:
-        color 0.18s ease,
-        transform 0.18s ease;
+        color 0.18s ease;
+        /* transform 0.18s ease; */
 }
 
 /* hover */
@@ -103,8 +103,7 @@
 .btn_order:hover,
 .btn_wish:hover {
     color: #111827;
-
-    transform: translateY(-1px);
+    /* transform: translateY(-1px); */
 }
 
 /* 밑줄 애니메이션 */
@@ -132,4 +131,36 @@
 .btn_order:hover::after,
 .btn_wish:hover::after {
     width: 100%;
+}
+
+.cart_count {
+    position: absolute;
+
+    top: -24px;
+    right: -12px;
+
+    min-width: 9px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background-color: #ef4444;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    pointer-events: none;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.12);
 }

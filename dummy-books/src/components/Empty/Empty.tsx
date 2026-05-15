@@ -1,10 +1,14 @@
 import styles from "@/components/Empty/Empty.module.css"
 
-export default function Empty() {
+type EmptyProps = {
+    info: string;
+}
+
+export default function Empty({ info = `비어 있습니다.` }: EmptyProps) {
     return (
         <div className={styles.container}>
             <div className={styles.mark}>!</div>
-            <div className={styles.info}>비어 있습니다.</div>
+            <div className={styles.info}>{info}</div>
         </div>
     );
 }

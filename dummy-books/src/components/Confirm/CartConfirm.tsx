@@ -1,6 +1,5 @@
 import ConfirmPopup from "./ConfirmPopup";
 import { IsCartDuplicate } from "@/utils/cartUtils";
-import { BookData } from "@/types/BookData";
 
 type CartConfirmProps = {
     // book: BookData;

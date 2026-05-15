@@ -1,7 +1,7 @@
 'use client';
 
 import styles from "@/components/Confirm/ConfirmPopup.module.css"
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 type ConfirmPopupProps = {
     info: string;
@@ -23,7 +23,10 @@ export default function ConfirmPopup({ info, no, yes, routerURL, isOpen, onOpen,
   const handleClickYes = () => {
     onOpen(false);
     onConfirm();
-    if (routerURL) router.push(routerURL);
+
+    if (routerURL) {
+      router.push(routerURL);
+    }
   };
 
   return (

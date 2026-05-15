@@ -22,7 +22,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
             </div>
 
             {!isBooksEmpty && <SearchList books={response.item}/>}
-            {isBooksEmpty && <Empty />}
+            {isBooksEmpty && <Empty info="검색 결과가 없습니다."/>}
             
             <SearchNavigation q={q} page={parseInt(page)} maxPage={maxPage} />
         </div>

@@ -58,6 +58,7 @@ export async function fetchItemLookUpByISBN13(isbn13: number) : Promise<BookData
     apiURL += `&itemType=ISBN13`;
     apiURL += `&itemId=${isbn13}`;
     apiURL += `&Cover=Big`;
+    apiURL += `&OptResult=ratingInfo,reviewList,Toc,Story,phraseList`
     apiURL += `&Output=JS`;
     apiURL += `&Version=20131101`;
 

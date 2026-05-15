@@ -24,13 +24,13 @@ async function fetchData<T>(url: string) : Promise<T | undefined> {
 export function fetchItemSearchResponse(setData: (data: ItemSearchResponse) => void, q: string, maxResults: number = 10, page: number = 1) {
     useEffect(() => {
       if (!q.trim()) {
-        setData(null);
+        setData({} as ItemSearchResponse);
         return;
       }
 
       const timer = setTimeout(async () => {
         const data = await fetchData(`/api/search?q=${q}&maxResults=${maxResults}&page=${page}`) as ItemSearchResponse;
-        setData(data || null);
+        setData(data || {} as ItemSearchResponse);
       }, 300);
 
       return () => clearTimeout(timer);

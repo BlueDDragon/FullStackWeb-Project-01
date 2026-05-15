@@ -23,16 +23,13 @@ export default function SearchBar() {
 
     const handleSubmitSearch = () => {
         if (!search || query === search) return;
-
         router.push(`/search?q=${search}&page=${1}`);
     };
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
     const handleDropdownFocus = () => {
         setIsDropdownOpen(true);
     };
-
     const handleDropdownBlur = () => {
         setTimeout(() => {
             setIsDropdownOpen(false);

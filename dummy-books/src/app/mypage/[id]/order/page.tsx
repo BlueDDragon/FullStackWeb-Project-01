@@ -3,11 +3,10 @@
 import styles from "@/app/mypage/[id]/order/order.module.css";
 import Empty from "@/components/Empty/Empty";
 import OrderList from "@/components/MyPage/Order/OrderList";
-import { OrderData } from "@/types/OrderData";
-import { LoadData } from "@/utils/saveload";
+import { GetOrders } from "@/utils/orderUtils";
 
 export default function Page() {
-    const orders = LoadData<OrderData[]>({ type: "Orders" });
+    const orders = GetOrders();
     const isOrdersEmpty = (!orders || !Array.isArray(orders) || orders.length === 0);
 
     return (
@@ -17,7 +16,7 @@ export default function Page() {
             </div>
             <div className={styles.order_container}>
                 {!isOrdersEmpty && orders.reverse().map((order, idx) => <OrderList key={idx} order={order}/>)}
-                {isOrdersEmpty && <Empty />}
+                {isOrdersEmpty && <Empty info="주문한 상품이 없습니다."/>}
             </div>
         </div>
     );

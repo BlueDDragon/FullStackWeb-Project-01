@@ -12,11 +12,23 @@ export type BookData = {
     priceStandard: number;
     stockStatus: string;
     mileage: number;
+    adult: boolean;
     cover: string;
     categoryId: number;
     categoryName: string;
     publisher: string;
     customerReviewRank: number;
+    subInfo: {
+        subTitle: string;
+        originalTitle: string;
+        itemPage: number;
+        ratingInfo: {
+            ratingScore: number;
+            ratingCount: number;
+            commentReviewCount: number;
+            myReviewCount: number;
+        }
+    }
 }
 
 export type SaleData = {

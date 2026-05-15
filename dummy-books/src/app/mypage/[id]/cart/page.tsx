@@ -7,13 +7,13 @@ import Empty from "@/components/Empty/Empty";
 import CartItem from "@/components/MyPage/Cart/CartItem";
 import { BookData } from "@/types/BookData";
 import { CartData } from "@/types/CartData";
-import { RemoveCart, RemoveCartAll } from "@/utils/cartUtils";
+import { GetCarts, RemoveCart, RemoveCartAll } from "@/utils/cartUtils";
 import { AddOrder } from "@/utils/orderUtils";
-import { LoadData } from "@/utils/saveload";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Page() {
-    const carts = LoadData<CartData[]>({ type: "Carts" });
+    const [carts, setCarts] = useState<CartData[]>([]);
+    useEffect(() => { setCarts(GetCarts()); }, []);
     const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
 
     const totalCount = (isCartsEmpty ? 0 : carts.length);
@@ -47,7 +47,7 @@ export default function Page() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.upper}>
-            <p className={styles.count}>장바구니 ({totalCount})</p>
+            {/* <p className={styles.count}>장바구니 ({totalCount})</p> */}
             {/* <input className={styles.selectAll} type="checkbox" /> */}
           </div>
           <div className={styles.book_container}>
@@ -60,7 +60,7 @@ export default function Page() {
                   onDelSelectBook={setSelectBook}
                 />
               ))}
-            {isCartsEmpty && <Empty />}
+            {isCartsEmpty && <Empty info="장바구니가 비어 있습니다." />}
           </div>
         </div>
         <div className={styles.aside}>
