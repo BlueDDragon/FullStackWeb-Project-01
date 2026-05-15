@@ -1,7 +1,6 @@
 import styles from "@/app/search/search.module.css"
-import Empty from "@/components/Empty/Empty";
-import SearchList from "@/components/Search/SearchList";
 import SearchNavigation from "@/components/Search/SearchNavigation";
+import SearchUpper from "@/components/Search/SearchUpper";
 import { fetchItemSearchResponse } from "@/utils/fetchServer";
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ q: string, page: string }>}) {
@@ -14,16 +13,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
     return (
         <div>
             <SearchNavigation q={q} page={parseInt(page)} maxPage={maxPage} />
-            
-            <p className={styles.search}><span className={styles.search_query}>'{q}'</span>에 대한 검색결과</p>
-
-            <div>
-                <p className={styles.result}>전체 {isBooksEmpty ? 0 : response.totalResults.toLocaleString()}건</p>
-            </div>
-
-            {!isBooksEmpty && <SearchList books={response.item}/>}
-            {isBooksEmpty && <Empty info="검색 결과가 없습니다."/>}
-            
+            <SearchUpper q={q} isBooksEmpty={isBooksEmpty} response={response}/>
             <SearchNavigation q={q} page={parseInt(page)} maxPage={maxPage} />
         </div>
     );

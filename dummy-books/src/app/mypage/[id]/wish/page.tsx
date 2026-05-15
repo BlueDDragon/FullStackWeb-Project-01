@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 export default function Page() {
     const [wish, setWish] = useState<WishData>({ books: [] });
     const updateWish = () => {
-        setWish(GetWish());
+        setWish({ books: GetWish().books.reverse() } );
     };
     useEffect(() => updateWish(), []);
 
