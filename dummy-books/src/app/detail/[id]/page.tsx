@@ -68,9 +68,11 @@ export default function Page() {
                     </div>
                     <div className={styles.buy_count}>
                         <p className={styles.key_count}>수량</p>
-                        <input className={styles.input} type="number" defaultValue={1} min={1} ref={inputRef}/>
-                        <button className={styles.btn_increase} onClick={handleCountIncrease}>+</button>
-                        <button className={styles.btn_decrease} onClick={handleCountDecrease}>-</button>
+                        <div className={styles.btns_input}>
+                            <button className={styles.btn_decrease} onClick={handleCountDecrease}>-</button>
+                            <input className={styles.input} type="number" defaultValue={1} min={1} ref={inputRef}/>
+                            <button className={styles.btn_increase} onClick={handleCountIncrease}>+</button>
+                        </div>
                     </div>
                     <div className={styles.btns}>
                         <button className={styles.btn_cart} onClick={handleOpen}>장바구니</button>

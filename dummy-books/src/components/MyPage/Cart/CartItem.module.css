@@ -1,95 +1,99 @@
+/* =========================
+   장바구니 아이템
+========================= */
+
 .container {
+    width: 100%;
+
+    position: relative; /* 삭제 버튼 기준 */
+
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 
-    gap: 18px;
+    padding: 34px 0;
 
-    padding: 28px 24px;
+    margin: 10px 0;
 
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid #ececec;
 
-    background-color: white;
+    box-sizing: border-box;
 }
 
-.container:last-child {
-    border-bottom: none;
-}
+/* =========================
+   책 영역
+========================= */
 
-/* 체크박스 */
-.checkbox {
-    width: 18px;
-    height: 18px;
-
-    margin-top: 76px;
-
-    cursor: pointer;
-
-    accent-color: #2563eb;
-
-    flex-shrink: 0;
-}
-
-/* 책 영역 */
 .book {
     flex: 1;
 
+    min-width: 0;
+
     display: flex;
     align-items: flex-start;
 
-    gap: 24px;
-
-    min-width: 0;
+    gap: 28px;
 }
 
-/* 책 이미지 */
+/* =========================
+   커버 이미지
+========================= */
+
 .cover {
-    width: 120px;
-    height: 174px;
+    width: 140px;
+    height: 200px;
 
     object-fit: cover;
 
-    border-radius: 8px;
+    border-radius: 14px;
+    margin-left: 60px;
 
     flex-shrink: 0;
 
+    background-color: #f3f4f6;
+
     box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.08),
-        0 2px 6px rgba(0, 0, 0, 0.04);
+        0 10px 22px rgba(0, 0, 0, 0.08),
+        0 3px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* 정보 영역 */
-.book > div:nth-child(2) {
-    flex: 1;
+/* =========================
+   텍스트 영역
+========================= */
 
-    min-width: 0;
-
+.book > div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
-    padding-top: 6px;
+    min-width: 0;
 }
 
-/* 제목 링크 */
-.book > div:nth-child(2) a {
+/* 링크 */
+.book a {
     text-decoration: none;
 
     color: inherit;
-
-    width: fit-content;
 }
 
-/* 제목 */
+/* =========================
+   제목
+========================= */
+
 .title {
     margin: 0 0 12px;
 
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 800;
+
+    /* 2줄 제한 */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    line-height: 1.4;
 
     color: #111827;
 
-    line-height: 1.45;
-
-    letter-spacing: -0.3px;
+    letter-spacing: -0.5px;
 
     transition: color 0.18s ease;
 }
@@ -98,65 +102,176 @@
     color: #2563eb;
 }
 
-/* 설명 */
+/* =========================
+   저자
+========================= */
+
 .description {
     margin: 0 0 18px;
 
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 500;
 
     color: #6b7280;
-
-    line-height: 1.7;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-
-    overflow: hidden;
-
-    word-break: keep-all;
 }
 
-/* 가격 */
-.price {
-    margin: 0 0 8px;
+/* =========================
+   가격
+========================= */
 
-    font-size: 24px;
+.price {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    color: #111827;
+}
+
+/* 할인율 */
+.sale {
+    font-size: 22px;
     font-weight: 800;
 
     color: #2563eb;
-
-    letter-spacing: -0.4px;
 }
 
-/* 수량 */
-.count {
-    margin: 0;
+/* =========================
+   우측 수량/합계 영역
+========================= */
 
-    font-size: 14px;
-    font-weight: 600;
+.container > div:nth-child(2) {
+    width: 200px;
 
-    color: #4b5563;
-}
+    margin-left: 40px;
+    margin-right: 60px;
 
-/* 삭제 버튼 영역 */
-.book > div:last-child {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 18px;
 
     flex-shrink: 0;
 }
 
-/* 삭제 버튼 */
+/* 총 금액 */
+.totalPrice {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 900;
+
+    color: #111827;
+
+    letter-spacing: -0.5px;
+}
+
+/* =========================
+   수량 컨트롤
+========================= */
+
+.buy_count {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #dbe4ff;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+}
+
+/* 버튼 */
+.btn_increase,
+.btn_decrease {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    background-color: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.18s ease,
+        transform 0.15s ease;
+}
+
+.btn_increase:hover,
+.btn_decrease:hover {
+    background-color: #dbeafe;
+}
+
+.btn_increase:active,
+.btn_decrease:active {
+    transform: scale(0.95);
+}
+
+/* input */
+.input {
+    width: 64px;
+    height: 48px;
+
+    border: none;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #111827;
+
+    outline: none;
+
+    background-color: #ffffff;
+}
+
+/* number 화살표 제거 */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+    margin: 0;
+}
+
+.input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* =========================
+   삭제 버튼 영역
+========================= */
+
+.container > div:nth-child(3) {
+    position: absolute;
+
+    top: 5px;
+    right: 20px;
+}
+
 .btn_del {
-    border: 1px solid #e5e7eb;
+    border: none;
 
     background-color: white;
 
-    color: #6b7280;
+    color: #b0b5c0;
 
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 0;
 
     padding: 10px 16px;
 
@@ -165,18 +280,15 @@
     cursor: pointer;
 
     transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease,
+        background-color 0.18s ease,
+        color 0.18s ease,
         transform 0.15s ease;
 }
 
 .btn_del:hover {
-    background-color: #f9fafb;
+    background-color: #fee2e2;
 
-    border-color: #d1d5db;
-
-    color: #111827;
+    color: #dc2626;
 }
 
 .btn_del:active {

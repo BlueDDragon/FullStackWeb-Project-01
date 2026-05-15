@@ -1,16 +1,19 @@
 import "./globals.css";
 import CustomFooter from "@/components/CustomFooter";
 import CustomHearder from "@/components/CustomHeader";
+import { MyContext } from "@/context/myContext";
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
-        <header><CustomHearder/></header>
+        <header>
+          <CustomHearder />
+        </header>
         <main>{children}</main>
-        <footer><CustomFooter/></footer>
+        <footer>
+          <CustomFooter />
+        </footer>
       </body>
     </html>
   );

@@ -13,13 +13,22 @@ import { useEffect, useState } from "react";
 
 export default function Page() {
     const [carts, setCarts] = useState<CartData[]>([]);
-    useEffect(() => { setCarts(GetCarts()); }, []);
+    const updateCarts = () => {
+      setCarts(GetCarts());
+      setTotalCount(carts.reduce((sum, cur) => sum + (cur.count), 0));
+    };
+    useEffect(() => updateCarts(), []);
     const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
 
-    const totalCount = (isCartsEmpty ? 0 : carts.length);
+    const deliveryPrice = 3000;
+    const [totalCount, setTotalCount] = useState(0);
     const selectCarts= isCartsEmpty ? [] : carts;
-    const totalStandardPrice = isCartsEmpty ? 0 : selectCarts.reduce((sum, cur) => sum + cur.book.priceStandard, 0);
-    const totalResultPrice = isCartsEmpty ? 0 : selectCarts.reduce((sum, cur) => sum + cur.book.priceSales, 0);
+    const [totalStandardPrice, setTotalStandardPrice] = useState(0);
+    const [totalResultPrice, setTotalResultPrice] = useState(0);
+    useEffect(() => {
+      setTotalStandardPrice(selectCarts.reduce((sum, cur) => sum + (cur.book.priceStandard * cur.count), 0));
+      setTotalResultPrice(selectCarts.reduce((sum, cur) => sum + (cur.book.priceSales * cur.count), 0) + deliveryPrice);
+    }, [selectCarts]);
     const totalSalePrice = totalStandardPrice - totalResultPrice;
 
     const [isOrderConfirm, setIsOrderConfirm] = useState(false);
@@ -40,6 +49,7 @@ export default function Page() {
     const handleDelCartConfirm = () => {
         if (!selectBook) return;
         RemoveCart(selectBook);
+        updateCarts();
         setIsDelCartConfirm(false);
     };
 
@@ -47,7 +57,7 @@ export default function Page() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.upper}>
-            {/* <p className={styles.count}>장바구니 ({totalCount})</p> */}
+            <p className={styles.count}>장바구니 ({totalCount})</p>
             {/* <input className={styles.selectAll} type="checkbox" /> */}
           </div>
           <div className={styles.book_container}>
@@ -58,6 +68,7 @@ export default function Page() {
                   cart={cart}
                   onDelCart={handleDelCartOpen}
                   onDelSelectBook={setSelectBook}
+                  onUpdatePrice={updateCarts}
                 />
               ))}
             {isCartsEmpty && <Empty info="장바구니가 비어 있습니다." />}
@@ -66,22 +77,21 @@ export default function Page() {
         <div className={styles.aside}>
           <div className={styles.aside_box_upper}>
             <p className={styles.key}>
-              상품 금액<span className={styles.value}>{totalStandardPrice}원</span>
+              상품 금액<span className={styles.value}>{totalStandardPrice.toLocaleString()}원</span>
             </p>
             <p className={styles.key}>
-              배송비<span className={styles.value}>+{3000}원</span>
+              배송비<span className={styles.value}>+{(deliveryPrice).toLocaleString()}원</span>
             </p>
             <p className={styles.key}>
-              상품 할인<span className={styles.value}>-{totalSalePrice}원</span>
+              상품 할인<span className={styles.value}>-{totalSalePrice.toLocaleString()}원</span>
             </p>
           </div>
           <div className={styles.aside_box_body}>
             <p className={styles.key}>
-              결제 예정 금액<span className={styles.value}>{totalResultPrice}원</span>
+              결제 예정 금액<span className={styles.value}>{totalResultPrice.toLocaleString()}원</span>
             </p>
-            <button className={styles.btn_buy} onClick={handleOrderOpen}>
-              주문하기 ({totalCount})
-            </button>
+            <button className={styles.btn_buy} onClick={handleOrderOpen}>주문하기 ({totalCount})</button>
+            <button className={styles.btn_present} onClick={handleOrderOpen}>선물하기</button>
           </div>
         </div>
         <div>

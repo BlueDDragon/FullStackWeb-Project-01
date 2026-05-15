@@ -3,27 +3,59 @@ import Link from "next/link";
 import Image from "next/image";
 import { CartData } from "@/types/CartData";
 import { BookData } from "@/types/BookData";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { GetSaleData } from "@/utils/saleUtils";
+import { ChangeCartCount } from "@/utils/cartUtils";
 
 type CartItemProps = {
     cart: CartData;
     onDelCart: () => void;
     onDelSelectBook: (book: BookData) => void;
+    onUpdatePrice: () => void;
 };
 
-export default function CartItem({ cart, onDelCart, onDelSelectBook }: CartItemProps) {
-
+export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePrice }: CartItemProps) {
   const handleDel = () => {
     onDelCart();
     onDelSelectBook(cart.book);
   };
+  
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [count, setCount] = useState(cart.count);
+  useEffect(() => {
+      updateCount(count);
+  }, [inputRef.current?.value]);
+  const handleCountIncrease = () => {
+      updateCount(count + 1);
+      setCount((prev) => prev + 1);
+  };
+  const handleCountDecrease = () => {
+      if (count <= 1) return;
+      updateCount(count - 1);
+      setCount((prev) => prev - 1);
+  };
+  const updateCount = (resultCount: number) => {
+      if (!inputRef.current) return;
+      inputRef.current.value = resultCount.toString();
+      ChangeCartCount(cart.book, resultCount);
+      cart.count = resultCount;
+      onUpdatePrice();
+  };
+  const handleCountChange = () => {
+      if (!inputRef.current) return;
+      const resultCount = parseInt(inputRef.current.value);
+      setCount(resultCount);
+      ChangeCartCount(cart.book, resultCount);
+      cart.count = resultCount;
+      onUpdatePrice();
+  };
+
+  const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(cart.book);
+  const priceResult = (isSale ? priceSales : priceStandard);
 
   return (
     <div className={styles.container}>
-      {/* <input
-        className={styles.checkbox}
-        type="checkbox"
-      /> */}
+      {/* <input className={styles.checkbox} type="checkbox" /> */}
       <div className={styles.book}>
         <Image
           className={styles.cover}
@@ -36,15 +68,23 @@ export default function CartItem({ cart, onDelCart, onDelSelectBook }: CartItemP
           <Link href={`/detail/${cart.book.isbn13}`}>
             <p className={styles.title}>{cart.book.title}</p>
           </Link>
-          <p className={styles.description}>{cart.book.description}</p>
-          <p className={styles.price}>{cart.book.priceStandard}원</p>
-          <p className={styles.count}>{cart.count}개</p>
+          <p className={styles.description}>{cart.book.author}</p>
+          <p className={styles.price}>
+            {isSale && <span className={styles.sale}>{`${percentSale}%`}</span>}
+            {priceResult.toLocaleString()}원
+          </p>
         </div>
-        <div>
-          <button className={styles.btn_del} onClick={handleDel}>
-            삭제
-          </button>
+      </div>
+      <div>
+        <p className={styles.totalPrice}>{(cart.count ? priceResult * cart.count : 0).toLocaleString()}원</p>
+        <div className={styles.buy_count}>
+          <button className={styles.btn_decrease} onClick={handleCountDecrease}>-</button>
+          <input className={styles.input} type="number" defaultValue={1} min={1} ref={inputRef} onChange={handleCountChange}/>
+          <button className={styles.btn_increase} onClick={handleCountIncrease}>+</button>
         </div>
+      </div>
+      <div>
+        <button className={styles.btn_del} onClick={handleDel}>{"×"}</button>
       </div>
     </div>
   );

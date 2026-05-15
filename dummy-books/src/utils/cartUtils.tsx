@@ -58,3 +58,21 @@ export function RemoveCart(selectBook: BookData) {
 export function RemoveCartAll() {
     SaveData<CartData[]>({ type: "Carts" }, []);
 }
+
+export function ChangeCartCount(selectBook: BookData, count: number) {
+    const carts = GetCarts();
+    const isCartsEmpty = (!carts || !Array.isArray(carts) || carts.length === 0);
+
+    // 기존에 저장된 값이 없을 경우
+    if (isCartsEmpty) {
+        return;
+    }
+    
+    carts.map((cart) => {
+        if (cart.book.isbn13 === selectBook.isbn13) {
+            cart.count = count;
+        }
+        return cart;
+    });
+    SaveData<CartData[]>({ type: "Carts" }, carts);
+}

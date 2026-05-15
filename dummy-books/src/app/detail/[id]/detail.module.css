@@ -184,49 +184,80 @@
     padding: 10px 0;
 }
 
-.input {
-    width: 70px;
-    height: 40px;
+.btns_input {
+    display: flex;
+    align-items: center;
 
-    text-align: center;
+    border: 1px solid #dbe4ff;
 
-    border: 1px solid #ececec;
-    border-radius: 8px;
+    border-radius: 14px;
 
-    font-size: 22px;
-    font-weight: 600;
-    
+    overflow: hidden;
+
+    background-color: #ffffff;
 }
 
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
+/* 버튼 */
 .btn_increase,
 .btn_decrease {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
 
-    border: 1px solid #ececec;
-    border-radius: 8px;
+    border: none;
 
-    background-color: #fff;
+    background-color: #eff6ff;
 
-    font-size: 22px;
-    font-weight: 500;
+    color: #2563eb;
+
+    font-size: 20px;
+    font-weight: 800;
 
     cursor: pointer;
 
-    transition: background-color 0.18s ease;
+    transition:
+        background-color 0.18s ease,
+        transform 0.15s ease;
 }
 
 .btn_increase:hover,
 .btn_decrease:hover {
-    background-color: #f9fafb;
+    background-color: #dbeafe;
+}
+
+.btn_increase:active,
+.btn_decrease:active {
+    transform: scale(0.95);
+}
+
+/* input */
+.input {
+    width: 64px;
+    height: 48px;
+
+    border: none;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #111827;
+
+    outline: none;
+
+    background-color: #ffffff;
+}
+
+/* number 화살표 제거 */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+    margin: 0;
+}
+
+.input[type=number] {
+    -moz-appearance: textfield;
 }
 
 /* =========================
