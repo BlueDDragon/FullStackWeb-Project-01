@@ -2,6 +2,7 @@
 
 import styles from "@/components/Search/SearchNavigation.module.css"
 import { useRouter } from "next/navigation";
+import { useCallback } from "react";
 
 type SearchNavigationProps = {
     q: string;
@@ -12,19 +13,21 @@ type SearchNavigationProps = {
 export default function SearchNavigation({ q, page, maxPage }: SearchNavigationProps) {
     const router = useRouter();
 
+    // prev 버튼 onClick
     const isPrevDisabled = page <= 1;
-    const handlePrev = () => {
+    const handlePrev = useCallback(() => {
         if (isPrevDisabled) return;
         const prevPage = (page - 1);
         router.push(`/search?q=${q}&page=${prevPage}`);
-    };
+    }, [page]);
     
+    // next 버튼 onClick
     const isNextDisabled = page >= maxPage;
-    const handleNext = () => {
+    const handleNext = useCallback(() => {
         if (isNextDisabled) return;
         const nextPage = (page + 1);
         router.push(`/search?q=${q}&page=${nextPage}`);
-    };
+    }, [page]);
 
     return (
         <div>

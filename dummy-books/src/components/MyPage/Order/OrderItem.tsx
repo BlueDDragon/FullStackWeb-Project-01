@@ -8,6 +8,7 @@ type OrderItemProps = {
 };
 
 export default function OrderItem({ cart }: OrderItemProps) {
+  // 기본 정보
   const totalPrice = cart.book.priceSales * cart.count;
 
   return (

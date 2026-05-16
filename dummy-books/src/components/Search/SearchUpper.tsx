@@ -3,7 +3,7 @@
 import styles from "@/app/search/search.module.css"
 import { SearchViewContext, SearchViewContextType } from "@/context/SearchViewContext";
 import { ItemSearchResponse } from "@/types/ApiData";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Empty from "../Empty/Empty";
 import SearchList from "./SearchList";
@@ -17,13 +17,14 @@ type SearchUpperProps = {
 }
 
 export default function SearchUpper({ q, isBooksEmpty, response }: SearchUpperProps) {
+    // 검색 리스트 보기 타입
     const [viewType, setViewType] = useState<SearchViewContextType>({ viewType: "detail" });
-    const handleViewTypeDetail = () => {
+    const handleViewTypeDetail = useCallback(() => {
         setViewType({ viewType: "detail" });
-    }
-    const handleViewTypeSimple = () => {
+    }, []);
+    const handleViewTypeSimple = useCallback(() => {
         setViewType({ viewType: "simple" });
-    }
+    }, [])
 
     return (
         <div>

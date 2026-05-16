@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CartData } from "@/types/CartData";
 import { BookData } from "@/types/BookData";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { GetSaleData } from "@/utils/saleUtils";
 import { ChangeCartCount } from "@/utils/cartUtils";
 
@@ -15,25 +15,20 @@ type CartItemProps = {
 };
 
 export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePrice }: CartItemProps) {
-  const handleDel = () => {
+  // 삭제 확인
+  const handleDel = useCallback(() => {
     onDelCart();
     onDelSelectBook(cart.book);
-  };
+  }, [cart]);
   
+  // 수량
   const inputRef = useRef<HTMLInputElement>(null);
   const [count, setCount] = useState(cart.count);
   useEffect(() => {
       updateCount(count);
   }, [inputRef.current?.value]);
-  const handleCountIncrease = () => {
-      updateCount(count + 1);
-      setCount((prev) => prev + 1);
-  };
-  const handleCountDecrease = () => {
-      if (count <= 1) return;
-      updateCount(count - 1);
-      setCount((prev) => prev - 1);
-  };
+
+  // 수량 업데이트 (value > input) - 버튼
   const updateCount = (resultCount: number) => {
       if (!inputRef.current) return;
       inputRef.current.value = resultCount.toString();
@@ -41,15 +36,27 @@ export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePri
       cart.count = resultCount;
       onUpdatePrice();
   };
-  const handleCountChange = () => {
+  const handleCountIncrease = useCallback(() => {
+      updateCount(count + 1);
+      setCount((prev) => prev + 1);
+  }, [count]);
+  const handleCountDecrease = useCallback(() => {
+      if (count <= 1) return;
+      updateCount(count - 1);
+      setCount((prev) => prev - 1);
+  }, [count]);
+
+  // 수량 업데이트 (input > value) - input 입력
+  const handleCountChange = useCallback(() => {
       if (!inputRef.current) return;
       const resultCount = parseInt(inputRef.current.value);
       setCount(resultCount);
       ChangeCartCount(cart.book, resultCount);
       cart.count = resultCount;
       onUpdatePrice();
-  };
+  }, [cart]);
 
+  // 세일 정보
   const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(cart.book);
   const priceResult = (isSale ? priceSales : priceStandard);
 

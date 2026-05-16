@@ -1,7 +1,6 @@
 import "./globals.css";
 import CustomFooter from "@/components/CustomFooter";
 import CustomHearder from "@/components/CustomHeader";
-import { MyContext } from "@/context/myContext";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
