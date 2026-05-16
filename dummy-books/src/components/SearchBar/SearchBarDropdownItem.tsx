@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GetSaleData } from "@/utils/saleUtils";
 import { AddCart } from "@/utils/cartUtils";
+import { useCallback } from "react";
 
 type SearchBarDropdownItemProps = {
     book: BookData;
@@ -11,11 +12,13 @@ type SearchBarDropdownItemProps = {
 };
 
 export default function SearchBarDropdownItem({ book, onCartOpen }: SearchBarDropdownItemProps) {
-  const handleCartOpen = () => {
+  // 장바구니 확인창
+  const handleCartOpen = useCallback(() => {
     AddCart({ book: book, count: 1 });
     onCartOpen();
-  };
+  }, [book]);
 
+  // 세일 정보
   const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
 
   return (
@@ -33,16 +36,12 @@ export default function SearchBarDropdownItem({ book, onCartOpen }: SearchBarDro
             <p className={styles.title}>{book.title}</p>
             <p className={styles.author}>{book.author}</p>
             <p className={styles.price}>
-              {isSale && (
-                <span className={styles.sale}>{`${percentSale}%`}</span>
-              )}
+              {isSale && <span className={styles.sale}>{`${percentSale}%`}</span>}
               {(isSale ? priceSales : priceStandard).toLocaleString()}원
             </p>
           </div>
         </Link>
-        <button className={styles.btn_cart} onClick={handleCartOpen}>
-          장바구니
-        </button>
+        <button className={styles.btn_cart} onClick={handleCartOpen}>장바구니</button>
       </div>
     </div>
   );
