@@ -19,6 +19,7 @@ export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePri
   const handleDel = useCallback(() => {
     onDelCart();
     onDelSelectBook(cart.book);
+    onUpdatePrice();
   }, [cart]);
   
   // 수량

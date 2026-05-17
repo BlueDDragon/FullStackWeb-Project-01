@@ -12,6 +12,7 @@ import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
 import { SearchViewContext } from "@/context/SearchViewContext";
 import { LoginData } from "@/types/UseData";
 import { useLoginState } from "@/utils/userUtils";
+import { HeaderContext } from "@/context/HeaderContext";
 
 type SearchItemProps = {
   book: BookData;
@@ -20,6 +21,7 @@ type SearchItemProps = {
 
 export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     const [isLogined, isVerifyId, login] = useLoginState("0");
+    const updateHeader = useContext(HeaderContext).updateHeader;
 
     // 세일 정보
     const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
@@ -27,6 +29,7 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     // 장바구니 확인창 상태
     const handleCartOpen = useCallback(() => {
       AddCart({ book: book, count: 1 });
+      updateHeader?.();
       onCartOpen();
     }, [book]);
 
@@ -34,6 +37,7 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     const router = useRouter();
     const handleOrder = useCallback(() => {
       AddCart({ book: book, count: 1 });
+      updateHeader?.();
       
       if (isLogined)
         router.push(`/mypage/${(login as LoginData).id}/cart`);

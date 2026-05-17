@@ -1,15 +1,15 @@
 'use client';
 
 import styles from "@/components/CustomHeader.module.css";
-import { LoginData } from "@/types/UseData";
-import { useLoginState } from "@/utils/userUtils";
+import { HeaderContext } from "@/context/HeaderContext";
 import Link from "next/link";
+import { useContext } from "react";
 
 export default function CustomHeaderWish() {
-    const [isLogined, isVerifyId, login] = useLoginState("0");
-    const id = (login && isLogined ? (login as LoginData).id : 0);
+    const loginId = useContext(HeaderContext).loginId;
+    const isLogined = (!loginId && loginId !== "0");
     
     return (
-        <Link className={styles.btn_order} href={(`/mypage/${id}/wish`)}>보관함</Link>
+        <Link className={styles.btn_order} href={(`/mypage/${loginId}/wish`)}>보관함</Link>
     );
 }

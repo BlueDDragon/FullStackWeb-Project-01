@@ -1,10 +1,13 @@
 'use client';
 
 import styles from "@/app/mypage/[id]/mypage.module.css"
-import { useLoginState } from "@/utils/userUtils";
+import { Logout, useLoginState } from "@/utils/userUtils";
 import Empty from "../Empty/Empty";
 import Link from "next/link";
 import { LoginData } from "@/types/UseData";
+import { useCallback, useContext } from "react";
+import { useRouter } from "next/navigation";
+import { HeaderContext } from "@/context/HeaderContext";
 
 type MyPageContentProps = {
     id: string;
@@ -12,6 +15,19 @@ type MyPageContentProps = {
 
 export default function MyPageContent({ id }: MyPageContentProps) {
     const [isLogined, isVerifyId, login] = useLoginState(id);
+
+    const updateHeader = useContext(HeaderContext).updateHeader;
+    const updateLogin = useContext(HeaderContext).updateLogin;
+    const setLoginId = useContext(HeaderContext).setLoginId;
+
+    const router = useRouter();
+    const handleLogout = useCallback(() => {
+        Logout();
+        setLoginId("");
+        updateHeader?.();
+        updateLogin?.();
+        router.push(`/login`);
+    }, []);
 
     return (
         <div>
@@ -34,7 +50,7 @@ export default function MyPageContent({ id }: MyPageContentProps) {
                         <Link className={styles.btn_link} href={(`/mypage/${id}/cart`)}>장바구니</Link>
                         <Link className={styles.btn_link} href={(`/mypage/${id}/order`)}>주문조회</Link>
                         <Link className={styles.btn_link} href={(`/mypage/${id}/wish`)}>보관함</Link>
-                        <button className={styles.btn_logout}>로그아웃</button>
+                        <button className={styles.btn_logout} onClick={handleLogout}>로그아웃</button>
                     </div>
                 </div>
             </div>}

@@ -6,7 +6,7 @@ import { WishData } from "@/types/WishData";
 import { AddCart } from "@/utils/cartUtils";
 import { GetWish, IsWishEmpty, RemoveWish } from "@/utils/wishUtils";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import WishItem from "./WishItem";
 import CartConfirm from "@/components/Confirm/CartConfirm";
 import Empty from "@/components/Empty/Empty";
@@ -14,6 +14,7 @@ import DelWishConfirm from "@/components/Confirm/DelWishConfirm";
 import { useLoginState } from "@/utils/userUtils";
 import Link from "next/link";
 import { LoginData } from "@/types/UseData";
+import { HeaderContext } from "@/context/HeaderContext";
 
 type WishContentProps = {
   id: string;
@@ -21,6 +22,7 @@ type WishContentProps = {
 
 export default function WishContent({ id }: WishContentProps) {
     const [isLogined, isVerifyId, login] = useLoginState(id);
+    const updateHeader = useContext(HeaderContext).updateHeader;
     
     // 기본 정보
     const [wish, setWish] = useState<WishData>({ books: [] });
@@ -30,11 +32,11 @@ export default function WishContent({ id }: WishContentProps) {
     // 찜하기
     const updateWish = () => {
         const tempWish = GetWish();
-        if (tempWish) setWish({ books: tempWish.books.reverse() } );
+        if (tempWish.books) setWish({ books: tempWish.books.reverse() } );
     };
     useEffect(() => {
       updateWish();
-    }, []);
+    }, [isLogined]);
 
     // 장바구니 확인창
     const [isCartConfirm, setIsCartConfirm] = useState(false);
@@ -42,6 +44,7 @@ export default function WishContent({ id }: WishContentProps) {
         if (isWishEmpty) return;
         if (!book) return;
         AddCart({ book: book, count: 1 });
+        updateHeader?.();
         setIsCartConfirm(true);
     };
 
@@ -62,6 +65,7 @@ export default function WishContent({ id }: WishContentProps) {
     const router = useRouter();
     const handleOrder = (book: BookData) => {
         AddCart({ book: book, count: 1 });
+        updateHeader?.();
 
         if (isLogined)
             router.push(`/mypage/${(login as LoginData).id}/cart`);

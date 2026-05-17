@@ -1,7 +1,8 @@
+import { CartData } from "@/types/CartData";
 import { createContext } from "react";
 
 export type CartPriceContextType = {
-    totalCount: number;
+    // totalCount: number;
     totalStandardPrice: number;
     setTotalStandardPrice: (value: number) => void;
     totalResultPrice: number;
@@ -9,7 +10,7 @@ export type CartPriceContextType = {
 }
 
 export const CartPriceContext = createContext<CartPriceContextType>( {
-    totalCount: 0,
+    // totalCount: 0,
     totalStandardPrice: 0,
     setTotalStandardPrice: (value: number) => {},
     totalResultPrice: 0,

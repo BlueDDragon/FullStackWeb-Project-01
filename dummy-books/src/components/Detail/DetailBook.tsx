@@ -2,12 +2,7 @@
 
 import styles from "@/app/detail/[id]/detail.module.css"
 import { BookData } from "@/types/BookData";
-import { AddCart } from "@/utils/cartUtils";
-import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
-import { GetSaleData } from "@/utils/saleUtils";
+import { useCallback, useState } from "react";
 import DetailCategory from "./DetailCategory";
 import DetailBookBody from "./DetailBookBody";
 import DetailBookBottom from "./DetailBookBottom";

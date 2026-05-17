@@ -3,6 +3,8 @@ import { LoadData, SaveData } from "./saveload";
 import { BookData } from "@/types/BookData";
 import { GetLogin } from "./userUtils";
 import { log } from "console";
+import { useContext } from "react";
+import { HeaderContext } from "@/context/HeaderContext";
 
 export function GetCarts() : CartData[] {
     const login = GetLogin();
@@ -68,6 +70,7 @@ export function RemoveCart(selectBook: BookData) {
     
     const newCarts = carts.filter((cart) => cart.book.isbn13 !== selectBook.isbn13);
     SaveData<CartData[]>({ type: "Carts", id: login.id }, newCarts);
+    return newCarts;
 }
 
 export function RemoveCartAll() {

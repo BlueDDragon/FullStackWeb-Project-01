@@ -120,7 +120,16 @@ export function SetLogin(idx: number, user: UserData) {
 }
 
 export function Logout() {
+    if (!IsAlreadyLogin()) return;
 
+    const newLogin: LoginData = {
+        isLogined: false,
+        idx: 0,
+        id: "0",
+        nickname: "",
+    };
+
+    SaveData<LoginData>({ type: "Login" }, newLogin);
 }
 
 export function useLoginState(id: string) {

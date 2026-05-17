@@ -4,9 +4,10 @@ import styles from "@/app/login/login.module.css"
 import { GetLogin, IsLoginEmpty, Login } from "@/utils/userUtils";
 import Image from "next/image";
 import Link from "next/link";
-import { ChangeEvent, KeyboardEvent, useCallback, useEffect, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useCallback, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LoginData } from "@/types/UseData";
+import { HeaderContext } from "@/context/HeaderContext";
 
 export default function LoginContent() {
     // 이미 로그인 되어있으면 자동으로 마이페이지
@@ -19,6 +20,10 @@ export default function LoginContent() {
         if (!isLogined) return;
         router.push(`/mypage/${login.id}`);
     }, [login, checkLogin]);
+    
+    const updateHeader = useContext(HeaderContext).updateHeader;
+    const updateLogin = useContext(HeaderContext).updateLogin;
+    const setLoginId = useContext(HeaderContext).setLoginId;
     
     // 경고
     const [warningString, setWarningString] = useState("");
@@ -48,6 +53,9 @@ export default function LoginContent() {
             return setWarningString("아이디 또는 비밀번호가 올바르지 않습니다.");
 
         setWarningString("");
+        setLoginId(userId);
+        updateHeader?.();
+        updateLogin?.();
         router.push(`/mypage/${userId}`);
 
     }, [userId, userPassword]);

@@ -7,9 +7,10 @@ import { GetSaleData } from "@/utils/saleUtils";
 import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useLoginState } from "@/utils/userUtils";
 import { LoginData } from "@/types/UseData";
+import { HeaderContext } from "@/context/HeaderContext";
 
 type DetailBookBodyProps = {
     book: BookData;
@@ -18,6 +19,7 @@ type DetailBookBodyProps = {
 
 export default function DetailBookBody({ book, onCartOpen }: DetailBookBodyProps) {
     const [isLogined, isVerifyId, login] = useLoginState("0");
+    const updateHeader = useContext(HeaderContext).updateHeader;
     
     // 세일 정보
     const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
@@ -40,6 +42,7 @@ export default function DetailBookBody({ book, onCartOpen }: DetailBookBodyProps
     // 장바구니
     const handleCartOpen = useCallback(() => {
         AddCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
+        updateHeader?.();
         onCartOpen();
     }, [book]);
     
@@ -47,6 +50,7 @@ export default function DetailBookBody({ book, onCartOpen }: DetailBookBodyProps
     const router = useRouter();
     const handleOrder = useCallback(() => {
         AddCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
+        updateHeader?.();
 
         if (isLogined)
             router.push(`/mypage/${(login as LoginData).id}/cart`);

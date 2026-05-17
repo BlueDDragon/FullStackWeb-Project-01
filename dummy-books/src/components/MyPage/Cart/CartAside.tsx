@@ -3,6 +3,7 @@
 import styles from "@/app/mypage/[id]/cart/cart.module.css"
 import OrderConfirm from "@/components/Confirm/OrderConfirm";
 import { CartPriceContext } from "@/context/CartPriceContext";
+import { HeaderContext } from "@/context/HeaderContext";
 import { CartData } from "@/types/CartData";
 import { IsCartEmpty, RemoveCartAll } from "@/utils/cartUtils";
 import { AddOrder } from "@/utils/orderUtils";
@@ -13,11 +14,14 @@ type CartAsideProps = {
 };
 
 export default function CartAside({ carts }: CartAsideProps) {
+    const updateHeader = useContext(HeaderContext).updateHeader;
+
     // 기본 정보
     const isCartsEmpty = IsCartEmpty(carts);
     // const selectCarts = isCartsEmpty ? [] : carts;
     const deliveryPrice = isCartsEmpty ? 0 : 3000;
-    const totalCount = useContext(CartPriceContext).totalCount;
+    // const totalCount = useContext(CartPriceContext).totalCount;
+    const cartTotalCount = useContext(HeaderContext).cartTotalCount;
 
     // 가격 정보
     const totalStandardPrice = useContext(CartPriceContext).totalStandardPrice;
@@ -46,6 +50,7 @@ export default function CartAside({ carts }: CartAsideProps) {
         if (isCartsEmpty) return;
         RemoveCartAll();
         AddOrder(carts, totalResultPrice, "buy");
+        updateHeader?.();
     }, [carts]);
 
     // 선물하기
@@ -58,6 +63,7 @@ export default function CartAside({ carts }: CartAsideProps) {
         if (isCartsEmpty) return;
         RemoveCartAll();
         AddOrder(carts, totalResultPrice, "present");
+        updateHeader?.();
     }, [carts]);
 
     return (
@@ -78,19 +84,19 @@ export default function CartAside({ carts }: CartAsideProps) {
             <p className={styles.key}>
               결제 예정 금액<span className={styles.value}>{totalResultPrice.toLocaleString()}원</span>
             </p>
-            <button className={styles.btn_buy} onClick={handleOrderOpen}>주문하기 ({totalCount})</button>
+            <button className={styles.btn_buy} onClick={handleOrderOpen}>주문하기 ({cartTotalCount})</button>
             <button className={styles.btn_present} onClick={handlePresentOpen}>선물하기</button>
           </div>
         </div>
         <div>
           <OrderConfirm
-            count={totalCount}
+            count={cartTotalCount}
             isOpen={isOrderConfirm}
             onOpen={setIsOrderConfirm}
             onConfirm={handleOrderConfirm}
           />
           <OrderConfirm
-            count={totalCount}
+            count={cartTotalCount}
             isOpen={isPresentConfirm}
             onOpen={setIsPresentConfirm}
             onConfirm={handlePresentConfirm}
