@@ -8,9 +8,9 @@ type OrderListProps = {
 };
 
 export default function OrderList({ order }: OrderListProps) {
+    // 기본 정보
     const orderDate = new Date(order.buyDate);
     const orderId = GetOrderId(orderDate);
-
     const isPresentType = order.type == "present";
     const isDeliveryComplete = order.state == "buy";
 

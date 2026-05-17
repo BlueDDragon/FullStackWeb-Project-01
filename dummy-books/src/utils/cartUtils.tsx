@@ -1,9 +1,16 @@
 import { CartData } from "@/types/CartData";
 import { LoadData, SaveData } from "./saveload";
 import { BookData } from "@/types/BookData";
+import { GetLogin } from "./userUtils";
+import { log } from "console";
+import { useContext } from "react";
+import { HeaderContext } from "@/context/HeaderContext";
 
 export function GetCarts() : CartData[] {
-    return LoadData<CartData[]>({ type: "Carts" }, ("[]"));
+    const login = GetLogin();
+    if (!login || !login.isLogined) return [];
+
+    return LoadData<CartData[]>({ type: "Carts", id: login.id }, ("[]"));
 }
 
 export function IsCartEmpty(carts: CartData[]) {
@@ -21,12 +28,15 @@ export function IsCartDuplicate(isbn13: string) {
 }
 
 export function AddCart(selectCart: CartData) {
+    const login = GetLogin();
+    if (!login || !login.isLogined) return;
+
     const carts = GetCarts();
     const isCartsEmpty = IsCartEmpty(carts);
 
     // 기존에 저장된 값이 없을 경우
     if (isCartsEmpty) {
-        SaveData<CartData[]>({ type: "Carts" }, [selectCart]);
+        SaveData<CartData[]>({ type: "Carts", id: login.id }, [selectCart]);
         return;
     }
 
@@ -39,14 +49,17 @@ export function AddCart(selectCart: CartData) {
             }
             return cart;
         });
-        SaveData<CartData[]>({ type: "Carts" }, carts);
+        SaveData<CartData[]>({ type: "Carts", id: login.id }, carts);
         return;
     }
 
-    SaveData<CartData[]>({ type: "Carts" }, [...carts, selectCart]);
+    SaveData<CartData[]>({ type: "Carts", id: login.id }, [...carts, selectCart]);
 }
 
 export function RemoveCart(selectBook: BookData) {
+    const login = GetLogin();
+    if (!login || !login.isLogined) return;
+
     const carts = GetCarts();
     const isCartsEmpty = IsCartEmpty(carts);
 
@@ -56,14 +69,21 @@ export function RemoveCart(selectBook: BookData) {
     }
     
     const newCarts = carts.filter((cart) => cart.book.isbn13 !== selectBook.isbn13);
-    SaveData<CartData[]>({ type: "Carts" }, newCarts);
+    SaveData<CartData[]>({ type: "Carts", id: login.id }, newCarts);
+    return newCarts;
 }
 
 export function RemoveCartAll() {
-    SaveData<CartData[]>({ type: "Carts" }, []);
+    const login = GetLogin();
+    if (!login || !login.isLogined) return;
+
+    SaveData<CartData[]>({ type: "Carts", id: login.id }, []);
 }
 
 export function ChangeCartCount(selectBook: BookData, count: number) {
+    const login = GetLogin();
+    if (!login || !login.isLogined) return;
+    
     const carts = GetCarts();
     const isCartsEmpty = IsCartEmpty(carts);
 
@@ -78,5 +98,5 @@ export function ChangeCartCount(selectBook: BookData, count: number) {
         }
         return cart;
     });
-    SaveData<CartData[]>({ type: "Carts" }, carts);
+    SaveData<CartData[]>({ type: "Carts", id: login.id }, carts);
 }

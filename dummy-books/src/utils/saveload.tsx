@@ -1,4 +1,10 @@
-type DataType = { type: "Carts" } | { type: "Orders" } | { type: "Wish" } | { type: "Setting" };
+type DataType = 
+    { type: "Carts", id: string } | 
+    { type: "Orders", id: string } | 
+    { type: "Wish", id: string } | 
+    { type: "Setting" } | 
+    { type: "Users" } | 
+    { type: "Login" };
 
 function LoadDataJSON<T>(key: string, defaultValue: string): T {
     if (typeof window !== 'undefined') {
@@ -14,10 +20,25 @@ function SaveDataJSON<T>(key: string, value: T) {
     }
 }
 
+function GetKey(type: DataType): string {
+    switch (type.type) {
+        case "Carts":
+        case "Orders":
+        case "Wish":
+            return `${type.id}_${type.type.toLowerCase()}`;
+
+        case "Setting":
+        case "Login":
+        case "Users":
+        default:
+            return `${type.type.toLowerCase()}`;
+    }
+}
+
 export function LoadData<T>(type: DataType, defaultValue: string) {
-    return LoadDataJSON<T>(type.type.toLowerCase(), defaultValue);
+    return LoadDataJSON<T>(GetKey(type), defaultValue);
 }
 
 export function SaveData<T>(type: DataType, value: T) {
-    SaveDataJSON(type.type.toLowerCase(), value);
+    SaveDataJSON(GetKey(type), value);
 }

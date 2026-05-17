@@ -7,9 +7,12 @@ import Image from "next/image";
 import { GetSaleData } from "@/utils/saleUtils";
 import { AddCart } from "@/utils/cartUtils";
 import { useRouter } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
 import { SearchViewContext } from "@/context/SearchViewContext";
+import { LoginData } from "@/types/UseData";
+import { useLoginState } from "@/utils/userUtils";
+import { HeaderContext } from "@/context/HeaderContext";
 
 type SearchItemProps = {
   book: BookData;
@@ -17,82 +20,101 @@ type SearchItemProps = {
 };
 
 export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
-  const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
+    const [isLogined, isVerifyId, login] = useLoginState("0");
+    const updateHeader = useContext(HeaderContext).updateHeader;
 
-  const handleCartOpen = () => {
-    AddCart({ book: book, count: 1 });
-    onCartOpen();
-  };
+    // 세일 정보
+    const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
 
-  const router = useRouter();
-  const handleOrder = () => {
-    AddCart({ book: book, count: 1 });
-    router.push(`/mypage/0/cart`);
-  };
+    // 장바구니 확인창 상태
+    const handleCartOpen = useCallback(() => {
+      AddCart({ book: book, count: 1 });
+      updateHeader?.();
+      onCartOpen();
+    }, [book]);
 
-  const [isWishAlready, setIsWishAlready] = useState(false);
-  useEffect(() => {
-    setIsWishAlready(IsWishAlready(book.isbn13));
-  }, [book]);
-  const handleToggleWish = () => {
-    setIsWishAlready(ToggleWish(book));
-  };
+    // 바로구매
+    const router = useRouter();
+    const handleOrder = useCallback(() => {
+      AddCart({ book: book, count: 1 });
+      updateHeader?.();
+      
+      if (isLogined)
+        router.push(`/mypage/${(login as LoginData).id}/cart`);
+      else
+        onCartOpen();
+    }, [book, isLogined]);
 
-  const viewType = useContext(SearchViewContext);
+    // 찜하기 상태
+    const [isWishAlready, setIsWishAlready] = useState(false);
+    // 찜하기 상태 업데이트
+    useEffect(() => {
+      setIsWishAlready(IsWishAlready(book.isbn13));
+    }, [book, isLogined]);
+    const handleToggleWish = useCallback(() => {
+      if (isLogined)
+          setIsWishAlready(ToggleWish(book));
+      else
+          onCartOpen();
+    }, [book, isLogined]);
 
-  if (viewType.viewType == "detail") {
-    return (
-      <div className={styles.container}>
-        {/* <input className={styles.checkbox} type="checkbox" /> */}
-        <Link href={`/detail/${book.isbn13}`}>
-          <div className={styles.book}>
-            <Image className={styles.cover} src={book.cover} width={180} height={261} alt="" />
-            <div>
-              <p className={styles.title}>{book.title}</p>
-              <p className={styles.description}>{book.author}</p>
-              <p className={styles.description}>{book.description}</p>
-              <p className={styles.price}>
-                {isSale && <span className={styles.sale}>{`${percentSale}%`}</span>}
-                {(isSale ? priceSales : priceStandard).toLocaleString()}원
-              </p>
+    const viewType = useContext(SearchViewContext);
+    switch (viewType.viewType) {
+      // 검색 리스트 보기 타입 - 상세
+      case "detail":
+      return (
+        <div className={styles.container}>
+          {/* <input className={styles.checkbox} type="checkbox" /> */}
+          <Link href={`/detail/${book.isbn13}`}>
+            <div className={styles.book}>
+              <Image className={styles.cover} src={book.cover} width={180} height={261} alt="" />
+              <div>
+                <p className={styles.title}>{book.title}</p>
+                <p className={styles.description}>{book.author}</p>
+                <p className={styles.description}>{book.description}</p>
+                <p className={styles.price}>
+                  {isSale && <span className={styles.sale}>{`${percentSale}%`}</span>}
+                  {(isSale ? priceSales : priceStandard).toLocaleString()}원
+                </p>
+              </div>
             </div>
+          </Link>
+          <div className={styles.btns}>
+            <button className={styles.btn_cart} onClick={handleCartOpen}>장바구니</button>
+            <button className={styles.btn_buy} onClick={handleOrder}>바로구매</button>
+            {isWishAlready ?
+            <button className={styles.btn_wish_already}onClick={handleToggleWish}>♥</button> :
+            <button className={styles.btn_wish} onClick={handleToggleWish}>♡</button>}
           </div>
-        </Link>
-        <div className={styles.btns}>
-          <button className={styles.btn_cart} onClick={handleCartOpen}>장바구니</button>
-          <button className={styles.btn_buy} onClick={handleOrder}>바로구매</button>
-          {isWishAlready ?
-          <button className={styles.btn_wish_already}onClick={handleToggleWish}>♥</button> :
-          <button className={styles.btn_wish} onClick={handleToggleWish}>♡</button>}
         </div>
-      </div>
-    );
-  }
-  else if (viewType.viewType === "simple") {
-    return (
-      <div className={styles.container_simple}>
-        <Link href={`/detail/${book.isbn13}`}>
-          <div className={styles.book_simple}>
-            <Image className={styles.cover_simple} src={book.cover} width={180} height={261} alt="" />
-            <div>
-              <p className={styles.title_simple}>{book.title}</p>
-              <p className={styles.description_simple}>{book.author}</p>
-              <p className={styles.price_simple}>
-                {isSale && <span className={styles.sale_simple}>{`${percentSale}%`}</span>}
-                {(isSale ? priceSales : priceStandard).toLocaleString()}원
-              </p>
+      );
+
+      // 검색 리스트 보기 타입 - 간단
+      case "simple":
+      return (
+        <div className={styles.container_simple}>
+          <Link href={`/detail/${book.isbn13}`}>
+            <div className={styles.book_simple}>
+              <Image className={styles.cover_simple} src={book.cover} width={180} height={261} alt="" />
+              <div>
+                <p className={styles.title_simple}>{book.title}</p>
+                <p className={styles.description_simple}>{book.author}</p>
+                <p className={styles.price_simple}>
+                  {isSale && <span className={styles.sale_simple}>{`${percentSale}%`}</span>}
+                  {(isSale ? priceSales : priceStandard).toLocaleString()}원
+                </p>
+              </div>
             </div>
+          </Link>
+          <div className={styles.btns_simple}>
+            {isWishAlready ?
+            <button className={styles.btn_wish_already_simple}onClick={handleToggleWish}>♥</button> :
+            <button className={styles.btn_wish_simple} onClick={handleToggleWish}>♡</button>}
           </div>
-        </Link>
-        <div className={styles.btns_simple}>
-          {isWishAlready ?
-          <button className={styles.btn_wish_already_simple}onClick={handleToggleWish}>♥</button> :
-          <button className={styles.btn_wish_simple} onClick={handleToggleWish}>♡</button>}
         </div>
-      </div>
-    );
-  }
-  else {
-    return <div></div>;
-  }
+      );
+
+      default:
+        return <div></div>;
+    }
 }

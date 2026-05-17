@@ -1,9 +1,12 @@
 import { CartData } from "@/types/CartData";
 import { LoadData, SaveData } from "./saveload";
 import { OrderData } from "@/types/OrderData";
-
+import { GetLogin } from "./userUtils";
 export function GetOrders() : OrderData[]{
-    return LoadData<OrderData[]>({ type: "Orders" }, ("[]"));
+    const login = GetLogin();
+    if (!login || !login.isLogined) return [];
+    
+    return LoadData<OrderData[]>({ type: "Orders", id: login.id }, ("[]"));
 }
 
 export function IsOrdersEmpty(orders: OrderData[]) {
@@ -11,6 +14,9 @@ export function IsOrdersEmpty(orders: OrderData[]) {
 }
 
 export function AddOrder(carts: CartData[], totalPrice: number, type: string) {
+    const login = GetLogin();
+    if (!login || !login.isLogined) return;
+
     const orders = GetOrders();
     const isOrdersEmpty = IsOrdersEmpty(orders);
 
@@ -25,11 +31,11 @@ export function AddOrder(carts: CartData[], totalPrice: number, type: string) {
     
     // 기존에 저장된 값이 없을 경우
     if (isOrdersEmpty) {
-        SaveData<OrderData[]>({ type: "Orders" }, [newOrder]);
+        SaveData<OrderData[]>({ type: "Orders", id: login.id }, [newOrder]);
         return;
     }
     
-    SaveData<OrderData[]>({ type: "Orders" }, [...orders, newOrder]);
+    SaveData<OrderData[]>({ type: "Orders", id: login.id }, [...orders, newOrder]);
 }
 
 export function GetOrderId(buyDate: Date): string {

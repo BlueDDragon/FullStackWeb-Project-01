@@ -4,7 +4,7 @@ import styles from "@/components/Bestseller/BestsellerList.module.css"
 import mock_books from "@/mocks/mock_books.json"
 import { BookData } from "@/types/BookData";
 import BestsellerItem from "@/components/Bestseller/BestsellerItem";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type BestsellerListProps = {
     title: string;
@@ -12,48 +12,53 @@ type BestsellerListProps = {
 }
 
 export default function BestsellerList({ title, books }: BestsellerListProps) {
-        const slideRef = useRef<HTMLDivElement>(null);
-        
-        const [isPrevDisabled, setIsPrevDisabled] = useState(true);
-        const [isNextDisabled, setIsNextDisabled] = useState(false);
-        const updateButtonState = () => {
-          if (!slideRef.current) return;
+    const slideRef = useRef<HTMLDivElement>(null);
     
-          const { scrollLeft, scrollWidth, clientWidth } = slideRef.current;
+    const [isPrevDisabled, setIsPrevDisabled] = useState(true);
+    const [isNextDisabled, setIsNextDisabled] = useState(false);
     
-          setIsPrevDisabled(scrollLeft <= 0);
-          setIsNextDisabled(scrollLeft + clientWidth >= scrollWidth - 1);
-        };
-    
-        useEffect(() => {
-          const slide = slideRef.current;
-          if (!slide) return;
-    
-          updateButtonState();
-          slide.addEventListener("scroll", updateButtonState);
-    
-          return () => {slide.removeEventListener("scroll", updateButtonState);};
-        }, []);
-    
-        const handlePrev = () => {
-            if (!slideRef.current) return;
-    
-            const width = slideRef.current.clientWidth;
-            slideRef.current.scrollBy({
-                left: -width,
-                behavior: "smooth",
-            });
-        };
-    
-        const handleNext = () => {
-            if (!slideRef.current) return;
-    
-            const width = slideRef.current.clientWidth;
-            slideRef.current.scrollBy({
-                left: width,
-                behavior: "smooth",
-            });
-        };
+    // 리스트 내비게이션 상태 업데이트
+    const updateButtonState = () => {
+        if (!slideRef.current) return;
+
+        const { scrollLeft, scrollWidth, clientWidth } = slideRef.current;
+
+        setIsPrevDisabled(scrollLeft <= 0);
+        setIsNextDisabled(scrollLeft + clientWidth >= scrollWidth - 1);
+    };
+
+    // 스크롤시 네비게이션 상태 업데이트
+    useEffect(() => {
+        const slide = slideRef.current;
+        if (!slide) return;
+
+        updateButtonState();
+        slide.addEventListener("scroll", updateButtonState);
+
+        return () => {slide.removeEventListener("scroll", updateButtonState);};
+    }, []);
+
+    // prev 버튼 onClick
+    const handlePrev = useCallback(() => {
+        if (!slideRef.current) return;
+
+        const width = slideRef.current.clientWidth;
+        slideRef.current.scrollBy({
+            left: -width,
+            behavior: "smooth",
+        });
+    }, []);
+
+    // next 버튼 onClick
+    const handleNext = useCallback(() => {
+        if (!slideRef.current) return;
+
+        const width = slideRef.current.clientWidth;
+        slideRef.current.scrollBy({
+            left: width,
+            behavior: "smooth",
+        });
+    }, []);
         
     return (
         <div className={styles.container}>
