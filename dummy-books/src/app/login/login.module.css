@@ -1,0 +1,150 @@
+.container {
+    width: 100%;
+    /* min-height: 100vh; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 24px;
+    background-color: #ffffff;
+}
+
+.img_logo {
+    width: 180px;
+    height: auto;
+
+    /* margin-bottom: 24px; */
+
+    object-fit: contain;
+}
+
+.title {
+    margin-bottom: 12px;
+
+    font-size: 28px;
+    font-weight: 700;
+    color: #111111;
+
+    letter-spacing: -0.02em;
+}
+
+.password_box {
+    position: relative;
+
+    width: 100%;
+    max-width: 360px;
+
+    display: flex;
+    align-items: center;
+    
+    outline: none;
+}
+
+.input_id,
+.input_password,
+.input_nickname {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: border-color 0.2s ease;
+}
+
+.input_password {
+    padding-right: 52px;
+}
+
+.input_id:focus,
+.input_password:focus,
+.input_nickname:focus {
+    border-color: #111111;
+}
+
+.img_password {
+    position: absolute;
+
+    right: 14px;
+
+    width: 36px;
+    height: 36px;
+
+    cursor: pointer;
+    user-select: none;
+
+    opacity: 0.7;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.15s ease;
+}
+
+.img_password:hover {
+    opacity: 1;
+}
+
+.img_password:active {
+    transform: scale(0.92);
+}
+
+.btn_login {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 14px 16px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #111111;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+.btn_login:hover {
+    opacity: 0.9;
+}
+
+.register {
+    margin-top: 4px;
+
+    color: #666666;
+    font-size: 14px;
+
+    text-decoration: none;
+}
+
+.register:hover {
+    text-decoration: underline;
+}
+
+.warning {
+    width: 100%;
+    max-width: 360px;
+
+    margin-top: -4px;
+
+    font-size: 13px;
+    color: #e54848;
+
+    text-align: center;
+}

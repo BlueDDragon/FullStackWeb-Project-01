@@ -67,12 +67,12 @@
 
 .list_view_detail,
 .list_view_simple {
-    width: 42px;
-    height: 42px;
+    width: 36px;
+    height: 35px;
 
     object-fit: contain;
 
-    padding: 8px;
+    padding: 4px;
 
     border-radius: 12px;
 

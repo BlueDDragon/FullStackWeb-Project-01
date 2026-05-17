@@ -37,8 +37,8 @@ export default function SearchUpper({ q, isBooksEmpty, response }: SearchUpperPr
                     </div>
 
                     <div className={styles.list_view}>
-                        <Image className={styles.list_view_detail} src={'/images/view_detail_2.png'} width={50} height={50} alt="" onClick={handleViewTypeDetail} />
-                        <Image className={styles.list_view_simple} src={'/images/view_simple_2.png'} width={50} height={50} alt="" onClick={handleViewTypeSimple} />
+                        <Image className={styles.list_view_detail} src={'/images/view_detail_3.png'} width={50} height={50} alt="" onClick={handleViewTypeDetail} />
+                        <Image className={styles.list_view_simple} src={'/images/view_simple_3.png'} width={50} height={50} alt="" onClick={handleViewTypeSimple} />
                     </div>
                 </div>        
 

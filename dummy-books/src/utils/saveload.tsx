@@ -1,4 +1,10 @@
-type DataType = { type: "Carts" } | { type: "Orders" } | { type: "Wish" } | { type: "Setting" };
+type DataType = 
+    { type: "Carts" } | 
+    { type: "Orders" } | 
+    { type: "Wish" } | 
+    { type: "Setting" } | 
+    { type: "Users" } | 
+    { type: "Login" };
 
 function LoadDataJSON<T>(key: string, defaultValue: string): T {
     if (typeof window !== 'undefined') {

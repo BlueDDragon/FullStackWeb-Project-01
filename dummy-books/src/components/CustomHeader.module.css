@@ -81,7 +81,10 @@
 /* 공통 메뉴 */
 .btn_cart,
 .btn_order,
-.btn_wish {
+.btn_wish,
+.btn_login,
+.btn_register,
+.btn_mypage {
     position: relative;
 
     text-decoration: none;
@@ -101,7 +104,10 @@
 /* hover */
 .btn_cart:hover,
 .btn_order:hover,
-.btn_wish:hover {
+.btn_wish:hover,
+.btn_login:hover,
+.btn_register:hover,
+.btn_mypage:hover {
     color: #111827;
     /* transform: translateY(-1px); */
 }
@@ -109,7 +115,10 @@
 /* 밑줄 애니메이션 */
 .btn_cart::after,
 .btn_order::after,
-.btn_wish::after {
+.btn_wish::after,
+.btn_login::after,
+.btn_register::after,
+.btn_mypage::after {
     content: "";
 
     position: absolute;
@@ -129,7 +138,10 @@
 
 .btn_cart:hover::after,
 .btn_order:hover::after,
-.btn_wish:hover::after {
+.btn_wish:hover::after,
+.btn_login:hover:after,
+.btn_register:hover:after,
+.btn_mypage:hover:after {
     width: 100%;
 }
 

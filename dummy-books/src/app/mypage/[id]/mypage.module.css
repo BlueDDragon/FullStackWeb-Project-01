@@ -1,0 +1,236 @@
+/* =========================
+   마이페이지 컨테이너
+========================= */
+
+.page,
+.container,
+.detail_container {
+    padding-top: 110px;
+}
+
+.container {
+    max-width: 1200px;
+
+    margin: 14px auto 80px;
+
+    padding:
+        32px
+        80px;
+
+    box-sizing: border-box;
+}
+
+/* =========================
+   상단 영역
+========================= */
+
+.upper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 40px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid #ececec;
+}
+
+/* 제목 */
+.count {
+    margin: 0;
+
+    font-size: 36px;
+    font-weight: 800;
+
+    color: #111827;
+
+    letter-spacing: -0.8px;
+}
+
+/* =========================
+   로그인 상태 영역
+========================= */
+
+.body {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+/* 정보 카드 */
+.user_container {
+    width: 100%;
+
+    padding: 30px 34px;
+
+    border: 1px solid #ececec;
+    border-radius: 22px;
+
+    background-color: #ffffff;
+
+    box-sizing: border-box;
+}
+
+/* 소제목 */
+.user_subtitle {
+    margin: 0 0 14px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #6b7280;
+
+    letter-spacing: -0.2px;
+}
+
+/* 정보 */
+.user_info {
+    margin: 0;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    color: #111827;
+
+    letter-spacing: -0.7px;
+
+    line-height: 1.4;
+}
+
+/* =========================
+   버튼 영역
+========================= */
+
+.btns_box {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 10px;
+}
+
+/* =========================
+   공통 버튼
+========================= */
+
+.btn_link,
+.btn_logout {
+    flex: 1;
+
+    height: 58px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    letter-spacing: -0.3px;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
+}
+
+/* =========================
+   장바구니 / 보관함
+========================= */
+
+.btn_link {
+    border: 1px solid #d1d5db;
+
+    background-color: #ffffff;
+
+    color: #111827;
+}
+
+.btn_link:hover {
+    background-color: #f9fafb;
+
+    border-color: #9ca3af;
+}
+
+/* =========================
+   로그아웃
+========================= */
+
+.btn_logout {
+    border: none;
+
+    background-color: #ef4444;
+
+    color: #ffffff;
+}
+
+.btn_logout:hover {
+    background-color: #dc2626;
+}
+
+/* =========================
+   클릭 효과
+========================= */
+
+.btn_cart:active,
+.btn_order:active,
+.btn_logout:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   비로그인 상태
+========================= */
+
+.body_warning {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0 24px;
+
+    background-color: #ffffff;
+
+    box-sizing: border-box;
+}
+
+.link_box {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+
+    margin-top: -72px;
+    margin-bottom: 128px;
+}
+
+.register,
+.login {
+    font-size: 14px;
+    color: #666666;
+
+    text-decoration: none;
+}
+
+.register:hover,
+.login:hover {
+    text-decoration: underline;
+}
+
