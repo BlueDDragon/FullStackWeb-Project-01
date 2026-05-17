@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
 import { SearchViewContext } from "@/context/SearchViewContext";
+import { LoginData } from "@/types/UseData";
+import { useLoginState } from "@/utils/userUtils";
 
 type SearchItemProps = {
   book: BookData;
@@ -17,6 +19,8 @@ type SearchItemProps = {
 };
 
 export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
+    const [isLogined, isVerifyId, login] = useLoginState("0");
+
     // 세일 정보
     const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
 
@@ -30,18 +34,25 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     const router = useRouter();
     const handleOrder = useCallback(() => {
       AddCart({ book: book, count: 1 });
-      router.push(`/mypage/0/cart`);
-    }, [book]);
+      
+      if (isLogined)
+        router.push(`/mypage/${(login as LoginData).id}/cart`);
+      else
+        onCartOpen();
+    }, [book, isLogined]);
 
     // 찜하기 상태
     const [isWishAlready, setIsWishAlready] = useState(false);
     // 찜하기 상태 업데이트
     useEffect(() => {
       setIsWishAlready(IsWishAlready(book.isbn13));
-    }, [book]);
+    }, [book, isLogined]);
     const handleToggleWish = useCallback(() => {
-      setIsWishAlready(ToggleWish(book));
-    }, [book]);
+      if (isLogined)
+          setIsWishAlready(ToggleWish(book));
+      else
+          onCartOpen();
+    }, [book, isLogined]);
 
     const viewType = useContext(SearchViewContext);
     switch (viewType.viewType) {

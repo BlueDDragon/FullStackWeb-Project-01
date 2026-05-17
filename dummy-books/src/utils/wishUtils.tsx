@@ -1,9 +1,13 @@
 import { WishData } from "@/types/WishData";
 import { LoadData, SaveData } from "./saveload";
 import { BookData } from "@/types/BookData";
+import { GetLogin } from "./userUtils";
 
 export function GetWish() : WishData{
-    return LoadData<WishData>({ type: "Wish" }, ("{}"));
+    const login = GetLogin();
+    if (!login || !login.isLogined) return { books: [] };
+
+    return LoadData<WishData>({ type: "Wish", id: login.id }, ("{}"));
 }
 
 export function IsWishEmpty(wish: WishData) {
@@ -21,13 +25,16 @@ export function IsWishAlready(isbn13: string) {
 }
 
 export function AddWish(selectBook: BookData) {
+    const login = GetLogin();
+    if (!login || !login.isLogined) return;
+
     const wish = GetWish();
     const isWishEmpty = IsWishEmpty(wish);
     
     // 기존에 저장된 값이 없을 경우
     if (isWishEmpty) {
         console.log("isWishEmpty");
-        SaveData<WishData>({ type: "Wish" }, { books: [selectBook, ] });
+        SaveData<WishData>({ type: "Wish", id: login.id }, { books: [selectBook, ] });
         return;
     }
 
@@ -38,10 +45,13 @@ export function AddWish(selectBook: BookData) {
         return;
     }
 
-    SaveData<WishData>({ type: "Wish" }, { books: [...wish.books, selectBook] });
+    SaveData<WishData>({ type: "Wish", id: login.id }, { books: [...wish.books, selectBook] });
 }
 
 export function RemoveWish(selectBook: BookData) {
+    const login = GetLogin();
+    if (!login || !login.isLogined) return;
+
     const wish = GetWish();
     const isWishEmpty = IsWishEmpty(wish);
 
@@ -51,7 +61,7 @@ export function RemoveWish(selectBook: BookData) {
     }
     
     const newWish = { books: wish.books.filter((book) => book.isbn13 !== selectBook.isbn13) };
-    SaveData<WishData>({ type: "Wish" }, newWish);
+    SaveData<WishData>({ type: "Wish", id: login.id }, newWish);
 }
 
 export function ToggleWish(book: BookData) {

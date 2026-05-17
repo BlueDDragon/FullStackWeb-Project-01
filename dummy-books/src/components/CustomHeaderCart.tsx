@@ -2,11 +2,16 @@
 
 import styles from "@/components/CustomHeader.module.css"
 import { CartData } from "@/types/CartData";
+import { LoginData } from "@/types/UseData";
 import { GetCarts } from "@/utils/cartUtils";
+import { useLoginState } from "@/utils/userUtils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function CustomHeaderCart() {
+    const [isLogined, isVerifyId, login] = useLoginState("0");
+    const id = (login && isLogined ? (login as LoginData).id : 0);
+    
     const [carts, setCarts] = useState<CartData[]>([]);
     useEffect(() => { setCarts(GetCarts()); }, []);
 
@@ -15,7 +20,7 @@ export default function CustomHeaderCart() {
 
     return (
         <div>
-            <Link className={styles.btn_cart} href={(`/mypage/0/cart`)}>장바구니
+            <Link className={styles.btn_cart} href={(`/mypage/${id}/cart`)}>장바구니
                 {!isCartsEmpty && <p className={styles.cart_count}>{cartCount}</p>}
             </Link>
         </div>

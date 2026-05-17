@@ -11,8 +11,17 @@ import WishItem from "./WishItem";
 import CartConfirm from "@/components/Confirm/CartConfirm";
 import Empty from "@/components/Empty/Empty";
 import DelWishConfirm from "@/components/Confirm/DelWishConfirm";
+import { useLoginState } from "@/utils/userUtils";
+import Link from "next/link";
+import { LoginData } from "@/types/UseData";
 
-export default function WishContent() {
+type WishContentProps = {
+  id: string;
+}
+
+export default function WishContent({ id }: WishContentProps) {
+    const [isLogined, isVerifyId, login] = useLoginState(id);
+    
     // 기본 정보
     const [wish, setWish] = useState<WishData>({ books: [] });
     const isWishEmpty = IsWishEmpty(wish);
@@ -20,7 +29,8 @@ export default function WishContent() {
 
     // 찜하기
     const updateWish = () => {
-        setWish({ books: GetWish().books.reverse() } );
+        const tempWish = GetWish();
+        if (tempWish) setWish({ books: tempWish.books.reverse() } );
     };
     useEffect(() => {
       updateWish();
@@ -52,40 +62,62 @@ export default function WishContent() {
     const router = useRouter();
     const handleOrder = (book: BookData) => {
         AddCart({ book: book, count: 1 });
-        router.push(`/mypage/0/cart`);
+
+        if (isLogined)
+            router.push(`/mypage/${(login as LoginData).id}/cart`);
+        else
+            setIsCartConfirm(true);
     };
 
     return (
-      <div className={styles.container}>
-        <div className={styles.upper}>
-          <p className={styles.count}>보관함 ({wishCount})</p>
-        </div>
-        <div className={styles.wish_container}>
-          {!isWishEmpty &&
-            wish?.books.map((book, idx) => (
-              <WishItem
-                key={idx}
-                book={book}
-                onDelWish={handleDelWishOpen}
-                onSelectBook={setSelectBook}
-                onCartOpen={handleCartOpen}
-                onOrder={handleOrder}
-              />
-            ))}
-          {isWishEmpty && <Empty info="마음에 드는 상품을 보관하세요." />}
-        </div>
+      <div>
+            {isLogined && isVerifyId &&
+            <div className={styles.container}>
+              <div className={styles.upper}>
+                <p className={styles.count}>보관함 ({wishCount})</p>
+              </div>
+              <div className={styles.wish_container}>
+                {!isWishEmpty &&
+                  wish?.books.map((book, idx) => (
+                    <WishItem
+                      key={idx}
+                      book={book}
+                      onDelWish={handleDelWishOpen}
+                      onSelectBook={setSelectBook}
+                      onCartOpen={handleCartOpen}
+                      onOrder={handleOrder}
+                    />
+                  ))}
+                {isWishEmpty && <Empty info="마음에 드는 상품을 보관하세요." />}
+              </div>
 
-        <div>
-          <CartConfirm
-            isOpen={isCartConfirm}
-            onOpen={setIsCartConfirm}
-          />
-          <DelWishConfirm
-            isOpen={isDelWishConfirm}
-            onOpen={setIsDelWishConfirm}
-            onConfirm={handleDelWishConfirm}
-          />
+              <div>
+                <CartConfirm
+                  isOpen={isCartConfirm}
+                  onOpen={setIsCartConfirm}
+                />
+                <DelWishConfirm
+                  isOpen={isDelWishConfirm}
+                  onOpen={setIsDelWishConfirm}
+                  onConfirm={handleDelWishConfirm}
+                />
+              </div>
+            </div>}
+        
+            {!isLogined &&
+            <div className={styles.body_warning}>
+                <Empty info="로그인이 필요합니다."/>
+                <div className={styles.link_box}>
+                    <Link className={styles.register} href={(`/register`)}>회원가입</Link>
+                    <Link className={styles.login} href={(`/login`)}>로그인</Link>
+                </div>
+            </div>}
+
+            {isLogined && !isVerifyId &&
+            <div className={styles.body_warning}>
+                <Empty info="접근할 수 없습니다."/>
+            </div>}
+
         </div>
-      </div>
     );
 }

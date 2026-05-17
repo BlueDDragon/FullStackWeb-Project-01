@@ -4,6 +4,8 @@ import Link from "next/link";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import CustomHeaderCart from "./CustomHeaderCart";
 import CustomHeaderLogin from "./CustomHeaderLogin";
+import CustomHeaderOrder from "./CustomHeaderOrder";
+import CustomHeaderWish from "./CustomHeaderWish";
 
 export default function CustomHearder() {  
     return (
@@ -24,8 +26,8 @@ export default function CustomHearder() {
 
             <div className={styles.side}>
               <CustomHeaderCart />
-              <Link className={styles.btn_order} href={(`/mypage/0/order`)}>주문조회</Link>
-              <Link className={styles.btn_wish} href={(`/mypage/0/wish`)}>보관함</Link>
+              <CustomHeaderOrder />
+              <CustomHeaderWish />
               <CustomHeaderLogin />
             </div>
           </div>

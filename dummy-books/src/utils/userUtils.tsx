@@ -1,6 +1,7 @@
 import { LoginData, UserData } from "@/types/UseData";
 import { LoadData, SaveData } from "./saveload";
 import crypto from "crypto";
+import { useEffect, useState } from "react";
 
 // 비밀번호 해시 생성
 const SALT_LENGTH = 16;
@@ -120,4 +121,13 @@ export function SetLogin(idx: number, user: UserData) {
 
 export function Logout() {
 
+}
+
+export function useLoginState(id: string) {
+    const [login, setLogin] = useState<LoginData>({ isLogined: false, idx: 0, id: "0", nickname: "" });
+    useEffect(() => { setLogin(GetLogin()); }, []);
+    const isLogined = !IsLoginEmpty(login) && login.isLogined;
+    const isVerifyId = login.isLogined && login.id === id;
+
+    return [isLogined, isVerifyId, login];
 }

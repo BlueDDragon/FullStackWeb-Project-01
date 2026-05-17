@@ -1,10 +1,12 @@
 import styles from "@/app/mypage/[id]/cart/cart.module.css"
 import CartContent from "@/components/MyPage/Cart/CartContent";
 
-export default function Page() {
+export default async function Page({ params }: { params: Promise<{ id: string }>}) {
+    const { id } = await params;
+
     return (
       <div>
-          <CartContent />
+          <CartContent id={id}/>
       </div>
     );
 }

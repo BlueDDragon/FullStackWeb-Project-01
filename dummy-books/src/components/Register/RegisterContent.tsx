@@ -168,9 +168,9 @@ export default function RegisterContent() {
         setIsUserAgree(false);
 
     }, [userId, userPassword, userRePassword, userNickname, isUserAgree]);
-    // const handleRegisterKeyDown = useCallback((e: KeyboardEvent<HTMLButtonElement>) => {
-    //     if (e.key === 'Enter') handleRegister();
-    // }, []);
+    const handleRegisterKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') handleRegister();
+    }, [userId, userPassword, userRePassword, userNickname, isUserAgree]);
 
     // 회원가입 성공
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
@@ -188,18 +188,18 @@ export default function RegisterContent() {
                 />
                 <p className={styles.title}>회원가입</p>
                 {isRegisterFail && <p className={styles.warning}>{warningString}</p>}
-                <input className={styles.input_id} type="text" placeholder="아이디" onChange={handleChangeUserId} ref={inputIdRef}/>
+                <input className={styles.input_id} type="text" placeholder="아이디" onChange={handleChangeUserId} onKeyDown={handleRegisterKeyDown} ref={inputIdRef}/>
                 <div className={styles.password_box}>
-                    <input className={styles.input_password} type={isHiddenPassword ? "password" : "text"} placeholder="비밀번호" onChange={handleChangeUserPassword} ref={inputPasswordRef}/>
+                    <input className={styles.input_password} type={isHiddenPassword ? "password" : "text"} placeholder="비밀번호" onChange={handleChangeUserPassword} onKeyDown={handleRegisterKeyDown} ref={inputPasswordRef}/>
                     {isHiddenPassword && <Image className={styles.img_password} src={(`/images/register_password_hidden.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenPassword}/>}
                     {!isHiddenPassword && <Image className={styles.img_password} src={(`/images/register_password_show.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenPassword}/>}
                 </div>
                 <div className={styles.password_box}>
-                    <input className={styles.input_password} type={isHiddenRePassword ? "password" : "text"} placeholder="비밀번호 재입력" onChange={handleChangeUserRePassword} ref={inputRePasswordRef}/>
+                    <input className={styles.input_password} type={isHiddenRePassword ? "password" : "text"} placeholder="비밀번호 재입력" onChange={handleChangeUserRePassword} onKeyDown={handleRegisterKeyDown} ref={inputRePasswordRef}/>
                     {isHiddenRePassword && <Image className={styles.img_password} src={(`/images/register_password_hidden.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenRePassword}/>}
                     {!isHiddenRePassword && <Image className={styles.img_password} src={(`/images/register_password_show.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenRePassword}/>}
                 </div>
-                <input className={styles.input_nickname} type="text" placeholder="닉네임" onChange={handleChangeUserNickname} ref={inputNicknameRef}/>
+                <input className={styles.input_nickname} type="text" placeholder="닉네임" onChange={handleChangeUserNickname} onKeyDown={handleRegisterKeyDown} ref={inputNicknameRef}/>
                 <div className={styles.agree_box}>
                     <p className={styles.agree_info}>정보 제공에 동의하시겠습니까?</p>
                     <input className={styles.checkbox} type="checkbox" onClick={handleToggleIsUserAgree} ref={inputAgreeRef}/>

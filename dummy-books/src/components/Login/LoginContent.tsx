@@ -4,7 +4,7 @@ import styles from "@/app/login/login.module.css"
 import { GetLogin, IsLoginEmpty, Login } from "@/utils/userUtils";
 import Image from "next/image";
 import Link from "next/link";
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LoginData } from "@/types/UseData";
 
@@ -51,6 +51,9 @@ export default function LoginContent() {
         router.push(`/mypage/${userId}`);
 
     }, [userId, userPassword]);
+    const handleLoginKeyDown = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') handleLogin();
+    }, [userId, userPassword]);
 
     return (
         <div>
@@ -65,9 +68,9 @@ export default function LoginContent() {
                 />
                 <p className={styles.title}>로그인</p>
                 {isLoginFail && <p className={styles.warning}>{warningString}</p>}
-                <input className={styles.input_id} type="text" placeholder="아이디" onChange={handleChangeUserId}/>
+                <input className={styles.input_id} type="text" placeholder="아이디" onChange={handleChangeUserId} onKeyDown={handleLoginKeyDown}/>
                 <div className={styles.password_box}>
-                    <input className={styles.input_password} type={isHiddenPassword ? "password" : "text"} placeholder="비밀번호" onChange={handleChangeUserPassword}/>
+                    <input className={styles.input_password} type={isHiddenPassword ? "password" : "text"} placeholder="비밀번호" onChange={handleChangeUserPassword} onKeyDown={handleLoginKeyDown}/>
                     {isHiddenPassword && <Image className={styles.img_password} src={(`/images/register_password_hidden.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenPassword}/>}
                     {!isHiddenPassword && <Image className={styles.img_password} src={(`/images/register_password_show.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenPassword}/>}
                 </div>
