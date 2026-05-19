@@ -1,7 +1,7 @@
 import { useLoginState } from "@/utils/userUtils";
 import ConfirmPopup from "./ConfirmPopup";
 import { IsCartDuplicate } from "@/utils/cartUtils";
-import { LoginData } from "@/types/UseData";
+import { LoginData } from "@/types/UserData";
 
 type CartConfirmProps = {
     // book: BookData;

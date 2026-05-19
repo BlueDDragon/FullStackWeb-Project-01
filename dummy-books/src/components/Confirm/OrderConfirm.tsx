@@ -1,6 +1,6 @@
 import { useLoginState } from "@/utils/userUtils";
 import ConfirmPopup from "./ConfirmPopup";
-import { LoginData } from "@/types/UseData";
+import { LoginData } from "@/types/UserData";
 
 type OrderConfirmProps = {
     count: number;

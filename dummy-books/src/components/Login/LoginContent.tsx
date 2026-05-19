@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, KeyboardEvent, useCallback, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { LoginData } from "@/types/UseData";
+import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
 
 export default function LoginContent() {

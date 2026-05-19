@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
 import { SearchViewContext } from "@/context/SearchViewContext";
-import { LoginData } from "@/types/UseData";
+import { LoginData } from "@/types/UserData";
 import { useLoginState } from "@/utils/userUtils";
 import { HeaderContext } from "@/context/HeaderContext";
 

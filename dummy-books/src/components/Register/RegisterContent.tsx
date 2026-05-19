@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ChangeEvent, KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 import ConfirmPopup from "../Confirm/ConfirmPopup";
 import { useRouter } from "next/navigation";
-import { LoginData } from "@/types/UseData";
+import { LoginData } from "@/types/UserData";
 
 function CheckId(id: string) {
     if (!id || id === null || id === "" || id === undefined)

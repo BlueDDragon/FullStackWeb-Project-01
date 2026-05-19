@@ -4,7 +4,7 @@ import styles from "@/app/mypage/[id]/mypage.module.css"
 import { Logout, useLoginState } from "@/utils/userUtils";
 import Empty from "../Empty/Empty";
 import Link from "next/link";
-import { LoginData } from "@/types/UseData";
+import { LoginData } from "@/types/UserData";
 import { useCallback, useContext } from "react";
 import { useRouter } from "next/navigation";
 import { HeaderContext } from "@/context/HeaderContext";

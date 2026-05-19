@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useLoginState } from "@/utils/userUtils";
-import { LoginData } from "@/types/UseData";
+import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
 
 type DetailBookBodyProps = {

@@ -1,6 +1,6 @@
 import "./globals.css";
 import CustomFooter from "@/components/CustomFooter";
-import CustomHearder from "@/components/CustomHeader";
+import CustomHeader from "@/components/CustomHeader";
 import HeaderContent from "@/components/HeaderContent";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -10,7 +10,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <HeaderContent children={
           <>
             <header>
-              <CustomHearder />
+              <CustomHeader />
             </header>
             <main>{children}</main>
           </>}/>

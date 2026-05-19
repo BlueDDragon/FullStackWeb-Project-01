@@ -13,7 +13,7 @@ import Empty from "@/components/Empty/Empty";
 import DelWishConfirm from "@/components/Confirm/DelWishConfirm";
 import { useLoginState } from "@/utils/userUtils";
 import Link from "next/link";
-import { LoginData } from "@/types/UseData";
+import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
 
 type WishContentProps = {
