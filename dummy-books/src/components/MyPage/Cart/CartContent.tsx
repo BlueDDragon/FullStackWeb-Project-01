@@ -17,7 +17,7 @@ type CartContentProps = {
 }
 
 export default function CartContent({ id }: CartContentProps) {
-    const [isLogined, isVerifyId] = useLoginState(id);
+    const { isLogined, isVerifyId, login } = useLoginState(id);
     const setCartTotalCount = useContext(HeaderContext).setCartTotalCount;
 
     // 장바구니 정보

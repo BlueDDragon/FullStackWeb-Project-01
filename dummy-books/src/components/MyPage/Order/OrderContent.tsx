@@ -14,7 +14,7 @@ type OrderContentProps = {
 }
 
 export default function OrderContent({ id }: OrderContentProps) {
-    const [isLogined, isVerifyId] = useLoginState(id);
+    const { isLogined, isVerifyId, login } = useLoginState(id);
     
     const [orders, setOrders] = useState<OrderData[]>([]);
     useEffect(() => {

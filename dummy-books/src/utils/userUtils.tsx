@@ -73,7 +73,7 @@ export function GetLogin(): LoginData {
     return LoadData<LoginData>({ type: "Login" }, ("{}"));
 }
 
-export function IsLoginEmpty(login: LoginData) {
+export function IsLoginEmpty(login: LoginData): boolean {
     return (!login);
 }
 
@@ -138,5 +138,5 @@ export function useLoginState(id: string) {
     const isLogined = !IsLoginEmpty(login) && login.isLogined;
     const isVerifyId = login.isLogined && login.id === id;
 
-    return [isLogined, isVerifyId, login];
+    return { isLogined, isVerifyId, login };
 }

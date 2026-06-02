@@ -21,7 +21,7 @@ type WishContentProps = {
 }
 
 export default function WishContent({ id }: WishContentProps) {
-    const [isLogined, isVerifyId, login] = useLoginState(id);
+    const { isLogined, isVerifyId, login } = useLoginState(id);
     const updateHeader = useContext(HeaderContext).updateHeader;
     
     // 기본 정보

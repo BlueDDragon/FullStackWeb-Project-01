@@ -14,7 +14,7 @@ type MyPageContentProps = {
 }
 
 export default function MyPageContent({ id }: MyPageContentProps) {
-    const [isLogined, isVerifyId, login] = useLoginState(id);
+    const { isLogined, isVerifyId, login } = useLoginState(id);
 
     const updateHeader = useContext(HeaderContext).updateHeader;
     const updateLogin = useContext(HeaderContext).updateLogin;

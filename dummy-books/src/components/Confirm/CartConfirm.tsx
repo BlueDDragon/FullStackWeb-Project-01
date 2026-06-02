@@ -11,7 +11,7 @@ type CartConfirmProps = {
 };
 
 export default function CartConfirm({ isOpen, onOpen, onConfirm }: CartConfirmProps) {
-    const [isLogined, isVerifyId, login] = useLoginState("0");
+    const { isLogined, isVerifyId, login } = useLoginState("0");
 
   // const isCartDuplicate = IsCartDuplicate(book.isbn13);
   // const info = (isCartDuplicate ? 

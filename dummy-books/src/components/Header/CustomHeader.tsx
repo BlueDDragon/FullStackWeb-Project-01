@@ -1,4 +1,4 @@
-import styles from "@/components/CustomHeader.module.css";
+import styles from "@/components/Header/CustomHeader.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "@/components/SearchBar/SearchBar";

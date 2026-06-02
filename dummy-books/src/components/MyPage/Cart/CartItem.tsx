@@ -6,6 +6,7 @@ import { BookData } from "@/types/BookData";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GetSaleData } from "@/utils/saleUtils";
 import { ChangeCartCount } from "@/utils/cartUtils";
+import { useCountInput } from "@/hooks/useCountInput";
 
 type CartItemProps = {
     cart: CartData;
@@ -23,39 +24,12 @@ export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePri
   }, [cart]);
   
   // 수량
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [count, setCount] = useState(cart.count);
-  useEffect(() => {
-      updateCount(count);
-  }, [inputRef.current?.value]);
-
-  // 수량 업데이트 (value > input) - 버튼
-  const updateCount = (resultCount: number) => {
-      if (!inputRef.current) return;
-      inputRef.current.value = resultCount.toString();
-      ChangeCartCount(cart.book, resultCount);
-      cart.count = resultCount;
-      onUpdatePrice();
+  const onCountChange = (newCount: number) => {
+    ChangeCartCount(cart.book, newCount);
+    cart.count = newCount;
+    onUpdatePrice();
   };
-  const handleCountIncrease = useCallback(() => {
-      updateCount(count + 1);
-      setCount((prev) => prev + 1);
-  }, [count]);
-  const handleCountDecrease = useCallback(() => {
-      if (count <= 1) return;
-      updateCount(count - 1);
-      setCount((prev) => prev - 1);
-  }, [count]);
-
-  // 수량 업데이트 (input > value) - input 입력
-  const handleCountChange = useCallback(() => {
-      if (!inputRef.current) return;
-      const resultCount = parseInt(inputRef.current.value);
-      setCount(resultCount);
-      ChangeCartCount(cart.book, resultCount);
-      cart.count = resultCount;
-      onUpdatePrice();
-  }, [cart]);
+  const { inputRef, count, handleCountIncrease, handleCountDecrease, handleChange } = useCountInput(cart.count, onCountChange);
 
   // 세일 정보
   const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(cart.book);
@@ -87,7 +61,7 @@ export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePri
         <p className={styles.totalPrice}>{(cart.count ? priceResult * cart.count : 0).toLocaleString()}원</p>
         <div className={styles.buy_count}>
           <button className={styles.btn_decrease} onClick={handleCountDecrease}>-</button>
-          <input className={styles.input} type="number" defaultValue={1} min={1} ref={inputRef} onChange={handleCountChange}/>
+          <input className={styles.input} type="number" defaultValue={cart.count} min={1} ref={inputRef} onChange={handleChange}/>
           <button className={styles.btn_increase} onClick={handleCountIncrease}>+</button>
         </div>
       </div>

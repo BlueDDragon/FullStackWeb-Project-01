@@ -1,4 +1,4 @@
-import styles from "@/components/CustomFooter.module.css"
+import styles from "@/components/Footer/CustomFooter.module.css"
 
 export default function CustomFooter() {
     return (

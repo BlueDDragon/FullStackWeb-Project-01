@@ -13,6 +13,7 @@ import { SearchViewContext } from "@/context/SearchViewContext";
 import { LoginData } from "@/types/UserData";
 import { useLoginState } from "@/utils/userUtils";
 import { HeaderContext } from "@/context/HeaderContext";
+import { useWishToggle } from "@/hooks/useWishToggle";
 
 type SearchItemProps = {
   book: BookData;
@@ -20,7 +21,7 @@ type SearchItemProps = {
 };
 
 export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
-    const [isLogined, isVerifyId, login] = useLoginState("0");
+    const { isLogined, isVerifyId, login } = useLoginState("0");
     const updateHeader = useContext(HeaderContext).updateHeader;
 
     // 세일 정보
@@ -46,17 +47,7 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     }, [book, isLogined]);
 
     // 찜하기 상태
-    const [isWishAlready, setIsWishAlready] = useState(false);
-    // 찜하기 상태 업데이트
-    useEffect(() => {
-      setIsWishAlready(IsWishAlready(book.isbn13));
-    }, [book, isLogined]);
-    const handleToggleWish = useCallback(() => {
-      if (isLogined)
-          setIsWishAlready(ToggleWish(book));
-      else
-          onCartOpen();
-    }, [book, isLogined]);
+    const { isWishAlready, handleToggleWish } = useWishToggle(book, isLogined, onCartOpen);
 
     const viewType = useContext(SearchViewContext);
     switch (viewType.viewType) {

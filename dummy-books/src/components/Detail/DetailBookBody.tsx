@@ -4,13 +4,14 @@ import styles from "@/app/detail/[id]/detail.module.css"
 import { BookData } from "@/types/BookData";
 import { AddCart } from "@/utils/cartUtils";
 import { GetSaleData } from "@/utils/saleUtils";
-import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useContext } from "react";
 import { useLoginState } from "@/utils/userUtils";
 import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
+import { useWishToggle } from "@/hooks/useWishToggle";
+import { useCountInput } from "@/hooks/useCountInput";
 
 type DetailBookBodyProps = {
     book: BookData;
@@ -18,26 +19,14 @@ type DetailBookBodyProps = {
 }
 
 export default function DetailBookBody({ book, onCartOpen }: DetailBookBodyProps) {
-    const [isLogined, isVerifyId, login] = useLoginState("0");
+    const { isLogined, isVerifyId, login } = useLoginState("0");
     const updateHeader = useContext(HeaderContext).updateHeader;
     
     // 세일 정보
     const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
     
     // 수량
-    const inputRef = useRef<HTMLInputElement>(null);
-    const [count, setCount] = useState(1);
-    const handleCountIncrease = useCallback(() => {
-        if (!inputRef.current) return;
-        inputRef.current.value = (count + 1).toString();
-        setCount((prev) => prev + 1);
-    }, [count]);
-    const handleCountDecrease = useCallback(() => {
-        if (count <= 1) return;
-        if (!inputRef.current) return;
-        inputRef.current.value = (count - 1).toString();
-        setCount((prev) => prev - 1);
-    }, [count]);
+    const { inputRef, handleCountIncrease, handleCountDecrease } = useCountInput(1);
 
     // 장바구니
     const handleCartOpen = useCallback(() => {
@@ -59,17 +48,7 @@ export default function DetailBookBody({ book, onCartOpen }: DetailBookBodyProps
     }, [book, isLogined]);
     
     // 찜하기
-    const [isWishAlready, setIsWishAlready] = useState(false);
-    useEffect(() => {
-        setIsWishAlready(IsWishAlready(book.isbn13));
-    }, [book, isLogined]);
-    const handleToggleWish = useCallback(() => {
-        if (isLogined)
-            setIsWishAlready(ToggleWish(book));
-        else
-            onCartOpen();
-    }, [book, isLogined]);
-
+    const { isWishAlready, handleToggleWish } = useWishToggle(book, isLogined, onCartOpen);
 
     return (
         <div>

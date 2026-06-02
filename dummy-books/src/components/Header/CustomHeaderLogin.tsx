@@ -1,6 +1,6 @@
 'use client';
 
-import styles from "@/components/CustomHeader.module.css"
+import styles from "@/components/Header/CustomHeader.module.css"
 import { HeaderContext } from "@/context/HeaderContext";
 import Link from "next/link";
 import { useContext } from "react";

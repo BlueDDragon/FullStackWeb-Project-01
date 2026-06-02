@@ -10,7 +10,7 @@ type OrderConfirmProps = {
 };
 
 export default function OrderConfirm({ count, isOpen, onOpen, onConfirm }: OrderConfirmProps) {
-    const [isLogined, isVerifyId, login] = useLoginState("0");
+    const { isLogined, isVerifyId, login } = useLoginState("0");
     
   return (
     <div>
