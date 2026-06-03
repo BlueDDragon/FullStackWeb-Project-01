@@ -2,7 +2,7 @@
 
 import styles from "@/app/detail/[id]/detail.module.css"
 import { BookData } from "@/types/BookData";
-import { GetSaleData } from "@/utils/services/saleUtils";
+import { getSaleData } from "@/utils/services/saleUtils";
 
 type DetailBookInfoProps = {
     book: BookData;
@@ -10,7 +10,7 @@ type DetailBookInfoProps = {
 
 export default function DetailBookInfo({ book }: DetailBookInfoProps) {
     // 세일 정보
-    const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
+    const { priceSales, priceStandard, isSale, percentSale } = getSaleData(book);
     
     return (
         <div>

@@ -3,7 +3,7 @@
 import styles from "@/app/mypage/[id]/cart/cart.module.css"
 import { BookData } from "@/types/BookData";
 import { CartData } from "@/types/CartData";
-import { GetCartTotalCount, IsCartEmpty, RemoveCart } from "@/utils/services/cartUtils";
+import { getCartTotalCount, isCartEmpty, removeCart } from "@/utils/services/cartUtils";
 import { useCallback, useContext, useState } from "react";
 import CartItem from "./CartItem";
 import Empty from "@/components/Common/Empty";
@@ -19,7 +19,7 @@ export default function CartList({ carts, updateCarts }: CartListProps) {
     const { cartTotalCount, setCartTotalCount } = useContext(HeaderContext);
 
     // 기본 정보
-    const isCartsEmpty = IsCartEmpty(carts);
+    const isEmpty = isCartEmpty(carts);
 
     // 장바구니 삭제
     const [selectBook, setSelectBook] = useState<BookData>();
@@ -29,9 +29,9 @@ export default function CartList({ carts, updateCarts }: CartListProps) {
     }, []);
     const handleDelCartConfirm = useCallback(() => {
         if (!selectBook) return;
-        RemoveCart(selectBook);
+        removeCart(selectBook);
         updateCarts();
-        setCartTotalCount(GetCartTotalCount());
+        setCartTotalCount(getCartTotalCount());
         setIsDelCartConfirm(false);
         window.location.reload();
     }, [selectBook]);
@@ -43,7 +43,7 @@ export default function CartList({ carts, updateCarts }: CartListProps) {
           {/* <input className={styles.selectAll} type="checkbox" /> */}
         </div>
         <div className={styles.book_container}>
-          {!isCartsEmpty &&
+          {!isEmpty &&
             carts.map((cart, idx) => (
               <CartItem
                 key={idx}
@@ -53,7 +53,7 @@ export default function CartList({ carts, updateCarts }: CartListProps) {
                 onUpdatePrice={updateCarts}
               />
             ))}
-          {isCartsEmpty && <Empty info="장바구니가 비어 있습니다." />}
+          {isEmpty && <Empty info="장바구니가 비어 있습니다." />}
         </div>
         <div>
           <DelCartConfirm

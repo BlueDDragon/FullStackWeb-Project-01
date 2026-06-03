@@ -2,7 +2,7 @@
 
 import styles from "@/components/Search/SearchItem.module.css"
 import { BookData } from "@/types/BookData";
-import { AddCart, GetCartTotalCount } from "@/utils/services/cartUtils";
+import { addCart, getCartTotalCount } from "@/utils/services/cartUtils";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext } from "react";
 import { SearchViewContext } from "@/context/SearchViewContext";
@@ -24,8 +24,8 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
 
     // 장바구니 확인창 상태
     const handleCartOpen = useCallback(() => {
-      AddCart({ book: book, count: 1 });
-      setCartTotalCount(GetCartTotalCount());
+      addCart({ book: book, count: 1 });
+      setCartTotalCount(getCartTotalCount());
       
       onCartOpen();
     }, [book]);
@@ -33,8 +33,8 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     // 바로구매
     const router = useRouter();
     const handleOrder = useCallback(() => {
-      AddCart({ book: book, count: 1 });
-      setCartTotalCount(GetCartTotalCount());
+      addCart({ book: book, count: 1 });
+      setCartTotalCount(getCartTotalCount());
 
       if (isLogined)
         router.push(`/mypage/${(login as LoginData).id}/cart`);
@@ -43,18 +43,18 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     }, [book, isLogined]);
 
     // 찜하기 상태
-    const { isWishAlready, handleToggleWish } = useWishToggle(book, isLogined, onCartOpen);
+    const { isAlready, handleToggleWish } = useWishToggle(book, isLogined, onCartOpen);
 
     const viewType = useContext(SearchViewContext);
     switch (viewType.viewType) {
       // 검색 리스트 보기 타입 - 상세
       case "detail":
-        return <SearchItemDetail book={book} isWishAlready={isWishAlready} handleToggleWish={handleToggleWish}
+        return <SearchItemDetail book={book} isWishAlready={isAlready} handleToggleWish={handleToggleWish}
                 handleCartOpen={handleCartOpen} handleOrder={handleOrder} />
 
       // 검색 리스트 보기 타입 - 간단
       case "simple":
-        return <SearchItemSimple book={book} isWishAlready={isWishAlready} handleToggleWish={handleToggleWish} />
+        return <SearchItemSimple book={book} isWishAlready={isAlready} handleToggleWish={handleToggleWish} />
 
       default:
         return <div></div>;

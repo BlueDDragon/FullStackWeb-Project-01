@@ -1,14 +1,14 @@
 'use client';
 
 import styles from "@/app/register/register.module.css"
-import { AddUser, GetLogin, IsLoginEmpty } from "@/utils/services/userUtils";
+import { addUser, getLogin, isLoginEmpty } from "@/utils/services/userUtils";
 import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 import ConfirmPopup from "../Confirm/ConfirmPopup";
 import { useRouter } from "next/navigation";
 import { LoginData } from "@/types/UserData";
-import { validateId, validateNickname, validatePassword } from "@/hooks/validators";
+import { validateId, validateNickname, validatePassword } from "@/utils/validators";
 import PasswordInput from "./PasswordInput";
 
 export default function RegisterContent() {
@@ -16,8 +16,8 @@ export default function RegisterContent() {
     const router = useRouter();
     const [checkLogin, setCheckLogin] = useState(false);
     const [login, setLogin] = useState<LoginData>({ isLogined: false, idx: 0, id: "0", nickname: "" });
-    useEffect(() => { setLogin(GetLogin()); setCheckLogin(true); }, []);
-    const isLogined = !IsLoginEmpty(login) && login.isLogined;
+    useEffect(() => { setLogin(getLogin()); setCheckLogin(true); }, []);
+    const isLogined = !isLoginEmpty(login) && login.isLogined;
     useEffect(() => {
         if (!isLogined) return;
         router.push(`/mypage/${login.id}`);
@@ -91,7 +91,7 @@ export default function RegisterContent() {
         if (!isUserAgree) return setWarningString("정보 제공에 동의해야합니다.");
 
         setWarningString("");
-        AddUser(userId, userPassword, userNickname);
+        addUser(userId, userPassword, userNickname);
         setIsConfirmOpen(true);
 
         // 입력 정보 리셋
@@ -130,8 +130,10 @@ export default function RegisterContent() {
                 {isRegisterFail && <p className={styles.warning}>{warningString}</p>}
                 <input className={styles.input_id} type="text" placeholder="아이디" onChange={handleChangeUserId} onKeyDown={handleRegisterKeyDown} ref={inputIdRef}/>
                 
-                <PasswordInput isHiddenPassword={isHiddenPassword} handleChangeUserPassword={handleChangeUserPassword} handleLoginKeyDown={handleRegisterKeyDown} handleToggleIsHiddenPassword={handleToggleIsHiddenPassword} />
-                <PasswordInput isHiddenPassword={isHiddenRePassword} handleChangeUserPassword={handleChangeUserRePassword} handleLoginKeyDown={handleRegisterKeyDown} handleToggleIsHiddenPassword={handleToggleIsHiddenRePassword} />
+                <PasswordInput isHiddenPassword={isHiddenPassword} inputPasswordRef={inputPasswordRef} 
+                handleChangeUserPassword={handleChangeUserPassword} handleLoginKeyDown={handleRegisterKeyDown} handleToggleIsHiddenPassword={handleToggleIsHiddenPassword} />
+                <PasswordInput isHiddenPassword={isHiddenRePassword} inputPasswordRef={inputRePasswordRef} 
+                handleChangeUserPassword={handleChangeUserRePassword} handleLoginKeyDown={handleRegisterKeyDown} handleToggleIsHiddenPassword={handleToggleIsHiddenRePassword} />
 
                 <input className={styles.input_nickname} type="text" placeholder="닉네임" onChange={handleChangeUserNickname} onKeyDown={handleRegisterKeyDown} ref={inputNicknameRef}/>
                 <div className={styles.agree_box}>

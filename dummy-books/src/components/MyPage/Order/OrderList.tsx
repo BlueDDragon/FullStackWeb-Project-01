@@ -1,7 +1,7 @@
 import styles from "@/components/MyPage/Order/OrderList.module.css"
 import { OrderData } from "@/types/OrderData";
 import OrderItem from "./OrderItem";
-import { GetOrderId } from "@/utils/services/orderUtils";
+import { getOrderId } from "@/utils/services/orderUtils";
 
 type OrderListProps = {
     order: OrderData;
@@ -10,7 +10,7 @@ type OrderListProps = {
 export default function OrderList({ order }: OrderListProps) {
     // 기본 정보
     const orderDate = new Date(order.buyDate);
-    const orderId = GetOrderId(orderDate);
+    const orderId = getOrderId(orderDate);
     const isPresentType = order.type == "present";
     const isDeliveryComplete = order.state == "buy";
 

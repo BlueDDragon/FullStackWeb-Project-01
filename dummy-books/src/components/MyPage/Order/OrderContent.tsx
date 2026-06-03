@@ -2,7 +2,7 @@
 
 import styles from "@/app/mypage/[id]/order/order.module.css"
 import { OrderData } from "@/types/OrderData";
-import { GetOrders, IsOrdersEmpty } from "@/utils/services/orderUtils";
+import { getOrders, isOrderEmpty } from "@/utils/services/orderUtils";
 import { useEffect, useState } from "react";
 import OrderList from "./OrderList";
 import Empty from "@/components/Common/Empty";
@@ -18,9 +18,9 @@ export default function OrderContent({ id }: OrderContentProps) {
     
     const [orders, setOrders] = useState<OrderData[]>([]);
     useEffect(() => {
-      setOrders(GetOrders().reverse());
+      setOrders(getOrders().reverse());
     }, []);
-    const isOrdersEmpty = IsOrdersEmpty(orders);
+    const isEmpty = isOrderEmpty(orders);
 
     return (
         <LoginGuard isLogined={isLogined} isVerifyId={isVerifyId}>
@@ -29,8 +29,8 @@ export default function OrderContent({ id }: OrderContentProps) {
                     <p className={styles.count}>주문조회</p>
                 </div>
                 <div className={styles.order_container}>
-                    {!isOrdersEmpty && orders.map((order, idx) => <OrderList key={idx} order={order}/>)}
-                    {isOrdersEmpty && <Empty info="주문한 상품이 없습니다."/>}
+                    {!isEmpty && orders.map((order, idx) => <OrderList key={idx} order={order}/>)}
+                    {isEmpty && <Empty info="주문한 상품이 없습니다."/>}
                 </div>
             </div>
         </LoginGuard>

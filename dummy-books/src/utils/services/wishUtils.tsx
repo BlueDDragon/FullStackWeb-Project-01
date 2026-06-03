@@ -1,75 +1,74 @@
 import { WishData } from "@/types/WishData";
-import { LoadData, SaveData } from "@/utils/storage/saveload";
+import { loadData, saveData } from "@/utils/storage/saveload";
 import { BookData } from "@/types/BookData";
-import { GetLogin } from "./userUtils";
+import { getLogin } from "./userUtils";
 
-export function GetWish() : WishData{
-    const login = GetLogin();
+export function getWish() : WishData{
+    const login = getLogin();
     if (!login || !login.isLogined) return { books: [] };
 
-    return LoadData<WishData>({ type: "Wish", id: login.id }, ("{}"));
+    return loadData<WishData>({ type: "Wish", id: login.id }, ("{}"));
 }
 
-export function IsWishEmpty(wish: WishData) {
+export function isWishEmpty(wish: WishData) {
     return (!wish || !wish.books || wish.books.length === 0);
 }
 
-export function IsWishAlready(isbn13: string) {
-    const wish = GetWish();
-    const isWishEmpty = IsWishEmpty(wish);
+export function isWishAlready(isbn13: string) {
+    const wish = getWish();
+    const isEmpty = isWishEmpty(wish);
+    if (isEmpty) return !isEmpty;
 
-    if (isWishEmpty) return !isWishEmpty;
-
-    const isWishAlready = wish.books.filter((book) => book.isbn13 === isbn13).length > 0;
-    return isWishAlready;
+    const isAlready = wish.books.filter((book) => book.isbn13 === isbn13).length > 0;
+    return isAlready;
 }
 
-export function AddWish(selectBook: BookData) {
-    const login = GetLogin();
+export function addWish(selectBook: BookData) {
+    const login = getLogin();
     if (!login || !login.isLogined) return;
 
-    const wish = GetWish();
-    const isWishEmpty = IsWishEmpty(wish);
+    const wish = getWish();
+    const isEmpty = isWishEmpty(wish);
     
     // 기존에 저장된 값이 없을 경우
-    if (isWishEmpty) {
+    if (isEmpty) {
         console.log("isWishEmpty");
-        SaveData<WishData>({ type: "Wish", id: login.id }, { books: [selectBook, ] });
+        saveData<WishData>({ type: "Wish", id: login.id }, { books: [selectBook, ] });
         return;
     }
 
     // 기존에 같은 상품이 존재할 경우
-    const isWishAlready = IsWishAlready(selectBook.isbn13);
-    if (isWishAlready) {
+    const isAlready = isWishAlready(selectBook.isbn13);
+    if (isAlready) {
         console.log("isWishAlready");
         return;
     }
 
-    SaveData<WishData>({ type: "Wish", id: login.id }, { books: [...wish.books, selectBook] });
+    saveData<WishData>({ type: "Wish", id: login.id }, { books: [...wish.books, selectBook] });
 }
 
-export function RemoveWish(selectBook: BookData) {
-    const login = GetLogin();
+export function removeWish(selectBook: BookData) {
+    const login = getLogin();
     if (!login || !login.isLogined) return;
 
-    const wish = GetWish();
-    const isWishEmpty = IsWishEmpty(wish);
+    const wish = getWish();
+    const isEmpty = isWishEmpty(wish);
 
     // 기존에 저장된 값이 없을 경우
-    if (isWishEmpty) {
+    if (isEmpty) {
         return;
     }
     
     const newWish = { books: wish.books.filter((book) => book.isbn13 !== selectBook.isbn13) };
-    SaveData<WishData>({ type: "Wish", id: login.id }, newWish);
+    saveData<WishData>({ type: "Wish", id: login.id }, newWish);
 }
 
-export function ToggleWish(book: BookData) {
-    if (IsWishAlready(book.isbn13)) {
-        RemoveWish(book);
+export function toggleWish(book: BookData) {
+    if (isWishAlready(book.isbn13)) {
+        removeWish(book);
         return false;
     }
 
-    AddWish(book);
+    addWish(book);
     return true;
 }

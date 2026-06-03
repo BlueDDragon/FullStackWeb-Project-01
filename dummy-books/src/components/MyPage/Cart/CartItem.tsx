@@ -4,8 +4,8 @@ import Image from "next/image";
 import { CartData } from "@/types/CartData";
 import { BookData } from "@/types/BookData";
 import { useCallback } from "react";
-import { GetSaleTotalPrice } from "@/utils/services/saleUtils";
-import { ChangeCartCount } from "@/utils/services/cartUtils";
+import { getSaleTotalPrice } from "@/utils/services/saleUtils";
+import { changeCartCount } from "@/utils/services/cartUtils";
 import { useCountInput } from "@/hooks/useCountInput";
 import BookPriceDisplay from "@/components/Common/BookPriceDisplay";
 
@@ -27,7 +27,7 @@ export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePri
   // 수량
   const { inputRef, count, handleCountIncrease, handleCountDecrease, handleChange } 
     = useCountInput(cart.count, (newCount: number) => {
-      ChangeCartCount(cart.book, newCount);
+      changeCartCount(cart.book, newCount);
       cart.count = newCount;
       onUpdatePrice();
     });
@@ -52,7 +52,7 @@ export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePri
         </div>
       </div>
       <div>
-        <p className={styles.totalPrice}>{(GetSaleTotalPrice(cart.book, cart.count)).toLocaleString()}원</p>
+        <p className={styles.totalPrice}>{(getSaleTotalPrice(cart.book, cart.count)).toLocaleString()}원</p>
         <div className={styles.buy_count}>
           <button className={styles.btn_decrease} onClick={handleCountDecrease}>-</button>
           <input className={styles.input} type="number" defaultValue={cart.count} min={1} ref={inputRef} onChange={handleChange}/>

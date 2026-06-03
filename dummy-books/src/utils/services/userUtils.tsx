@@ -1,11 +1,11 @@
 import { LoginData, UserData } from "@/types/UserData";
-import { LoadData, SaveData } from "@/utils/storage/saveload";
+import { loadData, saveData } from "@/utils/storage/saveload";
 import crypto from "crypto";
 import { useEffect, useState } from "react";
 
 // 비밀번호 해시 생성
 const SALT_LENGTH = 16;
-function HashPassword(password: string) {
+function hashPassword(password: string) {
     const salt = crypto.randomBytes(SALT_LENGTH).toString("hex");
     const hash = crypto
         .createHash("sha256")
@@ -16,7 +16,7 @@ function HashPassword(password: string) {
 }
 
 // 비밀번호 검증
-function VerifyPassword(password: string, storedPassword: string) {
+function verifyPassword(password: string, storedPassword: string) {
     const [salt, originalHash] = storedPassword.split(":");
     const hash = crypto
         .createHash("sha256")
@@ -26,88 +26,88 @@ function VerifyPassword(password: string, storedPassword: string) {
     return hash === originalHash;
 }
 
-export function GetUsers(): UserData[] {
-    return LoadData<UserData[]>({ type: "Users" }, ("[]"));
+export function getUsers(): UserData[] {
+    return loadData<UserData[]>({ type: "Users" }, ("[]"));
 }
 
-export function IsUsersEmpty(users: UserData[]) {
+export function isUsersEmpty(users: UserData[]) {
     return (!users || !Array.isArray(users) || users.length === 0);
 }
 
-export function IsUserIdDuplicate(id: string) {
-    const users = GetUsers();
-    const isUsersEmpty = IsUsersEmpty(users);
+export function isUserIdDuplicate(id: string) {
+    const users = getUsers();
+    const isEmpty = isUsersEmpty(users);
 
-    if (isUsersEmpty) return false;
+    if (isEmpty) return false;
 
     const isUserIdDuplicate = users.filter((user) => user.id === id).length > 0;
     return isUserIdDuplicate;
 }
 
-export function AddUser(id: string, pw: string, uname: string) {
+export function addUser(id: string, pw: string, uname: string) {
     const newUser: UserData = {
         id: id,
-        password: HashPassword(pw),
+        password: hashPassword(pw),
         nickname: uname,
     };
 
-    const users = GetUsers();
-    const isUsersEmpty = IsUsersEmpty(users);
+    const users = getUsers();
+    const isEmpty = isUsersEmpty(users);
 
     // 기존에 저장된 값이 없을 경우
-    if (isUsersEmpty) {
-        SaveData<UserData[]>({ type: "Users" }, [newUser]);
+    if (isEmpty) {
+        saveData<UserData[]>({ type: "Users" }, [newUser]);
         return;
     }
 
     // 기존에 같은 아이디가 존재할 경우
-    const isUserIdDuplicate = IsUserIdDuplicate(id);
-    if (isUserIdDuplicate) {
+    const isDuplicate = isUserIdDuplicate(id);
+    if (isDuplicate) {
         return;
     }
 
-    SaveData<UserData[]>({ type: "Users" }, [...users, newUser]);
+    saveData<UserData[]>({ type: "Users" }, [...users, newUser]);
 }
 
-export function GetLogin(): LoginData {
-    return LoadData<LoginData>({ type: "Login" }, ("{}"));
+export function getLogin(): LoginData {
+    return loadData<LoginData>({ type: "Login" }, ("{}"));
 }
 
-export function IsLoginEmpty(login: LoginData): boolean {
+export function isLoginEmpty(login: LoginData): boolean {
     return (!login);
 }
 
-export function Login(id: string, pw: string) {
-    if (IsAlreadyLogin()) return false;
+export function loginUser(id: string, pw: string) {
+    if (isAlreadyLogin()) return false;
 
-    const users = GetUsers();
-    const isUsersEmpty = IsUsersEmpty(users);
+    const users = getUsers();
+    const isEmpty = isUsersEmpty(users);
 
-    if (isUsersEmpty) return false;
+    if (isEmpty) return false;
 
     for (let idx = 0; idx < users.length; idx++) {
         if (users[idx].id !== id) continue;
-        if (!VerifyPassword(pw, users[idx].password)) continue;
+        if (!verifyPassword(pw, users[idx].password)) continue;
 
-        SetLogin(idx, users[idx]);
+        setLogin(idx, users[idx]);
         return true;
     }
     
     return false;
 }
 
-export function IsAlreadyLogin() {
-    const login = GetLogin();
-    const isLoginEmpty = IsLoginEmpty(login);
+export function isAlreadyLogin() {
+    const login = getLogin();
+    const isEmpty = isLoginEmpty(login);
 
-    if (isLoginEmpty) return false;
+    if (isEmpty) return false;
     if (!login.isLogined) return false;
 
     return true;
 }
 
-export function SetLogin(idx: number, user: UserData) {
-    if (IsAlreadyLogin()) return false;
+export function setLogin(idx: number, user: UserData) {
+    if (isAlreadyLogin()) return false;
 
     const newLogin: LoginData = {
         isLogined: true,
@@ -116,11 +116,11 @@ export function SetLogin(idx: number, user: UserData) {
         nickname: user.nickname,
     };
 
-    SaveData<LoginData>({ type: "Login" }, newLogin);
+    saveData<LoginData>({ type: "Login" }, newLogin);
 }
 
-export function Logout() {
-    if (!IsAlreadyLogin()) return;
+export function logoutUser() {
+    if (!isAlreadyLogin()) return;
 
     const newLogin: LoginData = {
         isLogined: false,
@@ -129,13 +129,13 @@ export function Logout() {
         nickname: "",
     };
 
-    SaveData<LoginData>({ type: "Login" }, newLogin);
+    saveData<LoginData>({ type: "Login" }, newLogin);
 }
 
 export function useLoginState(id: string) {
     const [login, setLogin] = useState<LoginData>({ isLogined: false, idx: 0, id: "0", nickname: "" });
-    useEffect(() => { setLogin(GetLogin()); }, []);
-    const isLogined = !IsLoginEmpty(login) && login.isLogined;
+    useEffect(() => { setLogin(getLogin()); }, []);
+    const isLogined = !isLoginEmpty(login) && login.isLogined;
     const isVerifyId = login.isLogined && login.id === id;
 
     return { isLogined, isVerifyId, login };

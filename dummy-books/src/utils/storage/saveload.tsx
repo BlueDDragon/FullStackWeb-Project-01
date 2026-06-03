@@ -6,7 +6,7 @@ type DataType =
     { type: "Users" } | 
     { type: "Login" };
 
-function LoadDataJSON<T>(key: string, defaultValue: string): T {
+function loadDataJSON<T>(key: string, defaultValue: string): T {
     if (typeof window !== 'undefined') {
         return JSON.parse(localStorage.getItem(`data_${key}`) || defaultValue);
     }
@@ -14,13 +14,13 @@ function LoadDataJSON<T>(key: string, defaultValue: string): T {
     return JSON.parse(defaultValue);
 }
 
-function SaveDataJSON<T>(key: string, value: T) {
+function saveDataJSON<T>(key: string, value: T) {
     if (typeof window !== 'undefined') {
         localStorage.setItem(`data_${key}`, JSON.stringify(value));
     }
 }
 
-function GetKey(type: DataType): string {
+function getKey(type: DataType): string {
     switch (type.type) {
         case "Carts":
         case "Orders":
@@ -35,10 +35,10 @@ function GetKey(type: DataType): string {
     }
 }
 
-export function LoadData<T>(type: DataType, defaultValue: string) {
-    return LoadDataJSON<T>(GetKey(type), defaultValue);
+export function loadData<T>(type: DataType, defaultValue: string) {
+    return loadDataJSON<T>(getKey(type), defaultValue);
 }
 
-export function SaveData<T>(type: DataType, value: T) {
-    SaveDataJSON(GetKey(type), value);
+export function saveData<T>(type: DataType, value: T) {
+    saveDataJSON(getKey(type), value);
 }

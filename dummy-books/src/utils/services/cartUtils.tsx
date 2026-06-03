@@ -1,90 +1,90 @@
 import { CartData } from "@/types/CartData";
-import { LoadData, SaveData } from "@/utils/storage/saveload";
+import { loadData, saveData } from "@/utils/storage/saveload";
 import { BookData } from "@/types/BookData";
-import { GetLogin } from "./userUtils";
+import { getLogin } from "./userUtils";
 
-export function GetCarts() : CartData[] {
-    const login = GetLogin();
+export function getCarts() : CartData[] {
+    const login = getLogin();
     if (!login || !login.isLogined) return [];
 
-    return LoadData<CartData[]>({ type: "Carts", id: login.id }, ("[]"));
+    return loadData<CartData[]>({ type: "Carts", id: login.id }, ("[]"));
 }
 
-export function IsCartEmpty(carts: CartData[]) {
+export function isCartEmpty(carts: CartData[]) {
     return (!carts || !Array.isArray(carts) || carts.length === 0);
 }
 
-export function IsCartDuplicate(isbn13: string) {
-    const carts = GetCarts();
-    const isCartsEmpty = IsCartEmpty(carts);
+export function isCartDuplicate(isbn13: string) {
+    const carts = getCarts();
+    const isEmpty = isCartEmpty(carts);
 
-    if (isCartsEmpty) return isCartsEmpty;
+    if (isEmpty) return isEmpty;
 
-    const isCartDuplicate = carts.filter((cart) => cart.book.isbn13 === isbn13).length > 0;
-    return isCartDuplicate;
+    const isDuplicate = carts.filter((cart) => cart.book.isbn13 === isbn13).length > 0;
+    return isDuplicate;
 }
 
-export function AddCart(selectCart: CartData) {
-    const login = GetLogin();
+export function addCart(selectCart: CartData) {
+    const login = getLogin();
     if (!login || !login.isLogined) return;
 
-    const carts = GetCarts();
-    const isCartsEmpty = IsCartEmpty(carts);
+    const carts = getCarts();
+    const isEmpty = isCartEmpty(carts);
 
     // 기존에 저장된 값이 없을 경우
-    if (isCartsEmpty) {
-        SaveData<CartData[]>({ type: "Carts", id: login.id }, [selectCart]);
+    if (isEmpty) {
+        saveData<CartData[]>({ type: "Carts", id: login.id }, [selectCart]);
         return;
     }
 
     // 기존에 같은 상품이 존재할 경우
-    const isCartDuplicate = IsCartDuplicate(selectCart.book.isbn13);
-    if (isCartDuplicate) {
+    const isDuplicate = isCartDuplicate(selectCart.book.isbn13);
+    if (isDuplicate) {
         carts.map((cart) => {
             if (cart.book.isbn13 === selectCart.book.isbn13) {
                 cart.count += selectCart.count;
             }
             return cart;
         });
-        SaveData<CartData[]>({ type: "Carts", id: login.id }, carts);
+        saveData<CartData[]>({ type: "Carts", id: login.id }, carts);
         return;
     }
 
-    SaveData<CartData[]>({ type: "Carts", id: login.id }, [...carts, selectCart]);
+    saveData<CartData[]>({ type: "Carts", id: login.id }, [...carts, selectCart]);
 }
 
-export function RemoveCart(selectBook: BookData) {
-    const login = GetLogin();
+export function removeCart(selectBook: BookData) {
+    const login = getLogin();
     if (!login || !login.isLogined) return;
 
-    const carts = GetCarts();
-    const isCartsEmpty = IsCartEmpty(carts);
+    const carts = getCarts();
+    const isEmpty = isCartEmpty(carts);
 
     // 기존에 저장된 값이 없을 경우
-    if (isCartsEmpty) {
+    if (isEmpty) {
         return;
     }
     
     const newCarts = carts.filter((cart) => cart.book.isbn13 !== selectBook.isbn13);
-    SaveData<CartData[]>({ type: "Carts", id: login.id }, newCarts);
+    saveData<CartData[]>({ type: "Carts", id: login.id }, newCarts);
 }
 
-export function RemoveCartAll() {
-    const login = GetLogin();
+export function removeCartAll() {
+    const login = getLogin();
     if (!login || !login.isLogined) return;
 
-    SaveData<CartData[]>({ type: "Carts", id: login.id }, []);
+    saveData<CartData[]>({ type: "Carts", id: login.id }, []);
 }
 
-export function ChangeCartCount(selectBook: BookData, count: number) {
-    const login = GetLogin();
+export function changeCartCount(selectBook: BookData, count: number) {
+    const login = getLogin();
     if (!login || !login.isLogined) return;
     
-    const carts = GetCarts();
-    const isCartsEmpty = IsCartEmpty(carts);
+    const carts = getCarts();
+    const isEmpty = isCartEmpty(carts);
 
     // 기존에 저장된 값이 없을 경우
-    if (isCartsEmpty) {
+    if (isEmpty) {
         return;
     }
     
@@ -94,9 +94,9 @@ export function ChangeCartCount(selectBook: BookData, count: number) {
         }
         return cart;
     });
-    SaveData<CartData[]>({ type: "Carts", id: login.id }, carts);
+    saveData<CartData[]>({ type: "Carts", id: login.id }, carts);
 }
 
-export function GetCartTotalCount(): number {
-  return GetCarts()?.reduce((sum, cur) => sum + (cur.count ?? 0), 0) ?? 0;
+export function getCartTotalCount(): number {
+  return getCarts()?.reduce((sum, cur) => sum + (cur.count ?? 0), 0) ?? 0;
 }

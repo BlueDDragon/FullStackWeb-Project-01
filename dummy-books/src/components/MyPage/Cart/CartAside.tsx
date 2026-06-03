@@ -2,11 +2,10 @@
 
 import styles from "@/app/mypage/[id]/cart/cart.module.css"
 import OrderConfirm from "@/components/Confirm/OrderConfirm";
-import { CartPriceContext } from "@/context/CartPriceContext";
 import { HeaderContext } from "@/context/HeaderContext";
 import { CartData } from "@/types/CartData";
-import { IsCartEmpty, RemoveCartAll } from "@/utils/services/cartUtils";
-import { AddOrder } from "@/utils/services/orderUtils";
+import { isCartEmpty, removeCartAll } from "@/utils/services/cartUtils";
+import { addOrder } from "@/utils/services/orderUtils";
 import { useCallback, useContext, useEffect, useState } from "react";
 
 type CartAsideProps = {
@@ -14,57 +13,44 @@ type CartAsideProps = {
 };
 
 export default function CartAside({ carts }: CartAsideProps) {
-    const updateHeader = useContext(HeaderContext).updateHeader;
-
     // 기본 정보
-    const isCartsEmpty = IsCartEmpty(carts);
-    // const selectCarts = isCartsEmpty ? [] : carts;
-    const deliveryPrice = isCartsEmpty ? 0 : 3000;
-    // const totalCount = useContext(CartPriceContext).totalCount;
-    const cartTotalCount = useContext(HeaderContext).cartTotalCount;
+    const isEmpty = isCartEmpty(carts);
+    const deliveryPrice = isEmpty ? 0 : 3000;
+    const { cartTotalCount, setCartTotalCount } = useContext(HeaderContext);
 
     // 가격 정보
-    const totalStandardPrice = useContext(CartPriceContext).totalStandardPrice;
-    const setTotalResultPrice = useContext(CartPriceContext).setTotalResultPrice;
-    const totalResultPrice = useContext(CartPriceContext).totalResultPrice;
-    const setTotalStandardPrice = useContext(CartPriceContext).setTotalStandardPrice;
-    const [totalSalePrice, setTotalSalePrice] = useState(0);
-    useEffect(() => {
-      if (!carts) return;
-      const tempStandard = carts.reduce((sum, cur) => sum + (cur.book.priceStandard * cur.count), 0);
-      setTotalStandardPrice(tempStandard);
-
-      const tempResult = carts.reduce((sum, cur) => sum + (cur.book.priceSales * cur.count), 0);
-      setTotalResultPrice(tempResult + deliveryPrice);
-      
-      setTotalSalePrice(tempStandard - tempResult);
-    }, [carts]);
+    // const [totalStandardPrice, setTotalStandardPrice] = useState(0);
+    // const [totalResultPrice, setTotalResultPrice] = useState(0);
+    // const [totalSalePrice, setTotalSalePrice] = useState(0);
+    const totalStandardPrice = carts?.reduce((sum, cur) => sum + (cur.book.priceStandard * cur.count), 0);
+    const totalResultPrice = carts?.reduce((sum, cur) => sum + (cur.book.priceSales * cur.count), 0);
+    const totalSalePrice = totalStandardPrice - totalResultPrice;
 
     // 주문하기
     const [isOrderConfirm, setIsOrderConfirm] = useState(false);
     const handleOrderOpen = useCallback(() => {
-        if (isCartsEmpty) return;
+        if (isEmpty) return;
         setIsOrderConfirm(true);
     }, []);
     const handleOrderConfirm = useCallback(() => {
-        if (isCartsEmpty) return;
-        RemoveCartAll();
-        AddOrder(carts, totalResultPrice, "buy");
-        updateHeader?.();
-    }, [carts]);
+        if (isEmpty) return;
+        addOrder(carts, totalResultPrice, "buy");
+        removeCartAll();
+        setCartTotalCount(0);
+    }, [carts, totalResultPrice]);
 
     // 선물하기
     const [isPresentConfirm, setIsPresentConfirm] = useState(false);
     const handlePresentOpen = useCallback(() => {
-        if (isCartsEmpty) return;
+        if (isEmpty) return;
         setIsPresentConfirm(true);
     }, []);
     const handlePresentConfirm = useCallback(() => {
-        if (isCartsEmpty) return;
-        RemoveCartAll();
-        AddOrder(carts, totalResultPrice, "present");
-        updateHeader?.();
-    }, [carts]);
+        if (isEmpty) return;
+        addOrder(carts, totalResultPrice, "present");
+        removeCartAll();
+        setCartTotalCount(0);
+    }, [carts, totalResultPrice]);
 
     return (
       <div>

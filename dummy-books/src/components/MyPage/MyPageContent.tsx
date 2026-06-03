@@ -1,7 +1,7 @@
 'use client';
 
 import styles from "@/app/mypage/[id]/mypage.module.css"
-import { Logout, useLoginState } from "@/utils/services/userUtils";
+import { logoutUser, useLoginState } from "@/utils/services/userUtils";
 import Empty from "../Common/Empty";
 import Link from "next/link";
 import { LoginData } from "@/types/UserData";
@@ -16,16 +16,12 @@ type MyPageContentProps = {
 export default function MyPageContent({ id }: MyPageContentProps) {
     const { isLogined, isVerifyId, login } = useLoginState(id);
 
-    const updateHeader = useContext(HeaderContext).updateHeader;
-    const updateLogin = useContext(HeaderContext).updateLogin;
-    const setLoginId = useContext(HeaderContext).setLoginId;
+    const { setLoginId } = useContext(HeaderContext);
 
     const router = useRouter();
     const handleLogout = useCallback(() => {
-        Logout();
+        logoutUser();
         setLoginId("");
-        updateHeader?.();
-        updateLogin?.();
         router.push(`/login`);
     }, []);
 

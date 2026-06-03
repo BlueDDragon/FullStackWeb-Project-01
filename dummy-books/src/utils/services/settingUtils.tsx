@@ -1,13 +1,13 @@
 import { SearchViewContextType } from "@/context/SearchViewContext";
-import { LoadData, SaveData } from "@/utils/storage/saveload";
+import { loadData, saveData } from "@/utils/storage/saveload";
 import { SettingData } from "@/types/SettingData";
 
-export function GetSettingData() {
-    return LoadData<SettingData>({ type: "Setting" }, ("{}"));
+export function getSettingData() {
+    return loadData<SettingData>({ type: "Setting" }, ("{}"));
 }
 
-export function SettingSearchViewType(viewType: SearchViewContextType) {
-    const setting = GetSettingData();
+export function settingSearchViewType(viewType: SearchViewContextType) {
+    const setting = getSettingData();
     const isSettingEmpty = (!setting);
 
     const newSetting: SettingData = {
@@ -15,8 +15,8 @@ export function SettingSearchViewType(viewType: SearchViewContextType) {
     }
 
     if (isSettingEmpty) {
-        SaveData<SettingData>({ type: "Setting" }, newSetting);
+        saveData<SettingData>({ type: "Setting" }, newSetting);
     }
 
-    SaveData<SettingData>({ type: "Setting" }, { ...setting, ...newSetting });
+    saveData<SettingData>({ type: "Setting" }, { ...setting, ...newSetting });
 }

@@ -1,25 +1,25 @@
 import { CartData } from "@/types/CartData";
-import { LoadData, SaveData } from "@/utils/storage/saveload";
+import { loadData, saveData } from "@/utils/storage/saveload";
 import { OrderData } from "@/types/OrderData";
-import { GetLogin } from "./userUtils";
+import { getLogin } from "./userUtils";
 
-export function GetOrders() : OrderData[]{
-    const login = GetLogin();
+export function getOrders() : OrderData[]{
+    const login = getLogin();
     if (!login || !login.isLogined) return [];
     
-    return LoadData<OrderData[]>({ type: "Orders", id: login.id }, ("[]"));
+    return loadData<OrderData[]>({ type: "Orders", id: login.id }, ("[]"));
 }
 
-export function IsOrdersEmpty(orders: OrderData[]) {
+export function isOrderEmpty(orders: OrderData[]) {
     return (!orders || !Array.isArray(orders) || orders.length === 0);
 }
 
-export function AddOrder(carts: CartData[], totalPrice: number, type: string) {
-    const login = GetLogin();
+export function addOrder(carts: CartData[], totalPrice: number, type: string) {
+    const login = getLogin();
     if (!login || !login.isLogined) return;
 
-    const orders = GetOrders();
-    const isOrdersEmpty = IsOrdersEmpty(orders);
+    const orders = getOrders();
+    const isEmpty = isOrderEmpty(orders);
 
     const nowDate: number = Date.now();
     const newOrder: OrderData = {
@@ -31,15 +31,15 @@ export function AddOrder(carts: CartData[], totalPrice: number, type: string) {
     }
     
     // 기존에 저장된 값이 없을 경우
-    if (isOrdersEmpty) {
-        SaveData<OrderData[]>({ type: "Orders", id: login.id }, [newOrder]);
+    if (isEmpty) {
+        saveData<OrderData[]>({ type: "Orders", id: login.id }, [newOrder]);
         return;
     }
     
-    SaveData<OrderData[]>({ type: "Orders", id: login.id }, [...orders, newOrder]);
+    saveData<OrderData[]>({ type: "Orders", id: login.id }, [...orders, newOrder]);
 }
 
-export function GetOrderId(buyDate: Date): string {
+export function getOrderId(buyDate: Date): string {
     const buyMonth = (buyDate.getMonth() + 1).toString().padStart(2, '0');
     const buyDay = buyDate.getDate().toString().padStart(2, '0');
     const buyHour = buyDate.getHours().toString().padStart(2, '0');

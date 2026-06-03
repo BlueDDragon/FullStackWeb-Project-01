@@ -1,5 +1,5 @@
 import styles from "./BookPriceDisplay.module.css"
-import { GetSaleData } from "@/utils/services/saleUtils";
+import { getSaleData } from "@/utils/services/saleUtils";
 import { BookData } from "@/types/BookData"
 
 type BookPriceDisplayProps = {
@@ -8,7 +8,7 @@ type BookPriceDisplayProps = {
 }
 
 export default function BookPriceDisplay({ book, isSimple }: BookPriceDisplayProps) {
-    const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
+    const { priceSales, priceStandard, isSale, percentSale } = getSaleData(book);
 
     return (
         <div>

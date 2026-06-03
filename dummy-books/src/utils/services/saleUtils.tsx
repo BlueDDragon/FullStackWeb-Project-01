@@ -1,6 +1,6 @@
 import { BookData, SaleData } from "@/types/BookData";
 
-export function GetSaleData({ priceSales, priceStandard }: BookData) : SaleData {
+export function getSaleData({ priceSales, priceStandard }: BookData) : SaleData {
     return {
         priceSales: priceSales,
         priceStandard: priceStandard,
@@ -9,6 +9,6 @@ export function GetSaleData({ priceSales, priceStandard }: BookData) : SaleData 
     };
 }
 
-export function GetSaleTotalPrice({ priceSales, priceStandard }: BookData, count: number) {
+export function getSaleTotalPrice({ priceSales, priceStandard }: BookData, count: number) {
     return (priceSales != priceStandard ? priceSales : priceStandard) * count;
 }

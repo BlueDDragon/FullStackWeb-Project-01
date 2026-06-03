@@ -3,8 +3,8 @@
 import styles from "@/app/mypage/[id]/wish/wish.module.css"
 import { BookData } from "@/types/BookData";
 import { WishData } from "@/types/WishData";
-import { AddCart, GetCartTotalCount } from "@/utils/services/cartUtils";
-import { GetWish, IsWishEmpty, RemoveWish } from "@/utils/services/wishUtils";
+import { addCart, getCartTotalCount } from "@/utils/services/cartUtils";
+import { getWish, isWishEmpty, removeWish } from "@/utils/services/wishUtils";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext, useEffect, useState } from "react";
 import WishItem from "./WishItem";
@@ -26,12 +26,12 @@ export default function WishContent({ id }: WishContentProps) {
     
     // 기본 정보
     const [wish, setWish] = useState<WishData>({ books: [] });
-    const isWishEmpty = IsWishEmpty(wish);
-    const wishCount = isWishEmpty ? 0 : wish?.books.length;
+    const isEmpty = isWishEmpty(wish);
+    const wishCount = isEmpty ? 0 : wish?.books.length;
 
     // 찜하기
     const updateWish = () => {
-        const tempWish = GetWish();
+        const tempWish = getWish();
         if (tempWish.books) setWish({ books: tempWish.books.reverse() } );
     };
     useEffect(() => {
@@ -41,10 +41,10 @@ export default function WishContent({ id }: WishContentProps) {
     // 장바구니 확인창
     const [isCartConfirm, setIsCartConfirm] = useState(false);
     const handleCartOpen = (book: BookData) => {
-        if (isWishEmpty) return;
+        if (isEmpty) return;
         if (!book) return;
-        AddCart({ book: book, count: 1 });
-        setCartTotalCount(GetCartTotalCount());
+        addCart({ book: book, count: 1 });
+        setCartTotalCount(getCartTotalCount());
         setIsCartConfirm(true);
     };
 
@@ -56,7 +56,7 @@ export default function WishContent({ id }: WishContentProps) {
     }, []);
     const handleDelWishConfirm = useCallback(() => {
         if (!selectBook) return;
-        RemoveWish(selectBook);
+        removeWish(selectBook);
         updateWish();
         setIsDelWishConfirm(false);
     }, [selectBook]);
@@ -64,8 +64,8 @@ export default function WishContent({ id }: WishContentProps) {
     // 바로구매
     const router = useRouter();
     const handleOrder = (book: BookData) => {
-        AddCart({ book: book, count: 1 });
-        setCartTotalCount(GetCartTotalCount());
+        addCart({ book: book, count: 1 });
+        setCartTotalCount(getCartTotalCount());
 
         if (isLogined)
             router.push(`/mypage/${(login as LoginData).id}/cart`);
@@ -80,7 +80,7 @@ export default function WishContent({ id }: WishContentProps) {
                 <p className={styles.count}>보관함 ({wishCount})</p>
               </div>
               <div className={styles.wish_container}>
-                {!isWishEmpty &&
+                {!isEmpty &&
                   wish?.books.map((book, idx) => (
                     <WishItem
                       key={idx}
@@ -91,7 +91,7 @@ export default function WishContent({ id }: WishContentProps) {
                       onOrder={handleOrder}
                     />
                   ))}
-                {isWishEmpty && <Empty info="마음에 드는 상품을 보관하세요." />}
+                {isEmpty && <Empty info="마음에 드는 상품을 보관하세요." />}
               </div>
 
               <div>

@@ -2,8 +2,8 @@ import styles from "@/components/Layout/SearchBar/SearchBarDropdownItem.module.c
 import { BookData } from "@/types/BookData";
 import Image from "next/image";
 import Link from "next/link";
-import { GetSaleData } from "@/utils/services/saleUtils";
-import { AddCart, GetCartTotalCount } from "@/utils/services/cartUtils";
+import { getSaleData } from "@/utils/services/saleUtils";
+import { addCart, getCartTotalCount } from "@/utils/services/cartUtils";
 import { useCallback, useContext } from "react";
 import { HeaderContext } from "@/context/HeaderContext";
 import { usePathname } from "next/navigation";
@@ -19,8 +19,8 @@ export default function SearchBarDropdownItem({ book, onCartOpen }: SearchBarDro
 
   // 장바구니 확인창
   const handleCartOpen = useCallback(() => {
-    AddCart({ book: book, count: 1 });
-    setCartTotalCount(GetCartTotalCount());
+    addCart({ book: book, count: 1 });
+    setCartTotalCount(getCartTotalCount());
 
     console.log(`paths: ${paths}`);
     if (paths.length > 3 && paths[1] === 'mypage' && paths[3] === 'cart')
@@ -30,7 +30,7 @@ export default function SearchBarDropdownItem({ book, onCartOpen }: SearchBarDro
   }, [book]);
 
   // 세일 정보
-  const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
+  const { priceSales, priceStandard, isSale, percentSale } = getSaleData(book);
 
   return (
     <div>

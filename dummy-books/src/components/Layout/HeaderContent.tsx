@@ -1,8 +1,8 @@
 'use client';
 
 import { HeaderContext } from "@/context/HeaderContext";
-import { GetCarts } from "@/utils/services/cartUtils";
-import { GetLogin } from "@/utils/services/userUtils";
+import { getCarts } from "@/utils/services/cartUtils";
+import { getLogin } from "@/utils/services/userUtils";
 import { useEffect, useState } from "react";
 
 type HeaderContentProps = {
@@ -14,8 +14,8 @@ export default function HeaderContent({ children }: HeaderContentProps) {
     const [loginId, setLoginId] = useState("0");
     const [cartTotalCount, setCartTotalCount] = useState(0);
     useEffect(() => {
-        setLoginId(GetLogin()?.id);
-        setCartTotalCount(GetCarts()?.reduce((sum, cur) => sum + (cur.count ? cur.count : 0), 0)); 
+        setLoginId(getLogin()?.id);
+        setCartTotalCount(getCarts()?.reduce((sum, cur) => sum + (cur.count ? cur.count : 0), 0)); 
     }, []);
 
     return (

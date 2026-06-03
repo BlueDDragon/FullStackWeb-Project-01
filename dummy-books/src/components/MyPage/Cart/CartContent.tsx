@@ -2,11 +2,10 @@
 
 import styles from "@/app/mypage/[id]/cart/cart.module.css"
 import { CartData } from "@/types/CartData";
-import { GetCarts } from "@/utils/services/cartUtils";
+import { getCarts } from "@/utils/services/cartUtils";
 import { useContext, useEffect, useState } from "react";
 import CartAside from "./CartAside";
 import CartList from "./CartList";
-import { CartPriceContext } from "@/context/CartPriceContext";
 import { useLoginState } from "@/utils/services/userUtils";
 import { HeaderContext } from "@/context/HeaderContext";
 import LoginGuard from "@/components/Common/LoginGuard";
@@ -26,26 +25,17 @@ export default function CartContent({ id }: CartContentProps) {
     }, []);
     
     // 장바구니 개수 합계
-    // const [totalCount, setTotalCount] = useState(0);
     const updateCarts =() => {
-        const tempCart = GetCarts();
+        const tempCart = getCarts();
         setCarts(tempCart);
         setCartTotalCount(tempCart.reduce((sum, cur) => sum + (cur.count ? cur.count : 0), 0));
     };
-    
-    // 상품 금액, 결제 예정 금액
-    const [totalStandardPrice, setTotalStandardPrice] = useState(0);
-    const [totalResultPrice, setTotalResultPrice] = useState(0);
 
     return (
         <LoginGuard isLogined={isLogined} isVerifyId={isVerifyId}>
             <div className={styles.container}>
-                <CartPriceContext.Provider value={{ /*totalCount,*/ 
-                    totalStandardPrice, setTotalStandardPrice,
-                    totalResultPrice, setTotalResultPrice, }}>
-                    <CartList carts={carts} updateCarts={updateCarts}/>
-                    <CartAside carts={carts}/>
-                </CartPriceContext.Provider>
+                <CartList carts={carts} updateCarts={updateCarts}/>
+                <CartAside carts={carts}/>
             </div>
         </LoginGuard>
     );

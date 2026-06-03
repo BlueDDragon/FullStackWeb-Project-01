@@ -2,7 +2,7 @@
 
 import styles from "@/app/detail/[id]/detail.module.css"
 import { BookData } from "@/types/BookData";
-import { AddCart, GetCartTotalCount } from "@/utils/services/cartUtils";
+import { addCart, getCartTotalCount } from "@/utils/services/cartUtils";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext } from "react";
 import { useLoginState } from "@/utils/services/userUtils";
@@ -26,16 +26,16 @@ export default function DetailBookPurchase({ book, onCartOpen }: DetailBookPurch
 
     // 장바구니
     const handleCartOpen = useCallback(() => {
-        AddCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
-        setCartTotalCount(GetCartTotalCount());
+        addCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
+        setCartTotalCount(getCartTotalCount());
         onCartOpen();
     }, [book]);
     
     // 바로구매
     const router = useRouter();
     const handleOrder = useCallback(() => {
-        AddCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
-        setCartTotalCount(GetCartTotalCount());
+        addCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
+        setCartTotalCount(getCartTotalCount());
 
         if (isLogined)
             router.push(`/mypage/${(login as LoginData).id}/cart`);
@@ -44,7 +44,7 @@ export default function DetailBookPurchase({ book, onCartOpen }: DetailBookPurch
     }, [book, isLogined]);
     
     // 찜하기
-    const { isWishAlready, handleToggleWish } = useWishToggle(book, isLogined, onCartOpen);
+    const { isAlready, handleToggleWish } = useWishToggle(book, isLogined, onCartOpen);
 
     return (
         <div>
@@ -59,7 +59,7 @@ export default function DetailBookPurchase({ book, onCartOpen }: DetailBookPurch
             <div className={styles.btns}>
                 <button className={styles.btn_cart} onClick={handleCartOpen}>장바구니</button>
                 <button className={styles.btn_order} onClick={handleOrder}>바로구매</button>
-                <WishButton isWished={isWishAlready} onClick={handleToggleWish}/>
+                <WishButton isWished={isAlready} onClick={handleToggleWish}/>
             </div>
         </div>
     );

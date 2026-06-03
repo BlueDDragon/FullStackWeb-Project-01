@@ -1,7 +1,7 @@
 'use client';
 
 import styles from "@/app/login/login.module.css"
-import { GetLogin, IsLoginEmpty, Login } from "@/utils/services/userUtils";
+import { getLogin, isLoginEmpty, loginUser } from "@/utils/services/userUtils";
 import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, KeyboardEvent, useCallback, useContext, useEffect, useState } from "react";
@@ -9,15 +9,15 @@ import { useRouter } from "next/navigation";
 import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
 import PasswordInput from "./PasswordInput";
-import { GetCarts } from "@/utils/services/cartUtils";
+import { getCarts } from "@/utils/services/cartUtils";
 
 export default function LoginContent() {
     // 이미 로그인 되어있으면 자동으로 마이페이지
     const router = useRouter();
     const [checkLogin, setCheckLogin] = useState(false);
     const [login, setLogin] = useState<LoginData>({ isLogined: false, idx: 0, id: "0", nickname: "" });
-    useEffect(() => { setLogin(GetLogin()); setCheckLogin(true); }, []);
-    const isLogined = !IsLoginEmpty(login) && login.isLogined;
+    useEffect(() => { setLogin(getLogin()); setCheckLogin(true); }, []);
+    const isLogined = !isLoginEmpty(login) && login.isLogined;
     useEffect(() => {
         if (!isLogined) return;
         router.push(`/mypage/${login.id}`);
@@ -49,12 +49,12 @@ export default function LoginContent() {
 
     // 로그인
     const handleLogin = useCallback(() => {
-        if (!Login(userId, userPassword))
+        if (!loginUser(userId, userPassword))
             return setWarningString("아이디 또는 비밀번호가 올바르지 않습니다.");
 
         setWarningString("");
         setLoginId(userId);
-        setCartTotalCount(GetCarts()?.reduce((sum, cur) => sum + (cur.count ? cur.count : 0), 0));
+        setCartTotalCount(getCarts()?.reduce((sum, cur) => sum + (cur.count ? cur.count : 0), 0));
         router.push(`/mypage/${userId}`);
 
     }, [userId, userPassword]);
