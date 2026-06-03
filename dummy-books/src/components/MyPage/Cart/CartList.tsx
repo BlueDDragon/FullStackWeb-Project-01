@@ -3,7 +3,7 @@
 import styles from "@/app/mypage/[id]/cart/cart.module.css"
 import { BookData } from "@/types/BookData";
 import { CartData } from "@/types/CartData";
-import { IsCartEmpty, RemoveCart } from "@/utils/services/cartUtils";
+import { GetCartTotalCount, IsCartEmpty, RemoveCart } from "@/utils/services/cartUtils";
 import { useCallback, useContext, useState } from "react";
 import CartItem from "./CartItem";
 import Empty from "@/components/Common/Empty";
@@ -16,13 +16,10 @@ type CartListProps = {
 };
 
 export default function CartList({ carts, updateCarts }: CartListProps) {
-    const updateHeader = useContext(HeaderContext).updateHeader;
-    const setCartTotalCount = useContext(HeaderContext).setCartTotalCount;
+    const { cartTotalCount, setCartTotalCount } = useContext(HeaderContext);
 
     // 기본 정보
     const isCartsEmpty = IsCartEmpty(carts);
-    // const totalCount = useContext(CartPriceContext).totalCount;
-    const cartTotalCount = useContext(HeaderContext).cartTotalCount;
 
     // 장바구니 삭제
     const [selectBook, setSelectBook] = useState<BookData>();
@@ -32,11 +29,9 @@ export default function CartList({ carts, updateCarts }: CartListProps) {
     }, []);
     const handleDelCartConfirm = useCallback(() => {
         if (!selectBook) return;
-        const tempCarts = RemoveCart(selectBook);
+        RemoveCart(selectBook);
         updateCarts();
-        const tempTotal = tempCarts ? tempCarts.reduce((sum, cur) => sum + (cur.count ? cur.count : 0), 0) : 0;
-        setCartTotalCount(tempTotal as number);
-        updateHeader?.();
+        setCartTotalCount(GetCartTotalCount());
         setIsDelCartConfirm(false);
         window.location.reload();
     }, [selectBook]);

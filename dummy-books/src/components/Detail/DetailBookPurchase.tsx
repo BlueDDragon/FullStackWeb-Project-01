@@ -2,7 +2,7 @@
 
 import styles from "@/app/detail/[id]/detail.module.css"
 import { BookData } from "@/types/BookData";
-import { AddCart } from "@/utils/services/cartUtils";
+import { AddCart, GetCartTotalCount } from "@/utils/services/cartUtils";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext } from "react";
 import { useLoginState } from "@/utils/services/userUtils";
@@ -19,7 +19,7 @@ type DetailBookPurchaseProps = {
 
 export default function DetailBookPurchase({ book, onCartOpen }: DetailBookPurchaseProps) {
     const { isLogined, isVerifyId, login } = useLoginState("0");
-    const updateHeader = useContext(HeaderContext).updateHeader;
+    const { setCartTotalCount } = useContext(HeaderContext);
     
     // 수량
     const { inputRef, handleCountIncrease, handleCountDecrease } = useCountInput(1);
@@ -27,7 +27,7 @@ export default function DetailBookPurchase({ book, onCartOpen }: DetailBookPurch
     // 장바구니
     const handleCartOpen = useCallback(() => {
         AddCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
-        updateHeader?.();
+        setCartTotalCount(GetCartTotalCount());
         onCartOpen();
     }, [book]);
     
@@ -35,7 +35,7 @@ export default function DetailBookPurchase({ book, onCartOpen }: DetailBookPurch
     const router = useRouter();
     const handleOrder = useCallback(() => {
         AddCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
-        updateHeader?.();
+        setCartTotalCount(GetCartTotalCount());
 
         if (isLogined)
             router.push(`/mypage/${(login as LoginData).id}/cart`);

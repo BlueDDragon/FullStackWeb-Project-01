@@ -2,7 +2,7 @@
 
 import styles from "@/components/Search/SearchItem.module.css"
 import { BookData } from "@/types/BookData";
-import { AddCart } from "@/utils/services/cartUtils";
+import { AddCart, GetCartTotalCount } from "@/utils/services/cartUtils";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext } from "react";
 import { SearchViewContext } from "@/context/SearchViewContext";
@@ -20,12 +20,13 @@ type SearchItemProps = {
 
 export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     const { isLogined, isVerifyId, login } = useLoginState("0");
-    const updateHeader = useContext(HeaderContext).updateHeader;
+    const { setCartTotalCount } = useContext(HeaderContext);
 
     // 장바구니 확인창 상태
     const handleCartOpen = useCallback(() => {
       AddCart({ book: book, count: 1 });
-      updateHeader?.();
+      setCartTotalCount(GetCartTotalCount());
+      
       onCartOpen();
     }, [book]);
 
@@ -33,8 +34,8 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     const router = useRouter();
     const handleOrder = useCallback(() => {
       AddCart({ book: book, count: 1 });
-      updateHeader?.();
-      
+      setCartTotalCount(GetCartTotalCount());
+
       if (isLogined)
         router.push(`/mypage/${(login as LoginData).id}/cart`);
       else

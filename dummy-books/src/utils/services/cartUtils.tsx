@@ -67,7 +67,6 @@ export function RemoveCart(selectBook: BookData) {
     
     const newCarts = carts.filter((cart) => cart.book.isbn13 !== selectBook.isbn13);
     SaveData<CartData[]>({ type: "Carts", id: login.id }, newCarts);
-    return newCarts;
 }
 
 export function RemoveCartAll() {
@@ -96,4 +95,8 @@ export function ChangeCartCount(selectBook: BookData, count: number) {
         return cart;
     });
     SaveData<CartData[]>({ type: "Carts", id: login.id }, carts);
+}
+
+export function GetCartTotalCount(): number {
+  return GetCarts()?.reduce((sum, cur) => sum + (cur.count ?? 0), 0) ?? 0;
 }

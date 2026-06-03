@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
 import PasswordInput from "./PasswordInput";
+import { GetCarts } from "@/utils/services/cartUtils";
 
 export default function LoginContent() {
     // 이미 로그인 되어있으면 자동으로 마이페이지
@@ -22,9 +23,7 @@ export default function LoginContent() {
         router.push(`/mypage/${login.id}`);
     }, [login, checkLogin]);
     
-    const updateHeader = useContext(HeaderContext).updateHeader;
-    const updateLogin = useContext(HeaderContext).updateLogin;
-    const setLoginId = useContext(HeaderContext).setLoginId;
+    const { setLoginId, setCartTotalCount } = useContext(HeaderContext);
     
     // 경고
     const [warningString, setWarningString] = useState("");
@@ -55,8 +54,7 @@ export default function LoginContent() {
 
         setWarningString("");
         setLoginId(userId);
-        updateHeader?.();
-        updateLogin?.();
+        setCartTotalCount(GetCarts()?.reduce((sum, cur) => sum + (cur.count ? cur.count : 0), 0));
         router.push(`/mypage/${userId}`);
 
     }, [userId, userPassword]);

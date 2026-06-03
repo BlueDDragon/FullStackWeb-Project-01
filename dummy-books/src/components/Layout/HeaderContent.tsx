@@ -10,33 +10,6 @@ type HeaderContentProps = {
 }
 
 export default function HeaderContent({ children }: HeaderContentProps) {
-    const [updateHeader, setUpdateHeader] = useState<(() => void) | null>(null);
-    const addUpdateHeader = (func: () => void) => {
-        setUpdateHeader((prev) => {
-            if (!prev) return func;
-            return () => {
-                prev();
-                func();
-            };
-        });
-    };
-    const resetUpdateHeader = () => {
-        setUpdateHeader(null);
-    };
-
-    const [updateLogin, setUpdateLogin] = useState<(() => void) | null>(null);
-    const addUpdateLogin = (func: () => void) => {
-        setUpdateLogin((prev) => {
-            if (!prev) return func;
-            return () => {
-                prev();
-                func();
-            };
-        });
-    };
-    const resetUpdateLogin = () => {
-        setUpdateLogin(null);
-    };
 
     const [loginId, setLoginId] = useState("0");
     const [cartTotalCount, setCartTotalCount] = useState(0);
@@ -46,10 +19,7 @@ export default function HeaderContent({ children }: HeaderContentProps) {
     }, []);
 
     return (
-        <HeaderContext.Provider value={{ addUpdateHeader, resetUpdateHeader, updateHeader, 
-                                            addUpdateLogin, resetUpdateLogin, updateLogin,
-                                            loginId, setLoginId,
-                                            cartTotalCount, setCartTotalCount, }}>
+        <HeaderContext.Provider value={{ loginId, setLoginId, cartTotalCount, setCartTotalCount, }}>
             {children}
         </HeaderContext.Provider>
     );

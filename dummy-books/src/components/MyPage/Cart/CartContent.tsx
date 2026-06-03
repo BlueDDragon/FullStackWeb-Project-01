@@ -28,10 +28,9 @@ export default function CartContent({ id }: CartContentProps) {
     // 장바구니 개수 합계
     // const [totalCount, setTotalCount] = useState(0);
     const updateCarts =() => {
-      setCarts(GetCarts());
-      const tempTotal = carts.reduce((sum, cur) => sum + (cur.count ? cur.count : 0), 0);
-    //   setTotalCount(tempTotal);
-      setCartTotalCount(tempTotal);
+        const tempCart = GetCarts();
+        setCarts(tempCart);
+        setCartTotalCount(tempCart.reduce((sum, cur) => sum + (cur.count ? cur.count : 0), 0));
     };
     
     // 상품 금액, 결제 예정 금액

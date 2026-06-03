@@ -3,7 +3,7 @@ import { BookData } from "@/types/BookData";
 import Image from "next/image";
 import Link from "next/link";
 import { GetSaleData } from "@/utils/services/saleUtils";
-import { AddCart } from "@/utils/services/cartUtils";
+import { AddCart, GetCartTotalCount } from "@/utils/services/cartUtils";
 import { useCallback, useContext } from "react";
 import { HeaderContext } from "@/context/HeaderContext";
 import { usePathname } from "next/navigation";
@@ -14,13 +14,13 @@ type SearchBarDropdownItemProps = {
 };
 
 export default function SearchBarDropdownItem({ book, onCartOpen }: SearchBarDropdownItemProps) {
-  const updateHeader = useContext(HeaderContext).updateHeader;
   const paths = usePathname().split('/');
+  const { setCartTotalCount } = useContext(HeaderContext);
 
   // 장바구니 확인창
   const handleCartOpen = useCallback(() => {
     AddCart({ book: book, count: 1 });
-    updateHeader?.();
+    setCartTotalCount(GetCartTotalCount());
 
     console.log(`paths: ${paths}`);
     if (paths.length > 3 && paths[1] === 'mypage' && paths[3] === 'cart')

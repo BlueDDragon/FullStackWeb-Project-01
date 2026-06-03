@@ -3,7 +3,7 @@
 import styles from "@/app/mypage/[id]/wish/wish.module.css"
 import { BookData } from "@/types/BookData";
 import { WishData } from "@/types/WishData";
-import { AddCart } from "@/utils/services/cartUtils";
+import { AddCart, GetCartTotalCount } from "@/utils/services/cartUtils";
 import { GetWish, IsWishEmpty, RemoveWish } from "@/utils/services/wishUtils";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext, useEffect, useState } from "react";
@@ -22,7 +22,7 @@ type WishContentProps = {
 
 export default function WishContent({ id }: WishContentProps) {
     const { isLogined, isVerifyId, login } = useLoginState(id);
-    const updateHeader = useContext(HeaderContext).updateHeader;
+    const { setCartTotalCount } = useContext(HeaderContext);
     
     // 기본 정보
     const [wish, setWish] = useState<WishData>({ books: [] });
@@ -44,7 +44,7 @@ export default function WishContent({ id }: WishContentProps) {
         if (isWishEmpty) return;
         if (!book) return;
         AddCart({ book: book, count: 1 });
-        updateHeader?.();
+        setCartTotalCount(GetCartTotalCount());
         setIsCartConfirm(true);
     };
 
@@ -65,7 +65,7 @@ export default function WishContent({ id }: WishContentProps) {
     const router = useRouter();
     const handleOrder = (book: BookData) => {
         AddCart({ book: book, count: 1 });
-        updateHeader?.();
+        setCartTotalCount(GetCartTotalCount());
 
         if (isLogined)
             router.push(`/mypage/${(login as LoginData).id}/cart`);
