@@ -8,10 +8,10 @@ import { useCallback, useContext } from "react";
 import { SearchViewContext } from "@/context/SearchViewContext";
 import { LoginData } from "@/types/UserData";
 import { useLoginState } from "@/utils/services/userUtils";
-import { HeaderContext } from "@/context/HeaderContext";
 import { useWishToggle } from "@/hooks/useWishToggle";
 import SearchItemDetail from "./SearchItemDetail";
 import SearchItemSimple from "./SearchItemSimple";
+import { useBookActions } from "@/hooks/useBookActions";
 
 type SearchItemProps = {
   book: BookData;
@@ -20,28 +20,12 @@ type SearchItemProps = {
 
 export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
     const { isLogined, isVerifyId, login } = useLoginState("0");
-    const { setCartTotalCount } = useContext(HeaderContext);
-
-    // 장바구니 확인창 상태
-    const handleCartOpen = useCallback(() => {
-      addCart({ book: book, count: 1 });
-      setCartTotalCount(getCartTotalCount());
-      
-      onCartOpen();
-    }, [book]);
-
+    
+    // 장바구니
     // 바로구매
-    const router = useRouter();
-    const handleOrder = useCallback(() => {
-      addCart({ book: book, count: 1 });
-      setCartTotalCount(getCartTotalCount());
-
-      if (isLogined)
-        router.push(`/mypage/${(login as LoginData).id}/cart`);
-      else
-        onCartOpen();
-    }, [book, isLogined]);
-
+    const getCount = () => 1;
+    const { handleCartOpen, handleOrder } = useBookActions({ isLogined, login, book, getCount, onComplete: onCartOpen });
+    
     // 찜하기 상태
     const { isAlready, handleToggleWish } = useWishToggle(book, isLogined, onCartOpen);
 
@@ -50,7 +34,7 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
       // 검색 리스트 보기 타입 - 상세
       case "detail":
         return <SearchItemDetail book={book} isWishAlready={isAlready} handleToggleWish={handleToggleWish}
-                handleCartOpen={handleCartOpen} handleOrder={handleOrder} />
+        handleCartOpen={handleCartOpen} handleOrder={handleOrder} />
 
       // 검색 리스트 보기 타입 - 간단
       case "simple":

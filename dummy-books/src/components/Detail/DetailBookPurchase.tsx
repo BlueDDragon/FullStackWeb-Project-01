@@ -2,15 +2,11 @@
 
 import styles from "@/app/detail/[id]/detail.module.css"
 import { BookData } from "@/types/BookData";
-import { addCart, getCartTotalCount } from "@/utils/services/cartUtils";
-import { useRouter } from "next/navigation";
-import { useCallback, useContext } from "react";
 import { useLoginState } from "@/utils/services/userUtils";
-import { LoginData } from "@/types/UserData";
-import { HeaderContext } from "@/context/HeaderContext";
 import { useWishToggle } from "@/hooks/useWishToggle";
 import { useCountInput } from "@/hooks/useCountInput";
 import WishButton from "@/components/Common/WishButton";
+import { useBookActions } from "@/hooks/useBookActions";
 
 type DetailBookPurchaseProps = {
     book: BookData;
@@ -19,29 +15,14 @@ type DetailBookPurchaseProps = {
 
 export default function DetailBookPurchase({ book, onCartOpen }: DetailBookPurchaseProps) {
     const { isLogined, isVerifyId, login } = useLoginState("0");
-    const { setCartTotalCount } = useContext(HeaderContext);
     
     // 수량
     const { inputRef, handleCountIncrease, handleCountDecrease } = useCountInput(1);
+    const getCount = () => (inputRef.current ? parseInt(inputRef.current.value) : 1);
 
     // 장바구니
-    const handleCartOpen = useCallback(() => {
-        addCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
-        setCartTotalCount(getCartTotalCount());
-        onCartOpen();
-    }, [book]);
-    
     // 바로구매
-    const router = useRouter();
-    const handleOrder = useCallback(() => {
-        addCart({ book: book, count: (inputRef.current ? parseInt(inputRef.current.value) : 1) });
-        setCartTotalCount(getCartTotalCount());
-
-        if (isLogined)
-            router.push(`/mypage/${(login as LoginData).id}/cart`);
-        else
-            onCartOpen();
-    }, [book, isLogined]);
+    const { handleCartOpen, handleOrder } = useBookActions({ isLogined, login, book, getCount, onComplete: onCartOpen });
     
     // 찜하기
     const { isAlready, handleToggleWish } = useWishToggle(book, isLogined, onCartOpen);
