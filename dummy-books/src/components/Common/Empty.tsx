@@ -1,4 +1,4 @@
-import styles from "@/components/Empty/Empty.module.css"
+import styles from "@/components/Common/Empty.module.css"
 
 type EmptyProps = {
     info: string;

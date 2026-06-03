@@ -2,13 +2,12 @@
 
 import styles from "@/app/mypage/[id]/order/order.module.css"
 import { OrderData } from "@/types/OrderData";
-import { GetOrders, IsOrdersEmpty } from "@/utils/orderUtils";
+import { GetOrders, IsOrdersEmpty } from "@/utils/services/orderUtils";
 import { useEffect, useState } from "react";
 import OrderList from "./OrderList";
-import Empty from "@/components/Empty/Empty";
-import { useLoginState } from "@/utils/userUtils";
-import Link from "next/link";
-import LoginGuard from "@/components/LoginGuard";
+import Empty from "@/components/Common/Empty";
+import { useLoginState } from "@/utils/services/userUtils";
+import LoginGuard from "@/components/Common/LoginGuard";
 
 type OrderContentProps = {
     id: string;

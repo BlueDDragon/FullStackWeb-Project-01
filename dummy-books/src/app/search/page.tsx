@@ -1,7 +1,7 @@
 import styles from "@/app/search/search.module.css"
 import SearchNavigation from "@/components/Search/SearchNavigation";
 import SearchUpper from "@/components/Search/SearchUpper";
-import { fetchItemSearchResponse } from "@/utils/fetchServer";
+import { fetchItemSearchResponse } from "@/utils/api/fetchServer";
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ q: string, page: string }>}) {
     const { q, page } = await searchParams;

@@ -2,12 +2,12 @@
 
 import styles from "@/components/Search/SearchItem.module.css"
 import { BookData } from "@/types/BookData";
-import { AddCart } from "@/utils/cartUtils";
+import { AddCart } from "@/utils/services/cartUtils";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext } from "react";
 import { SearchViewContext } from "@/context/SearchViewContext";
 import { LoginData } from "@/types/UserData";
-import { useLoginState } from "@/utils/userUtils";
+import { useLoginState } from "@/utils/services/userUtils";
 import { HeaderContext } from "@/context/HeaderContext";
 import { useWishToggle } from "@/hooks/useWishToggle";
 import SearchItemDetail from "./SearchItemDetail";

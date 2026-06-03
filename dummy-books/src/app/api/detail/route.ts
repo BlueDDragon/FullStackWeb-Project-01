@@ -1,4 +1,4 @@
-import { fetchItemSearch } from "@/utils/fetchServer";
+import { fetchItemSearch } from "@/utils/api/fetchServer";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {

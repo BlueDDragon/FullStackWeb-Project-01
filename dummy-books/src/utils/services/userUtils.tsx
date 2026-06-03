@@ -1,5 +1,5 @@
 import { LoginData, UserData } from "@/types/UserData";
-import { LoadData, SaveData } from "./saveload";
+import { LoadData, SaveData } from "@/utils/storage/saveload";
 import crypto from "crypto";
 import { useEffect, useState } from "react";
 

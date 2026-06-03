@@ -1,7 +1,7 @@
 'use client';
 
 import { BookData } from "@/types/BookData";
-import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
+import { IsWishAlready, ToggleWish } from "@/utils/services/wishUtils";
 import { useCallback, useEffect, useState } from "react";
 
 export function useWishToggle(book: BookData, isLogined: boolean, onNotLogined: () => void) {

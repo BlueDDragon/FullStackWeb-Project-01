@@ -2,16 +2,14 @@
 
 import styles from "@/app/mypage/[id]/cart/cart.module.css"
 import { CartData } from "@/types/CartData";
-import { GetCarts } from "@/utils/cartUtils";
+import { GetCarts } from "@/utils/services/cartUtils";
 import { useContext, useEffect, useState } from "react";
 import CartAside from "./CartAside";
 import CartList from "./CartList";
 import { CartPriceContext } from "@/context/CartPriceContext";
-import { useLoginState } from "@/utils/userUtils";
-import Empty from "@/components/Empty/Empty";
-import Link from "next/link";
+import { useLoginState } from "@/utils/services/userUtils";
 import { HeaderContext } from "@/context/HeaderContext";
-import LoginGuard from "@/components/LoginGuard";
+import LoginGuard from "@/components/Common/LoginGuard";
 
 type CartContentProps = {
     id: string;

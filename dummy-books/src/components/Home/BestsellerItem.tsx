@@ -1,4 +1,4 @@
-import styles from "@/components/Bestseller/BestsellerItem.module.css"
+import styles from "@/components/Home/BestsellerItem.module.css"
 import Image from "next/image";
 import { BookData } from "@/types/BookData";
 import Link from "next/link";

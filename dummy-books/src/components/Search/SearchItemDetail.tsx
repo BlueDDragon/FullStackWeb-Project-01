@@ -4,8 +4,8 @@ import styles from "@/components/Search/SearchItem.module.css"
 import { BookData } from "@/types/BookData";
 import Link from "next/link";
 import Image from "next/image";
-import WishButton from "../WishButton";
-import BookPriceDisplay from "../BookPriceDisplay";
+import WishButton from "@/components/Common/WishButton";
+import BookPriceDisplay from "@/components/Common/BookPriceDisplay";
 
 type SearchItemDetailProps = {
     book: BookData;

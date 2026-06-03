@@ -1,5 +1,5 @@
 import styles from "./BookPriceDisplay.module.css"
-import { GetSaleData } from "@/utils/saleUtils";
+import { GetSaleData } from "@/utils/services/saleUtils";
 import { BookData } from "@/types/BookData"
 
 type BookPriceDisplayProps = {

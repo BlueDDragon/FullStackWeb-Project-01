@@ -1,9 +1,9 @@
-import styles from "@/components/SearchBar/SearchBarDropdownItem.module.css"
+import styles from "@/components/Layout/SearchBar/SearchBarDropdownItem.module.css"
 import { BookData } from "@/types/BookData";
 import Image from "next/image";
 import Link from "next/link";
-import { GetSaleData } from "@/utils/saleUtils";
-import { AddCart } from "@/utils/cartUtils";
+import { GetSaleData } from "@/utils/services/saleUtils";
+import { AddCart } from "@/utils/services/cartUtils";
 import { useCallback, useContext } from "react";
 import { HeaderContext } from "@/context/HeaderContext";
 import { usePathname } from "next/navigation";

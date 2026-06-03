@@ -1,4 +1,4 @@
-import styles from "@/components/SearchBar/SearchBarDropdown.module.css"
+import styles from "@/components/Layout/SearchBar/SearchBarDropdown.module.css"
 import { BookData } from "@/types/BookData";
 import SearchBarDropdownItem from "./SearchBarDropdownItem";
 

@@ -2,7 +2,7 @@
 
 import styles from "@/app/detail/[id]/detail.module.css"
 import { BookData } from "@/types/BookData";
-import { GetSaleData } from "@/utils/saleUtils";
+import { GetSaleData } from "@/utils/services/saleUtils";
 
 type DetailBookInfoProps = {
     book: BookData;

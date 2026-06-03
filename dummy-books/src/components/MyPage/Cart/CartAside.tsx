@@ -5,8 +5,8 @@ import OrderConfirm from "@/components/Confirm/OrderConfirm";
 import { CartPriceContext } from "@/context/CartPriceContext";
 import { HeaderContext } from "@/context/HeaderContext";
 import { CartData } from "@/types/CartData";
-import { IsCartEmpty, RemoveCartAll } from "@/utils/cartUtils";
-import { AddOrder } from "@/utils/orderUtils";
+import { IsCartEmpty, RemoveCartAll } from "@/utils/services/cartUtils";
+import { AddOrder } from "@/utils/services/orderUtils";
 import { useCallback, useContext, useEffect, useState } from "react";
 
 type CartAsideProps = {

@@ -1,7 +1,7 @@
 import "./globals.css";
-import CustomFooter from "@/components/Footer/CustomFooter";
-import CustomHeader from "@/components/Header/CustomHeader";
-import HeaderContent from "@/components/Header/HeaderContent";
+import CustomFooter from "@/components/Layout/CustomFooter";
+import CustomHeader from "@/components/Layout/CustomHeader";
+import HeaderContent from "@/components/Layout/HeaderContent";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

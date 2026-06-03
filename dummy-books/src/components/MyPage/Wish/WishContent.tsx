@@ -3,19 +3,18 @@
 import styles from "@/app/mypage/[id]/wish/wish.module.css"
 import { BookData } from "@/types/BookData";
 import { WishData } from "@/types/WishData";
-import { AddCart } from "@/utils/cartUtils";
-import { GetWish, IsWishEmpty, RemoveWish } from "@/utils/wishUtils";
+import { AddCart } from "@/utils/services/cartUtils";
+import { GetWish, IsWishEmpty, RemoveWish } from "@/utils/services/wishUtils";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext, useEffect, useState } from "react";
 import WishItem from "./WishItem";
 import CartConfirm from "@/components/Confirm/CartConfirm";
-import Empty from "@/components/Empty/Empty";
+import Empty from "@/components/Common/Empty";
 import DelWishConfirm from "@/components/Confirm/DelWishConfirm";
-import { useLoginState } from "@/utils/userUtils";
-import Link from "next/link";
+import { useLoginState } from "@/utils/services/userUtils";
 import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
-import LoginGuard from "@/components/LoginGuard";
+import LoginGuard from "@/components/Common/LoginGuard";
 
 type WishContentProps = {
   id: string;

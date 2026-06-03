@@ -1,14 +1,14 @@
 'use client';
 
 import styles from "@/app/login/login.module.css"
-import { GetLogin, IsLoginEmpty, Login } from "@/utils/userUtils";
+import { GetLogin, IsLoginEmpty, Login } from "@/utils/services/userUtils";
 import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, KeyboardEvent, useCallback, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
-import PasswordInput from "../Register/PasswordInput";
+import PasswordInput from "./PasswordInput";
 
 export default function LoginContent() {
     // 이미 로그인 되어있으면 자동으로 마이페이지

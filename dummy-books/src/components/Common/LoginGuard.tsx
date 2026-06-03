@@ -1,5 +1,5 @@
 import styles from "./LoginGuard.module.css"
-import Empty from "./Empty/Empty";
+import Empty from "@/components/Common/Empty";
 import Link from "next/link";
 
 type LoginGuardProps = {

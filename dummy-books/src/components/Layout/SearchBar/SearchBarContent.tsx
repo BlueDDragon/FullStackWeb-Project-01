@@ -1,13 +1,13 @@
 'use client';
 
-import styles from "@/components/SearchBar/SearchBar.module.css"
+import styles from "@/components/Layout/SearchBar/SearchBar.module.css"
 import Image from "next/image"
 import { useRouter, useSearchParams } from "next/navigation";
 import { ChangeEvent, KeyboardEvent, useCallback, useState } from "react";
 import SearchBarDropdown from "./SearchBarDropdown";
-import { fetchItemSearch } from "@/utils/fetchClient";
+import { fetchItemSearch } from "@/utils/api/fetchClient";
 import { BookData } from "@/types/BookData";
-import CartConfirm from "../Confirm/CartConfirm";
+import CartConfirm from "@/components/Confirm/CartConfirm";
 
 export default function SearchBarContent() {
     // 라우터 정보

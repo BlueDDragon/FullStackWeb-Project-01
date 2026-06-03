@@ -3,12 +3,10 @@
 import styles from "@/app/search/search.module.css"
 import { SearchViewContext, SearchViewContextType } from "@/context/SearchViewContext";
 import { ItemSearchResponse } from "@/types/ApiData";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import Image from "next/image";
-import Empty from "../Empty/Empty";
+import Empty from "../Common/Empty";
 import SearchList from "./SearchList";
-import { GetSettingData } from "@/utils/settingUtils";
-import { SettingData } from "@/types/SettingData";
 
 type SearchUpperProps = {
     q: string;

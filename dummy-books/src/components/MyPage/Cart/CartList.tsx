@@ -3,13 +3,12 @@
 import styles from "@/app/mypage/[id]/cart/cart.module.css"
 import { BookData } from "@/types/BookData";
 import { CartData } from "@/types/CartData";
-import { IsCartEmpty, RemoveCart } from "@/utils/cartUtils";
+import { IsCartEmpty, RemoveCart } from "@/utils/services/cartUtils";
 import { useCallback, useContext, useState } from "react";
 import CartItem from "./CartItem";
-import Empty from "@/components/Empty/Empty";
+import Empty from "@/components/Common/Empty";
 import DelCartConfirm from "@/components/Confirm/DelCartConfirm";
 import { HeaderContext } from "@/context/HeaderContext";
-import { useRouter } from "next/navigation";
 
 type CartListProps = {
   carts: CartData[];

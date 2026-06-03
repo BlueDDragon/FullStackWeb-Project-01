@@ -1,11 +1,10 @@
 'use client';
 
-import styles from "@/components/Header/CustomHeader.module.css"
+import styles from "@/components/Layout/CustomHeader.module.css"
 import { HeaderContext } from "@/context/HeaderContext";
-import { CartData } from "@/types/CartData";
-import { GetCarts } from "@/utils/cartUtils";
+import { GetCarts } from "@/utils/services/cartUtils";
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 
 export default function CustomHeaderCart() {
     const loginId = useContext(HeaderContext).loginId;

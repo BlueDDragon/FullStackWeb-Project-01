@@ -1,8 +1,8 @@
 'use client';
 
 import { HeaderContext } from "@/context/HeaderContext";
-import { GetCarts } from "@/utils/cartUtils";
-import { GetLogin } from "@/utils/userUtils";
+import { GetCarts } from "@/utils/services/cartUtils";
+import { GetLogin } from "@/utils/services/userUtils";
 import { useEffect, useState } from "react";
 
 type HeaderContentProps = {

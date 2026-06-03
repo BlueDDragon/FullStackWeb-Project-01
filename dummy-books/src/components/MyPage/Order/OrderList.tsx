@@ -1,7 +1,7 @@
 import styles from "@/components/MyPage/Order/OrderList.module.css"
 import { OrderData } from "@/types/OrderData";
 import OrderItem from "./OrderItem";
-import { GetOrderId } from "@/utils/orderUtils";
+import { GetOrderId } from "@/utils/services/orderUtils";
 
 type OrderListProps = {
     order: OrderData;

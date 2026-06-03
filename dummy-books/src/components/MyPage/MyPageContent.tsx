@@ -1,8 +1,8 @@
 'use client';
 
 import styles from "@/app/mypage/[id]/mypage.module.css"
-import { Logout, useLoginState } from "@/utils/userUtils";
-import Empty from "../Empty/Empty";
+import { Logout, useLoginState } from "@/utils/services/userUtils";
+import Empty from "../Common/Empty";
 import Link from "next/link";
 import { LoginData } from "@/types/UserData";
 import { useCallback, useContext } from "react";

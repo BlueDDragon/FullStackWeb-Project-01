@@ -1,5 +1,5 @@
 import { SearchViewContextType } from "@/context/SearchViewContext";
-import { LoadData, SaveData } from "./saveload";
+import { LoadData, SaveData } from "@/utils/storage/saveload";
 import { SettingData } from "@/types/SettingData";
 
 export function GetSettingData() {

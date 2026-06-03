@@ -1,8 +1,8 @@
 'use client';
 
-import styles from "@/components/Bestseller/BestsellerList.module.css"
+import styles from "@/components/Home/BestsellerList.module.css"
 import { BookData } from "@/types/BookData";
-import BestsellerItem from "@/components/Bestseller/BestsellerItem";
+import BestsellerItem from "@/components/Home/BestsellerItem";
 import { useScrollSlider } from "@/hooks/useScrollSlider";
 
 type BestsellerListProps = {

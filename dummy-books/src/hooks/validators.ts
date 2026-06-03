@@ -1,4 +1,4 @@
-import { IsUserIdDuplicate } from "@/utils/userUtils";
+import { IsUserIdDuplicate } from "@/utils/services/userUtils";
 
 export function validateId(id: string) {
     if (!id || id === null || id === "" || id === undefined)

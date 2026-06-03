@@ -2,15 +2,15 @@
 
 import styles from "@/app/detail/[id]/detail.module.css"
 import { BookData } from "@/types/BookData";
-import { AddCart } from "@/utils/cartUtils";
+import { AddCart } from "@/utils/services/cartUtils";
 import { useRouter } from "next/navigation";
 import { useCallback, useContext } from "react";
-import { useLoginState } from "@/utils/userUtils";
+import { useLoginState } from "@/utils/services/userUtils";
 import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
 import { useWishToggle } from "@/hooks/useWishToggle";
 import { useCountInput } from "@/hooks/useCountInput";
-import WishButton from "../WishButton";
+import WishButton from "@/components/Common/WishButton";
 
 type DetailBookPurchaseProps = {
     book: BookData;

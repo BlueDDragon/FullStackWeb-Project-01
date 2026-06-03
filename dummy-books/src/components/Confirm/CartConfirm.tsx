@@ -1,6 +1,6 @@
-import { useLoginState } from "@/utils/userUtils";
+import { useLoginState } from "@/utils/services/userUtils";
 import ConfirmPopup from "./ConfirmPopup";
-import { IsCartDuplicate } from "@/utils/cartUtils";
+import { IsCartDuplicate } from "@/utils/services/cartUtils";
 import { LoginData } from "@/types/UserData";
 
 type CartConfirmProps = {

@@ -3,11 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { CartData } from "@/types/CartData";
 import { BookData } from "@/types/BookData";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { GetSaleData, GetSaleTotalPrice } from "@/utils/saleUtils";
-import { ChangeCartCount } from "@/utils/cartUtils";
+import { useCallback } from "react";
+import { GetSaleTotalPrice } from "@/utils/services/saleUtils";
+import { ChangeCartCount } from "@/utils/services/cartUtils";
 import { useCountInput } from "@/hooks/useCountInput";
-import BookPriceDisplay from "@/components/BookPriceDisplay";
+import BookPriceDisplay from "@/components/Common/BookPriceDisplay";
 
 type CartItemProps = {
     cart: CartData;

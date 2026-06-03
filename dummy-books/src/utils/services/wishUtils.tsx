@@ -1,5 +1,5 @@
 import { WishData } from "@/types/WishData";
-import { LoadData, SaveData } from "./saveload";
+import { LoadData, SaveData } from "@/utils/storage/saveload";
 import { BookData } from "@/types/BookData";
 import { GetLogin } from "./userUtils";
 

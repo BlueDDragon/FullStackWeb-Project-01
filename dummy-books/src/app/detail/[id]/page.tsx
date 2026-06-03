@@ -1,6 +1,6 @@
 import styles from "@/app/detail/[id]/detail.module.css"
-import { fetchItemLookUpByISBN13 } from "@/utils/fetchServer";
-import Empty from "@/components/Empty/Empty";
+import { fetchItemLookUpByISBN13 } from "@/utils/api/fetchServer";
+import Empty from "@/components/Common/Empty";
 import DetailBook from "@/components/Detail/DetailBook";
 
 export default async function Page({ params }: { params: Promise<{ id: string }>}) {

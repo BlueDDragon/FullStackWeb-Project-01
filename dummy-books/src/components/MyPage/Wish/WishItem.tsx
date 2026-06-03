@@ -1,7 +1,6 @@
-import BookPriceDisplay from "@/components/BookPriceDisplay";
 import styles from "@/components/MyPage/Wish/WishItem.module.css"
 import { BookData } from "@/types/BookData";
-import { GetSaleData } from "@/utils/saleUtils";
+import BookPriceDisplay from "@/components/Common/BookPriceDisplay";
 import Image from "next/image";
 import Link from "next/link";
 

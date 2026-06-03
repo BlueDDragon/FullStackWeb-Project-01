@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
-import BestsellerList from "@/components/Bestseller/BestsellerList";
-import BestsellerBanner from "@/components/Bestseller/BestsellerBanner";
-import { fetchItemList } from "@/utils/fetchServer";
+import BestsellerList from "@/components/Home/BestsellerList";
+import BestsellerBanner from "@/components/Home/BestsellerBanner";
+import { fetchItemList } from "@/utils/api/fetchServer";
 
 export default async function Home() {
   const books_ItemNewSpecial = await fetchItemList(`ItemNewSpecial`);

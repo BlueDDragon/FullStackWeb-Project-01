@@ -1,7 +1,7 @@
 'use client';
 
 import styles from "@/app/register/register.module.css"
-import { AddUser, GetLogin, IsLoginEmpty } from "@/utils/userUtils";
+import { AddUser, GetLogin, IsLoginEmpty } from "@/utils/services/userUtils";
 import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";

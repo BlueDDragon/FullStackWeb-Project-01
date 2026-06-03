@@ -1,6 +1,6 @@
 'use client';
 
-import styles from "@/components/Bestseller/BestsellerBanner.module.css"
+import styles from "@/components/Home/BestsellerBanner.module.css"
 import { useScrollSlider } from "@/hooks/useScrollSlider";
 import { BookData } from "@/types/BookData";
 import Link from "next/link";
