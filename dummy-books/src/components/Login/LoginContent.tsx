@@ -8,6 +8,7 @@ import { ChangeEvent, KeyboardEvent, useCallback, useContext, useEffect, useStat
 import { useRouter } from "next/navigation";
 import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
+import PasswordInput from "../Register/PasswordInput";
 
 export default function LoginContent() {
     // 이미 로그인 되어있으면 자동으로 마이페이지
@@ -77,11 +78,7 @@ export default function LoginContent() {
                 <p className={styles.title}>로그인</p>
                 {isLoginFail && <p className={styles.warning}>{warningString}</p>}
                 <input className={styles.input_id} type="text" placeholder="아이디" onChange={handleChangeUserId} onKeyDown={handleLoginKeyDown}/>
-                <div className={styles.password_box}>
-                    <input className={styles.input_password} type={isHiddenPassword ? "password" : "text"} placeholder="비밀번호" onChange={handleChangeUserPassword} onKeyDown={handleLoginKeyDown}/>
-                    {isHiddenPassword && <Image className={styles.img_password} src={(`/images/register_password_hidden.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenPassword}/>}
-                    {!isHiddenPassword && <Image className={styles.img_password} src={(`/images/register_password_show.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenPassword}/>}
-                </div>
+                <PasswordInput isHiddenPassword={isHiddenPassword} handleChangeUserPassword={handleChangeUserPassword} handleLoginKeyDown={handleLoginKeyDown} handleToggleIsHiddenPassword={handleToggleIsHiddenPassword} />
                 <button className={styles.btn_login} onClick={handleLogin}>로그인</button>
                 <Link className={styles.register} href={(`/register`)}>회원가입</Link>
             </div>}

@@ -1,75 +1,15 @@
 'use client';
 
 import styles from "@/app/register/register.module.css"
-import { AddUser, GetLogin, IsLoginEmpty, IsUserIdDuplicate } from "@/utils/userUtils";
+import { AddUser, GetLogin, IsLoginEmpty } from "@/utils/userUtils";
 import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 import ConfirmPopup from "../Confirm/ConfirmPopup";
 import { useRouter } from "next/navigation";
 import { LoginData } from "@/types/UserData";
-
-function CheckId(id: string) {
-    if (!id || id === null || id === "" || id === undefined)
-        return '아이디 입력은 필수입니다.';
-
-    if (id.search(/\s/) != -1) 
-        return '아이디는 빈 칸을 포함할 수 없습니다.';
-
-    if (id.length < 6 || id.length > 30)
-        return '아이디는 영문 및 숫자 6~30자 입니다.';
-
-    var specialCheck = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
-    if (specialCheck.test(id))
-        return '아이디는 특수문자를 포함할 수 없습니다.';
-
-    const koreanCheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
-    if (koreanCheck.test(id))
-        return '아이디는 한글을 포함할 수 없습니다.';
-
-    const isUserIdDuplicate = IsUserIdDuplicate(id);
-    if (isUserIdDuplicate)
-        return '아이디가 중복되어 사용할 수 없습니다.';
-
-    return '';
-}
-
-function CheckPassword(password: string, rePassword: string) {
-    if (!password || password === null || password === "" || password === undefined)
-        return '비밀번호 입력은 필수입니다.';
-    
-    if (!rePassword || rePassword === null || rePassword === "" || rePassword === undefined || rePassword != password)
-        return '비밀번호가 일치하지 않습니다.';
-
-    if (password.search(/\s/) != -1) 
-        return '비밀번호는 빈 칸을 포함할 수 없습니다.';
-
-    if (password.length < 8 || password.length > 20)
-        return '비밀번호는 영문 및 숫자 8~16자 입니다.';
-
-    var specialCheck = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
-    if (!specialCheck.test(password))
-        return '비밀번호는 특수문자를 포함해야합니다.';
-
-    const koreanCheck = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
-    if (koreanCheck.test(password))
-        return '비밀번호는 한글을 포함할 수 없습니다.';
-
-    return '';
-}
-
-function CheckNickname(nickname: string) {
-    if (!nickname || nickname === null || nickname === "" || nickname === undefined)
-        return '닉네임 입력은 필수입니다.';
-
-    // if (nickname.search(/\s/) != -1) 
-    //     return '닉네임은 빈 칸을 포함할 수 없습니다.';
-
-    if (nickname.length < 2 || nickname.length > 20)
-        return '닉네임은 한글, 영문 및 숫자 2~20자 입니다.';
-
-    return '';
-}
+import { validateId, validateNickname, validatePassword } from "@/hooks/validators";
+import PasswordInput from "./PasswordInput";
 
 export default function RegisterContent() {
     // 이미 로그인 되어있으면 자동으로 마이페이지
@@ -139,13 +79,13 @@ export default function RegisterContent() {
     const handleRegister = useCallback(() => {
         let warning = "";
 
-        warning = CheckId(userId);
+        warning = validateId(userId);
         if (warning) return setWarningString(warning); // 아이디 사용 불가
         
-        warning = CheckPassword(userPassword, userRePassword);
+        warning = validatePassword(userPassword, userRePassword);
         if (warning) return setWarningString(warning); // 비밀번호 사용 불가
 
-        warning = CheckNickname(userNickname);
+        warning = validateNickname(userNickname);
         if (warning) return setWarningString(warning); // 닉네임 사용 불가
 
         if (!isUserAgree) return setWarningString("정보 제공에 동의해야합니다.");
@@ -189,16 +129,10 @@ export default function RegisterContent() {
                 <p className={styles.title}>회원가입</p>
                 {isRegisterFail && <p className={styles.warning}>{warningString}</p>}
                 <input className={styles.input_id} type="text" placeholder="아이디" onChange={handleChangeUserId} onKeyDown={handleRegisterKeyDown} ref={inputIdRef}/>
-                <div className={styles.password_box}>
-                    <input className={styles.input_password} type={isHiddenPassword ? "password" : "text"} placeholder="비밀번호" onChange={handleChangeUserPassword} onKeyDown={handleRegisterKeyDown} ref={inputPasswordRef}/>
-                    {isHiddenPassword && <Image className={styles.img_password} src={(`/images/register_password_hidden.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenPassword}/>}
-                    {!isHiddenPassword && <Image className={styles.img_password} src={(`/images/register_password_show.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenPassword}/>}
-                </div>
-                <div className={styles.password_box}>
-                    <input className={styles.input_password} type={isHiddenRePassword ? "password" : "text"} placeholder="비밀번호 재입력" onChange={handleChangeUserRePassword} onKeyDown={handleRegisterKeyDown} ref={inputRePasswordRef}/>
-                    {isHiddenRePassword && <Image className={styles.img_password} src={(`/images/register_password_hidden.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenRePassword}/>}
-                    {!isHiddenRePassword && <Image className={styles.img_password} src={(`/images/register_password_show.png`)} width={50} height={50} alt="" onClick={handleToggleIsHiddenRePassword}/>}
-                </div>
+                
+                <PasswordInput isHiddenPassword={isHiddenPassword} handleChangeUserPassword={handleChangeUserPassword} handleLoginKeyDown={handleRegisterKeyDown} handleToggleIsHiddenPassword={handleToggleIsHiddenPassword} />
+                <PasswordInput isHiddenPassword={isHiddenRePassword} handleChangeUserPassword={handleChangeUserRePassword} handleLoginKeyDown={handleRegisterKeyDown} handleToggleIsHiddenPassword={handleToggleIsHiddenRePassword} />
+
                 <input className={styles.input_nickname} type="text" placeholder="닉네임" onChange={handleChangeUserNickname} onKeyDown={handleRegisterKeyDown} ref={inputNicknameRef}/>
                 <div className={styles.agree_box}>
                     <p className={styles.agree_info}>정보 제공에 동의하시겠습니까?</p>
