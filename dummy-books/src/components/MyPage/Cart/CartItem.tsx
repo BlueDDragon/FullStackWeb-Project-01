@@ -4,9 +4,10 @@ import Image from "next/image";
 import { CartData } from "@/types/CartData";
 import { BookData } from "@/types/BookData";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { GetSaleData } from "@/utils/saleUtils";
+import { GetSaleData, GetSaleTotalPrice } from "@/utils/saleUtils";
 import { ChangeCartCount } from "@/utils/cartUtils";
 import { useCountInput } from "@/hooks/useCountInput";
+import BookPriceDisplay from "@/components/BookPriceDisplay";
 
 type CartItemProps = {
     cart: CartData;
@@ -24,16 +25,12 @@ export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePri
   }, [cart]);
   
   // 수량
-  const onCountChange = (newCount: number) => {
-    ChangeCartCount(cart.book, newCount);
-    cart.count = newCount;
-    onUpdatePrice();
-  };
-  const { inputRef, count, handleCountIncrease, handleCountDecrease, handleChange } = useCountInput(cart.count, onCountChange);
-
-  // 세일 정보
-  const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(cart.book);
-  const priceResult = (isSale ? priceSales : priceStandard);
+  const { inputRef, count, handleCountIncrease, handleCountDecrease, handleChange } 
+    = useCountInput(cart.count, (newCount: number) => {
+      ChangeCartCount(cart.book, newCount);
+      cart.count = newCount;
+      onUpdatePrice();
+    });
 
   return (
     <div className={styles.container}>
@@ -51,14 +48,11 @@ export default function CartItem({ cart, onDelCart, onDelSelectBook, onUpdatePri
             <p className={styles.title}>{cart.book.title}</p>
           </Link>
           <p className={styles.description}>{cart.book.author}</p>
-          <p className={styles.price}>
-            {isSale && <span className={styles.sale}>{`${percentSale}%`}</span>}
-            {priceResult.toLocaleString()}원
-          </p>
+          <BookPriceDisplay book={cart.book} isSimple={true}/>
         </div>
       </div>
       <div>
-        <p className={styles.totalPrice}>{(cart.count ? priceResult * cart.count : 0).toLocaleString()}원</p>
+        <p className={styles.totalPrice}>{(GetSaleTotalPrice(cart.book, cart.count)).toLocaleString()}원</p>
         <div className={styles.buy_count}>
           <button className={styles.btn_decrease} onClick={handleCountDecrease}>-</button>
           <input className={styles.input} type="number" defaultValue={cart.count} min={1} ref={inputRef} onChange={handleChange}/>

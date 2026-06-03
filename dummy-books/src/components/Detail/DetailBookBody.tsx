@@ -12,6 +12,7 @@ import { LoginData } from "@/types/UserData";
 import { HeaderContext } from "@/context/HeaderContext";
 import { useWishToggle } from "@/hooks/useWishToggle";
 import { useCountInput } from "@/hooks/useCountInput";
+import WishButton from "../WishButton";
 
 type DetailBookBodyProps = {
     book: BookData;
@@ -72,9 +73,7 @@ export default function DetailBookBody({ book, onCartOpen }: DetailBookBodyProps
                     <div className={styles.btns}>
                         <button className={styles.btn_cart} onClick={handleCartOpen}>장바구니</button>
                         <button className={styles.btn_order} onClick={handleOrder}>바로구매</button>
-                        {isWishAlready ?
-                        <button className={styles.btn_wish_already} onClick={handleToggleWish}>♥</button> :
-                        <button className={styles.btn_wish} onClick={handleToggleWish}>♡</button>}
+                        <WishButton isWished={isWishAlready} onClick={handleToggleWish}/>
                     </div>
                 </div>
             </div>

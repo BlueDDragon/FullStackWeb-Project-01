@@ -7,13 +7,14 @@ import Image from "next/image";
 import { GetSaleData } from "@/utils/saleUtils";
 import { AddCart } from "@/utils/cartUtils";
 import { useRouter } from "next/navigation";
-import { useCallback, useContext, useEffect, useState } from "react";
-import { IsWishAlready, ToggleWish } from "@/utils/wishUtils";
+import { useCallback, useContext } from "react";
 import { SearchViewContext } from "@/context/SearchViewContext";
 import { LoginData } from "@/types/UserData";
 import { useLoginState } from "@/utils/userUtils";
 import { HeaderContext } from "@/context/HeaderContext";
 import { useWishToggle } from "@/hooks/useWishToggle";
+import WishButton from "../WishButton";
+import BookPriceDisplay from "../BookPriceDisplay";
 
 type SearchItemProps = {
   book: BookData;
@@ -63,19 +64,14 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
                 <p className={styles.title}>{book.title}</p>
                 <p className={styles.description}>{book.author}</p>
                 <p className={styles.description}>{book.description}</p>
-                <p className={styles.price}>
-                  {isSale && <span className={styles.sale}>{`${percentSale}%`}</span>}
-                  {(isSale ? priceSales : priceStandard).toLocaleString()}원
-                </p>
+                <BookPriceDisplay book={book} isSimple={false}/>
               </div>
             </div>
           </Link>
           <div className={styles.btns}>
             <button className={styles.btn_cart} onClick={handleCartOpen}>장바구니</button>
             <button className={styles.btn_buy} onClick={handleOrder}>바로구매</button>
-            {isWishAlready ?
-            <button className={styles.btn_wish_already}onClick={handleToggleWish}>♥</button> :
-            <button className={styles.btn_wish} onClick={handleToggleWish}>♡</button>}
+            <WishButton isWished={isWishAlready} onClick={handleToggleWish}/>
           </div>
         </div>
       );
@@ -90,17 +86,12 @@ export default function SearchItem({ book, onCartOpen }: SearchItemProps) {
               <div>
                 <p className={styles.title_simple}>{book.title}</p>
                 <p className={styles.description_simple}>{book.author}</p>
-                <p className={styles.price_simple}>
-                  {isSale && <span className={styles.sale_simple}>{`${percentSale}%`}</span>}
-                  {(isSale ? priceSales : priceStandard).toLocaleString()}원
-                </p>
+                <BookPriceDisplay book={book} isSimple={true}/>
               </div>
             </div>
           </Link>
           <div className={styles.btns_simple}>
-            {isWishAlready ?
-            <button className={styles.btn_wish_already_simple}onClick={handleToggleWish}>♥</button> :
-            <button className={styles.btn_wish_simple} onClick={handleToggleWish}>♡</button>}
+            <WishButton isWished={isWishAlready} onClick={handleToggleWish}/>
           </div>
         </div>
       );

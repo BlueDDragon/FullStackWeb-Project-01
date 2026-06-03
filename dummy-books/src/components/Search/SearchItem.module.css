@@ -133,31 +133,6 @@
     word-break: keep-all;
 }
 
-/* 가격 */
-.price {
-    margin: 0;
-
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    font-size: 30px;
-    font-weight: 800;
-
-    color: #111827;
-
-    letter-spacing: -0.8px;
-}
-
-/* 할인율 */
-.sale {
-    font-size: 24px;
-    font-weight: 800;
-
-    color: #2563eb;
-}
-
 /* 버튼 영역 */
 .btns {
     width: 170px;
@@ -229,93 +204,6 @@
 .btn_cart:active,
 .btn_buy:active {
     transform: scale(0.97);
-}
-
-
-/* 찜하기 */
-.btn_wish {
-    width: 52px;
-    height: 52px;
-
-    border: 1px solid #d1d5db;
-
-    background-color: #ffffff;
-
-    color: #9ca3af;
-
-    font-size: 28px;
-    font-weight: 100;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* 오른쪽 정렬 */
-    margin-left: auto;
-
-    flex-shrink: 0;
-
-    border-radius: 14px;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.15s ease,
-        background-color 0.18s ease,
-        box-shadow 0.18s ease;
-}
-
-.btn_wish:hover {
-    background-color: #fef2f2;
-
-    border-color: #fecaca;
-
-    color: #ef4444;
-}
-
-.btn_wish_already {
-    width: 52px;
-    height: 52px;
-
-    border: 1px solid #fecaca;
-
-    background-color: #fef2f2;
-
-    color: #ef4444;
-
-    font-size: 32px;
-    font-weight: 100;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* 오른쪽 정렬 */
-    margin-left: auto;
-
-    flex-shrink: 0;
-
-    border-radius: 14px;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.15s ease,
-        background-color 0.18s ease,
-        box-shadow 0.18s ease;
-}
-
-.btn_wish_already:hover {
-    background-color: #ffffff;
-
-    border-color: #d1d5db;
-
-    color: #9ca3af;
-}
-
-.btn_wish:active,
-.btn_wish_already:active {
-    transform: scale(0.96);
 }
 
 /* =========================
@@ -455,114 +343,16 @@
 }
 
 /* =========================
-   가격
-========================= */
-
-.price_simple {
-    margin: 0;
-
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
-
-    font-size: 24px;
-    font-weight: 900;
-
-    color: #111827;
-
-    letter-spacing: -0.5px;
-}
-
-/* 할인율 */
-.sale_simple {
-    font-size: 16px;
-    font-weight: 800;
-
-    color: #2563eb;
-}
-
-/* =========================
    버튼 영역
 ========================= */
 
 .btns_simple {
     position: absolute;
 
-    top: 16px;
-    right: 16px;
+    top: 12px;
+    right: 12px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* =========================
-   찜 버튼
-========================= */
-
-.btn_wish_simple,
-.btn_wish_already_simple {
-    width: 48px;
-    height: 48px;
-
-    margin: 10px;
-
-    border-radius: 14px;
-
-    border: 1px solid rgba(255, 255, 255, 0.5);
-
-    backdrop-filter: blur(10px);
-
-    background-color: rgba(255, 255, 255, 0.75);
-
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition:
-        transform 0.15s ease,
-        background-color 0.18s ease,
-        border-color 0.18s ease,
-        color 0.18s ease;
-}
-
-/* 기본 */
-.btn_wish_simple {
-    color: #9ca3af;
-
-    font-size: 26px;
-    font-weight: 400;
-}
-
-.btn_wish_simple:hover {
-    background-color: #fef2f2;
-
-    border-color: #fecaca;
-
-    color: #ef4444;
-}
-
-/* 활성화 */
-.btn_wish_already_simple {
-    font-size: 34px;
-    font-weight: 400;
-
-    background-color: #fef2f2;
-
-    border-color: #fecaca;
-
-    color: #ef4444;
-}
-
-.btn_wish_already_simple:hover {
-    background-color: #fee2e2;
-}
-
-/* 클릭 */
-.btn_wish_simple:active,
-.btn_wish_already_simple:active {
-    transform: scale(0.92);
 }

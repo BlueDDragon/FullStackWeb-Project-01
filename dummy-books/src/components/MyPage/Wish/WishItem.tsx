@@ -1,3 +1,4 @@
+import BookPriceDisplay from "@/components/BookPriceDisplay";
 import styles from "@/components/MyPage/Wish/WishItem.module.css"
 import { BookData } from "@/types/BookData";
 import { GetSaleData } from "@/utils/saleUtils";
@@ -13,8 +14,6 @@ type WishItemProps = {
 }
 
 export default function WishItem({ book, onDelWish, onSelectBook, onCartOpen, onOrder }: WishItemProps) {
-    const { priceSales, priceStandard, isSale, percentSale } = GetSaleData(book);
-
     const handleDelWish = () => {
         onSelectBook(book);
         onDelWish();
@@ -43,10 +42,7 @@ export default function WishItem({ book, onDelWish, onSelectBook, onCartOpen, on
             </Link>
             <p className={styles.description}>{book.author}</p>
             {/* <p className={styles.description}>{book.description}</p> */}
-            <p className={styles.price}>
-              {isSale && (<span className={styles.sale}>{`${percentSale}%`}</span>)}
-              {(isSale ? priceSales : priceStandard).toLocaleString()}원
-            </p>
+            <BookPriceDisplay book={book} isSimple={false}/>
           </div>
 
             <div className={styles.btns}>
