@@ -1,0 +1,210 @@
+/* =========================
+   리뷰 작성 영역
+========================= */
+
+.post_cotainer {
+    max-width: 1200px;
+
+    margin: 0 auto 60px auto;
+
+    padding: 32px;
+
+    border: 1px solid #ececec;
+    border-radius: 20px;
+
+    background-color: #ffffff;
+
+    box-sizing: border-box;
+}
+
+/* =========================
+   작성자 정보
+========================= */
+
+.post_upper {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+}
+
+.nickname {
+    font-size: 18px;
+    font-weight: 800;
+
+    color: #111827;
+}
+
+.id {
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #9ca3af;
+}
+
+/* =========================
+   리뷰 입력
+========================= */
+
+.post_content {
+    position: relative;
+
+    margin-bottom: 24px;
+}
+
+.input {
+    width: 100%;
+    min-height: 180px;
+
+    padding: 20px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 16px;
+
+    box-sizing: border-box;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #111827;
+
+    resize: vertical;
+
+    outline: none;
+
+    font-family: inherit;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.input:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+.input::placeholder {
+    color: #9ca3af;
+}
+
+/* 글자수 */
+.textcount {
+    position: absolute;
+
+    right: 18px;
+    bottom: 16px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #9ca3af;
+}
+
+.box_btn {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* =========================
+   이미지 업로드
+========================= */
+
+.post_picture {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+
+    padding: 18px 20px;
+
+    border-radius: 14px;
+
+    background-color: #f8fafc;
+}
+
+.picupload {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #6b7280;
+}
+
+.btn_upload {
+    height: 42px;
+
+    padding: 0 18px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+
+    background-color: #ffffff;
+
+    color: #374151;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.15s ease;
+}
+
+.btn_upload:hover {
+    background-color: #f9fafb;
+
+    border-color: #9ca3af;
+}
+
+.btn_upload:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   리뷰 등록 버튼
+========================= */
+
+.btn_review {
+    width: 200px;
+
+    margin-bottom: 28px;
+    padding: 18px 20px;
+
+    border: none;
+    border-radius: 14px;
+
+    background-color: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    letter-spacing: -0.3px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.18s ease,
+        transform 0.15s ease;
+}
+
+.btn_review:hover {
+    background-color: #1d4ed8;
+}
+
+.btn_review:active {
+    transform: scale(0.98);
+}

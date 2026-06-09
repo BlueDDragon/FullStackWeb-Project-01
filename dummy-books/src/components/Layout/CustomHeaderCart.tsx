@@ -2,7 +2,6 @@
 
 import styles from "@/components/Layout/CustomHeader.module.css"
 import { HeaderContext } from "@/context/HeaderContext";
-import { GetCarts } from "@/utils/services/cartUtils";
 import Link from "next/link";
 import { useContext, useEffect } from "react";
 

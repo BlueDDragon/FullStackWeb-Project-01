@@ -34,7 +34,7 @@ export default function DetailBookBottom({ book }: DetailBookBottomProps) {
                 <p className={styles.book_info}>{book.isbn13}</p>
             </div>
             <div className={styles.book_container}>
-                <p className={styles.book_subtitle}>평점/리뷰</p>
+                <p className={styles.book_subtitle}>알라딘 평점</p>
                 <p className={styles.book_info}>
                     {book.subInfo.ratingInfo.ratingScore}점
                     ({`${book.subInfo.ratingInfo.ratingCount}`})

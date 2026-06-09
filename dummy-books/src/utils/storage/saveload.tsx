@@ -4,7 +4,8 @@ type DataType =
     { type: "Wish", id: string } | 
     { type: "Setting" } | 
     { type: "Users" } | 
-    { type: "Login" };
+    { type: "Login" } |
+    { type: "Review", isbn13: string };
 
 function loadDataJSON<T>(key: string, defaultValue: string): T {
     if (typeof window !== 'undefined') {

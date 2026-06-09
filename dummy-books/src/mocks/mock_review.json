@@ -1,0 +1,38 @@
+[
+    {
+            "isBuy": true,
+            "nickname": "홍길동",
+            "id": "hong1234",
+            "postDate": "2026-06-04",
+            "isDel": false,
+            "delDate": "",
+            "rank": 5,
+            "content": "책 내용이 너무 좋아요. 잘 읽었습니다.",
+            "like": 0,
+            "hashtag": ["쉬웠어요", "최고예요", "추천해요"]
+        },
+        {
+            "isBuy": false,
+            "nickname": "이영희",
+            "id": "lee1234",
+            "postDate": "2026-06-03",
+            "isDel": false,
+            "delDate": "",
+            "rank": 3,
+            "content": "재미있었습니다. 감사합니다.",
+            "like": 2,
+            "hashtag": ["집중돼요", "도움돼요", "추천해요"]
+        },
+        {
+            "isBuy": false,
+            "nickname": "김철수",
+            "id": "kim1234",
+            "postDate": "2026-06-02",
+            "isDel": false,
+            "delDate": "",
+            "rank": 1,
+            "content": "책 소개와 너무 동떨어진 내용이 적혀있습니다. 최악입니다.",
+            "like": 4,
+            "hashtag": ["해시태그", "리뷰", "종이책"]
+        }
+    ]

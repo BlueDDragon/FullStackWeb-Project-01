@@ -1,0 +1,257 @@
+/* =========================
+   리뷰 전체 영역
+========================= */
+
+.review {
+    max-width: 1200px;
+
+    margin: 20px auto 80px;
+
+    padding: 40px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    border-top: 1px solid #ececec;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.subtitle {
+    min-width: 200px;
+    margin: 28px 0 10px;
+    flex-shrink: 0;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    color: #111827;
+}
+
+.info {
+    flex: 1;
+    width: 100%;
+    margin: 0 0 10px;
+
+    font-size: 16px;
+
+    color: #4b5563;
+
+    line-height: 1.9;
+}
+
+/* =========================
+   리뷰 목록
+========================= */
+
+.box {
+    flex: 1;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-top: 0;
+}
+
+/* =========================
+   리뷰 카드
+========================= */
+
+.totalcount {
+    min-width: 200px;
+    margin: 28px 0 10px;
+    flex-shrink: 0;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    color: #111827;
+    border-bottom: 1px solid #ececec;
+}
+
+.review_item {
+    width: 100%;
+
+    padding: 24px 0;
+
+    border-bottom: 1px solid #ececec;
+
+    box-sizing: border-box;
+}
+
+.review_item:last-child {
+    border-bottom: none;
+}
+
+/* =========================
+   상단 정보
+========================= */
+
+.review_upper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+/* 구매자 뱃지 */
+.buy {
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    background-color: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* 닉네임 */
+.nickname {
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+/* 아이디 */
+.id {
+    font-size: 13px;
+
+    color: #9ca3af;
+}
+
+/* 날짜 */
+.postDate {
+    margin-left: auto;
+
+    font-size: 13px;
+
+    color: #9ca3af;
+}
+
+/* 별점 */
+.rank {
+    font-size: 15px;
+
+    color: #f59e0b;
+
+    letter-spacing: 1px;
+}
+
+/* 신고 버튼 */
+.btn1 {
+    border: none;
+
+    background: none;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: color 0.18s ease;
+}
+
+.btn1:hover {
+    color: #ef4444;
+}
+
+/* =========================
+   본문
+========================= */
+
+.review_body {
+    display: flex;
+    align-items: flex-end;
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
+/* 내용 */
+.content {
+    flex: 1;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #374151;
+
+    word-break: keep-all;
+}
+
+/* 펼치기 버튼 */
+.btn2 {
+    border: none;
+
+    background: none;
+
+    color: #2563eb;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+.btn2:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   하단
+========================= */
+
+.review_bottom {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+    
+    margin-bottom: 16px;
+}
+
+/* 좋아요 */
+.like {
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #6b7280;
+}
+
+/* 해시태그 */
+.hashtag {
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background-color: #f3f4f6;
+
+    color: #4b5563;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.hashtag:hover {
+    background-color: #e5e7eb;
+}

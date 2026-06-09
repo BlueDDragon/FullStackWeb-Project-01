@@ -7,6 +7,7 @@ import DetailCategory from "./DetailCategory";
 import DetailBookBody from "./DetailBookBody";
 import DetailBookBottom from "./DetailBookBottom";
 import CartConfirm from "../Confirm/CartConfirm";
+import BookReviewList from "./Review/BookReviewList";
 
 type DetailBookProps = {
     book: BookData;
@@ -28,6 +29,7 @@ export default function DeatilBook({ book }: DetailBookProps) {
             </div>
             <DetailBookBody book={book} onCartOpen={handleCartOpen} />
             <DetailBookBottom book={book} />
+            <BookReviewList book={book}/>
             <div>
                 <CartConfirm isOpen={isCartConfirm} onOpen={setIsCartConfirm}/>
             </div> 

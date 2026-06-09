@@ -48,3 +48,14 @@ export function getOrderId(buyDate: Date): string {
 
     return `${buyMonth}${buyDay}${buyHour}${buyMin}${buySec}`;
 }
+
+export function getIsOrderBuy(isbn13: string) {
+    const login = getLogin();
+    if (!login || !login.isLogined) return false;
+
+    const orders = getOrders();
+    const isEmpty = isOrderEmpty(orders);
+    if (isEmpty) return false;
+
+    return orders.filter((order) => order.carts.filter((cart) => cart.book.isbn13 === isbn13)).length > 0;
+}
