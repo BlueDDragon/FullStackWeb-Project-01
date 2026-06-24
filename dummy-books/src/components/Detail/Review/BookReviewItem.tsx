@@ -19,12 +19,12 @@ export default function BookReviewItem({ review, isMyReview }: BookReviewItemPro
                 <span className={styles.rank}>{"⭐️".repeat(review.rank)}</span>
                 <span className={styles.postDate}>{postDate.toDateString()}</span>
                 {!isMyReview && <button className={styles.btn1}>신고</button>}
-                {isMyReview && <button className={styles.btn1}>수정</button>}
-                <button className={styles.btn1}>삭제</button>
+                {/* {isMyReview && <button className={styles.btn1}>수정</button>} */}
+                {isMyReview && <button className={styles.btn1}>삭제</button>}
             </div>
             <div className={styles.review_body}>
                 <span className={styles.content}>{review.content}</span>
-                <button className={styles.btn2}>펼치기</button>
+                {/* <button className={styles.btn2}>펼치기</button> */}
             </div>
             <div className={styles.review_bottom}>
                 <span className={styles.like}>좋아요 {review.like}</span>

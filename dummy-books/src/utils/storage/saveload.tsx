@@ -28,6 +28,9 @@ function getKey(type: DataType): string {
         case "Wish":
             return `${type.id}_${type.type.toLowerCase()}`;
 
+        case "Review":
+            return `${type.isbn13}_${type.type.toLowerCase()}`;
+
         case "Setting":
         case "Login":
         case "Users":
